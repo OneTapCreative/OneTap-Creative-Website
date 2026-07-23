@@ -1,3 +1,11 @@
+# OneTap Creative Change Log
+
+## Logo Fix v2
+- Replaced the generated SVG logo with the exact user-supplied OneTap Creative logo artwork.
+- Added a horizontal header crop for navigation readability.
+- Added the full logo in the footer.
+- Versioned filenames prevent stale browser caching.
+
 # OneTap Creative Conversion Update
 
 Updated from the supplied web-design guidance.
