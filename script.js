@@ -5,63 +5,87 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 window.addEventListener('scroll', () => header?.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
 
-navToggle?.addEventListener('click', () => {
-  const open = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', String(!open));
-  navToggle.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
-  nav?.classList.toggle('open', !open);
+const setNavigationState = (isOpen, { returnFocus = false } = {}) => {
+  if (!nav || !navToggle) return;
+
+  nav.classList.toggle('open', isOpen);
+  document.body.classList.toggle('nav-open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+
+  if (returnFocus && !isOpen) navToggle.focus({ preventScroll: true });
+};
+
+navToggle?.addEventListener('click', event => {
+  event.stopPropagation();
+  setNavigationState(navToggle.getAttribute('aria-expanded') !== 'true');
 });
 
-document.querySelectorAll('.main-nav a').forEach(link => link.addEventListener('click', () => {
-  nav?.classList.remove('open');
-  navToggle?.setAttribute('aria-expanded', 'false');
-  navToggle?.setAttribute('aria-label', 'Open navigation');
-}));
+// Close the menu when the user taps away, presses Escape, or rotates/resizes the phone.
+document.addEventListener('click', event => {
+  if (!nav?.classList.contains('open')) return;
+  if (nav.contains(event.target) || navToggle?.contains(event.target)) return;
+  setNavigationState(false);
+});
 
-// Smooth, header-aware anchor movement with a natural ease-in/ease-out curve.
-let activeScrollFrame = 0;
-const cancelActiveScroll = () => {
-  if (activeScrollFrame) cancelAnimationFrame(activeScrollFrame);
-  activeScrollFrame = 0;
-};
-['wheel', 'touchstart'].forEach(type => window.addEventListener(type, cancelActiveScroll, { passive: true }));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav?.classList.contains('open')) {
+    setNavigationState(false, { returnFocus: true });
+  }
+});
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', event => {
-    const href = link.getAttribute('href');
-    if (!href || href === '#' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const target = href === '#top' ? document.documentElement : document.querySelector(href);
-    if (!target) return;
-    event.preventDefault();
-    cancelActiveScroll();
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 960 && nav?.classList.contains('open')) setNavigationState(false);
+}, { passive: true });
 
-    const headerOffset = (header?.offsetHeight || 0) + 10;
-    const startY = window.scrollY;
-    const targetY = href === '#top' ? 0 : Math.max(0, target.getBoundingClientRect().top + startY - headerOffset);
-    const distance = targetY - startY;
+// Pause the animated mini-sites while the page itself is moving. This leaves more
+// rendering capacity for smooth mobile anchor scrolling.
+let scrollIdleTimer = 0;
+window.addEventListener('scroll', () => {
+  document.documentElement.classList.add('is-page-scrolling');
+  window.clearTimeout(scrollIdleTimer);
+  scrollIdleTimer = window.setTimeout(() => {
+    document.documentElement.classList.remove('is-page-scrolling');
+  }, 140);
+}, { passive: true });
 
-    if (prefersReducedMotion || Math.abs(distance) < 2) {
-      window.scrollTo(0, targetY);
-      history.pushState(null, '', href);
-      return;
-    }
+// One delegated anchor handler keeps the order reliable on mobile:
+// 1) hide the dropdown immediately, 2) measure the target, 3) start native smooth scroll.
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link) return;
 
-    const duration = Math.min(950, Math.max(520, Math.abs(distance) * 0.32));
-    const startedAt = performance.now();
-    const easeInOutCubic = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const href = link.getAttribute('href');
+  if (!href || href === '#' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-    const step = now => {
-      const progress = Math.min(1, (now - startedAt) / duration);
-      window.scrollTo(0, startY + distance * easeInOutCubic(progress));
-      if (progress < 1) {
-        activeScrollFrame = requestAnimationFrame(step);
-      } else {
-        activeScrollFrame = 0;
-        history.pushState(null, '', href);
-      }
-    };
-    activeScrollFrame = requestAnimationFrame(step);
-  });
+  const target = href === '#top' ? document.documentElement : document.querySelector(href);
+  if (!target) return;
+
+  event.preventDefault();
+  const menuWasOpen = Boolean(nav?.classList.contains('open'));
+  setNavigationState(false);
+
+  const scrollToTarget = () => {
+    const headerOffset = (header?.getBoundingClientRect().height || 0) + 10;
+    const targetY = href === '#top'
+      ? 0
+      : Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerOffset);
+
+    window.scrollTo({
+      top: targetY,
+      left: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+
+    if (window.location.hash !== href) history.pushState(null, '', href);
+  };
+
+  // Two paint frames ensure the fixed dropdown is gone before scrolling begins.
+  if (menuWasOpen) {
+    requestAnimationFrame(() => requestAnimationFrame(scrollToTarget));
+  } else {
+    scrollToTarget();
+  }
 });
 
 

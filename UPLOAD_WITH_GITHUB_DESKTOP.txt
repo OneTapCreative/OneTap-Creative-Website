@@ -1,22 +1,22 @@
-ONETAP CREATIVE — GITHUB DESKTOP UPDATE
+ONETAP CREATIVE — MOBILE NAVIGATION FIX
 
-1. Extract this ZIP file.
-2. Open GitHub Desktop.
-3. Select the existing OneTap Creative repository.
-4. Confirm Current Branch is main.
-5. Click Fetch origin, then Pull origin if it appears.
-6. Choose Repository > Show in Explorer.
-7. Copy everything INSIDE this extracted folder.
-8. Paste it directly into the repository folder beside the existing index.html.
-9. Choose Replace the files in the destination.
-10. Return to GitHub Desktop and verify these appear in Changes:
-    - index.html
-    - styles.css
-    - script.js
-    - assets/images/onetap-icon-natural.png
-    - assets/images/onetap-logo-full-natural.png
-11. Summary: Professional logo and service showcase update
-12. Click Commit to main.
-13. Click Push origin.
-14. Open Vercel > Deployments and wait for Ready.
-15. Open the site and press Ctrl + Shift + R.
+1. Extract this ZIP.
+2. In GitHub Desktop, select the existing OneTap Creative repository.
+3. Click Fetch origin, then Pull origin if shown.
+4. Select Repository > Show in Explorer.
+5. Copy everything INSIDE this extracted folder.
+6. Paste it directly into the repository folder beside index.html.
+7. Choose Replace the files in the destination.
+8. Return to GitHub Desktop.
+9. Commit message: Fix mobile menu and smooth section scrolling
+10. Click Commit to main, then Push origin.
+11. Wait for Vercel to show Ready.
+12. Test on your phone or use Ctrl + Shift + R.
+
+FIXES INCLUDED
+- Correct hamburger-button HTML structure
+- Menu closes immediately after selecting a link
+- No extra tap required
+- Smoother native mobile anchor scrolling
+- Animated portfolio previews pause while the page moves
+- Outside tap, Escape, and resize also close the menu

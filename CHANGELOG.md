@@ -1,3 +1,12 @@
+# Mobile Navigation Fix
+
+- Corrected the malformed hamburger button closing tag.
+- Mobile menu now closes immediately after selecting a destination.
+- Replaced the custom JavaScript scroll animation with native smooth scrolling.
+- Pauses animated website demos while the page scrolls to reduce mobile jank.
+- Added outside-tap, Escape-key, and desktop-resize menu closing behavior.
+- Added cache-busting query strings for the updated CSS and JavaScript.
+
 # OneTap Creative — Professional Service Update
 
 ## Updated
