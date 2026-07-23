@@ -54,3 +54,6 @@ The homepage was refined using the customer-first design guidance supplied in `W
 - Connect the final custom domain and submit it to Google Search Console.
 - Add the final domain to a sitemap after the domain is confirmed.
 - Have a California-qualified attorney review the service agreement and legal pages.
+
+### Motion and logo update
+The site uses the finished OneTap touch-mark SVG and smooth 30 FPS looping website walkthroughs. Keep the SVG and video filenames unchanged when replacing the existing repository files.

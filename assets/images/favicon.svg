@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#080808"/><circle cx="32" cy="27" r="20" fill="none" stroke="#d6ad3c" stroke-width="3"/><circle cx="32" cy="27" r="12" fill="none" stroke="#f3ca5d" stroke-width="2"/><path d="M32 29v22M32 31c0-5 8-5 8 0v10M40 35c0-5 8-5 8 0v9c0 9-7 15-17 15-8 0-13-4-17-10l-5-9c-3-5 4-8 7-4l5 7V29c0-5 7-5 7 0z" fill="#fff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="OneTap Creative">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7dc7a"/><stop offset=".5" stop-color="#d9ae3d"/><stop offset="1" stop-color="#98701e"/></linearGradient></defs>
+  <rect width="64" height="64" rx="15" fill="#080808"/>
+  <circle cx="32" cy="29" r="23" fill="none" stroke="url(#g)" stroke-width="3"/>
+  <circle cx="32" cy="25" r="11" fill="none" stroke="url(#g)" stroke-width="2.4"/>
+  <circle cx="32" cy="25" r="3" fill="#f3cf68"/>
+  <path d="M32 54V28c0-4-6-4-6 0v14l-4.5-5c-2.8-3-7.3.4-5.1 4l6.6 11.5c2.4 4.1 6.7 6.5 11.5 6.5h3.8c7.9 0 13.7-5.7 13.7-13.3v-7.3c0-4-6-4-6 0v4.8-7.6c0-4-6-4-6 0v6.1-8.8c0-4-6-4-6 0v8.2" fill="#080808" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

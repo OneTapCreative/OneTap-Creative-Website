@@ -24,3 +24,8 @@ Updated from the supplied web-design guidance.
 - Added robots.txt and shortened asset caching so future updates refresh reliably.
 - Updated Terms, FAQ, form copy, README, and pricing language for consistency.
 
+
+## Logo and motion refinement
+- Rebuilt the OneTap Creative wordmark with a complete touch-hand mark and better header proportions.
+- Reworked all showcase walkthroughs to 30 FPS, ten-second seamless down-and-back loops.
+- Added eased, header-aware anchor scrolling and smoother reveal motion.

@@ -1,6 +1,7 @@
 const header = document.querySelector('.site-header');
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.main-nav');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 window.addEventListener('scroll', () => header?.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
 
@@ -16,6 +17,53 @@ document.querySelectorAll('.main-nav a').forEach(link => link.addEventListener('
   navToggle?.setAttribute('aria-expanded', 'false');
   navToggle?.setAttribute('aria-label', 'Open navigation');
 }));
+
+// Smooth, header-aware anchor movement with a natural ease-in/ease-out curve.
+let activeScrollFrame = 0;
+const cancelActiveScroll = () => {
+  if (activeScrollFrame) cancelAnimationFrame(activeScrollFrame);
+  activeScrollFrame = 0;
+};
+['wheel', 'touchstart'].forEach(type => window.addEventListener(type, cancelActiveScroll, { passive: true }));
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', event => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const target = href === '#top' ? document.documentElement : document.querySelector(href);
+    if (!target) return;
+    event.preventDefault();
+    cancelActiveScroll();
+
+    const headerOffset = (header?.offsetHeight || 0) + 10;
+    const startY = window.scrollY;
+    const targetY = href === '#top' ? 0 : Math.max(0, target.getBoundingClientRect().top + startY - headerOffset);
+    const distance = targetY - startY;
+
+    if (prefersReducedMotion || Math.abs(distance) < 2) {
+      window.scrollTo(0, targetY);
+      history.pushState(null, '', href);
+      return;
+    }
+
+    const duration = Math.min(950, Math.max(520, Math.abs(distance) * 0.32));
+    const startedAt = performance.now();
+    const easeInOutCubic = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const step = now => {
+      const progress = Math.min(1, (now - startedAt) / duration);
+      window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+      if (progress < 1) {
+        activeScrollFrame = requestAnimationFrame(step);
+      } else {
+        activeScrollFrame = 0;
+        history.pushState(null, '', href);
+      }
+    };
+    activeScrollFrame = requestAnimationFrame(step);
+  });
+});
+
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -46,7 +94,7 @@ if (mobileCta && heroPrimary && 'IntersectionObserver' in window) {
   mobileCtaObserver.observe(heroPrimary);
 }
 
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reduceMotion = prefersReducedMotion;
 const videos = [...document.querySelectorAll('video')];
 if (reduceMotion) {
   videos.forEach(video => video.pause());
@@ -61,7 +109,18 @@ if (reduceMotion) {
       }
     });
   }, { rootMargin: '180px 0px', threshold: 0.05 });
-  videos.forEach(video => videoObserver.observe(video));
+  videos.forEach(video => {
+    video.setAttribute('disablepictureinpicture', '');
+    videoObserver.observe(video);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      videos.forEach(video => video.pause());
+    } else {
+      videos.filter(video => video.getBoundingClientRect().bottom > -180 && video.getBoundingClientRect().top < window.innerHeight + 180)
+        .forEach(video => video.play().catch(() => {}));
+    }
+  });
 }
 
 const year = document.querySelector('#year');

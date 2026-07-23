@@ -1,19 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 132" role="img" aria-labelledby="title desc">
-  <title id="title">OneTap Creative</title>
-  <desc id="desc">Gold touch icon with OneTap Creative wordmark</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">OneTap Creative</title>
+  <desc id="logoDesc">A gold touch symbol beside the OneTap Creative wordmark</desc>
   <defs>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f7d66b"/><stop offset="0.48" stop-color="#d6ad3c"/><stop offset="1" stop-color="#9b701c"/>
+    <linearGradient id="otGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7dc7a"/>
+      <stop offset="0.48" stop-color="#d9ae3d"/>
+      <stop offset="1" stop-color="#98701e"/>
     </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <g transform="translate(7 6)">
-    <circle cx="58" cy="58" r="48" fill="none" stroke="url(#gold)" stroke-width="5"/>
-    <circle cx="58" cy="58" r="33" fill="none" stroke="url(#gold)" stroke-width="4" opacity=".9"/>
-    <circle cx="58" cy="58" r="18" fill="none" stroke="url(#gold)" stroke-width="3" opacity=".8"/>
-    <path d="M58 64v39M58 65c0-8 12-8 12 0v17M70 72c0-8 12-8 12 0v15M82 78c0-7 11-7 11 0v15c0 15-12 25-29 25-12 0-22-6-28-16l-10-17c-4-7 7-13 12-6l9 12V64c0-8 11-8 11 0z" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"/>
+
+  <!-- Touch mark -->
+  <g transform="translate(8 5)">
+    <circle cx="65" cy="65" r="50" fill="#0a0a0a" stroke="url(#otGold)" stroke-width="4.5"/>
+    <circle cx="65" cy="54" r="28" fill="none" stroke="url(#otGold)" stroke-width="3.5" opacity=".9"/>
+    <circle cx="65" cy="54" r="14" fill="none" stroke="url(#otGold)" stroke-width="3" opacity=".95"/>
+    <circle cx="65" cy="54" r="4.5" fill="#f3cf68" filter="url(#softGlow)"/>
+
+    <!-- Clean outlined tap hand -->
+    <path d="M65 113V58c0-6.8-10.5-6.8-10.5 0v31.5l-8-9.2c-4.6-5.2-12.3.6-8.7 6.6l11.8 20.2c4.5 7.6 12.5 12.2 21.3 12.2h7.4c14.7 0 25.7-10.6 25.7-24.9V80.8c0-6.8-10.5-6.8-10.5 0v9.3-14.4c0-6.8-10.5-6.8-10.5 0v11.7-16.3c0-6.8-10.5-6.8-10.5 0v15.2" fill="#0a0a0a" stroke="#ffffff" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <text x="135" y="68" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="800" fill="#fff">One</text>
-  <text x="252" y="68" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="800" fill="url(#gold)">Tap</text>
-  <path d="M138 101h50M423 101h50" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
-  <text x="201" y="108" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="8" fill="#fff">CREATIVE</text>
+
+  <!-- Wordmark -->
+  <g font-family="Inter, Arial, Helvetica, sans-serif">
+    <text x="142" y="76" font-size="62" font-weight="850" letter-spacing="-3" fill="#ffffff">One</text>
+    <text x="252" y="76" font-size="62" font-weight="850" letter-spacing="-3" fill="url(#otGold)">Tap</text>
+    <line x1="145" y1="111" x2="198" y2="111" stroke="url(#otGold)" stroke-width="3" stroke-linecap="round"/>
+    <text x="217" y="119" font-size="22" font-weight="750" letter-spacing="8" fill="#ffffff">CREATIVE</text>
+    <line x1="421" y1="111" x2="474" y2="111" stroke="url(#otGold)" stroke-width="3" stroke-linecap="round"/>
+  </g>
 </svg>
