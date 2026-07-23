@@ -1,26 +1,12 @@
-# Mobile Navigation Fix
+# Changelog
 
-- Corrected the malformed hamburger button closing tag.
-- Mobile menu now closes immediately after selecting a destination.
-- Replaced the custom JavaScript scroll animation with native smooth scrolling.
-- Pauses animated website demos while the page scrolls to reduce mobile jank.
-- Added outside-tap, Escape-key, and desktop-resize menu closing behavior.
-- Added cache-busting query strings for the updated CSS and JavaScript.
+## Get Found Online Direction — July 23, 2026
 
-# OneTap Creative — Professional Service Update
-
-## Updated
-- Rebuilt the header logo as a clean responsive lockup using the official OneTap touch icon.
-- Added the full official logo treatment to the footer.
-- Replaced video files with lightweight CSS live-scrolling website previews.
-- Added six focused website examples:
-  - Barber
-  - Nail salon
-  - Hair stylist / salon
-  - Car detailer
-  - Landscaper / lawn care
-  - Any local service that needs quote requests
-- Updated hero, services, lead form, SEO copy, and business-type options.
-- Preserved the single $119/month plan with a three-month minimum.
-- Kept the live DJ JRV project as real launch proof without positioning DJs as a primary niche.
-- Added unique logo asset names to avoid showing a previously cached logo.
+- Repositioned OneTap Creative as a complete online-presence partner, not only a website builder.
+- Updated the offer to $149/month with a three-month minimum ($447), then month-to-month with 30 days’ notice.
+- Added Google Business Profile setup, Google indexing, basic local SEO, and Search Console setup to the main service presentation.
+- Added a professional website + Google profile hero visual inspired by the approved marketing direction.
+- Added six clear included-service cards, a Google visibility section, a three-step delivery process, and a Stockton-area local banner.
+- Preserved live website examples for barbers, nail salons, hair stylists, car detailers, landscapers, and quote-based services.
+- Updated intake form, FAQ, Terms, thank-you flow, SEO metadata, and structured data.
+- Preserved the corrected mobile menu behavior and smooth section scrolling.

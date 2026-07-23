@@ -160,13 +160,13 @@ const businessSchema = document.querySelector('#business-schema');
 const homeUrl = new URL('index.html', window.location.href).href.replace(/index\.html$/, '');
 if (canonicalLink) canonicalLink.href = homeUrl;
 if (ogUrl) ogUrl.content = homeUrl;
-if (ogImage) ogImage.content = new URL('assets/images/onetap-og-natural.jpg', window.location.href).href;
+if (ogImage) ogImage.content = new URL('assets/images/onetap-og-direction.jpg', window.location.href).href;
 if (formNextUrl) formNextUrl.value = new URL('thank-you.html', window.location.href).href;
 if (businessSchema) {
   try {
     const schema = JSON.parse(businessSchema.textContent);
     schema.url = homeUrl;
-    schema.image = new URL('assets/images/onetap-og-natural.jpg', window.location.href).href;
+    schema.image = new URL('assets/images/onetap-og-direction.jpg', window.location.href).href;
     businessSchema.textContent = JSON.stringify(schema);
   } catch (_) {}
 }

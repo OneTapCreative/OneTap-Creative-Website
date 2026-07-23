@@ -1,22 +1,14 @@
-ONETAP CREATIVE — MOBILE NAVIGATION FIX
+ONETAP CREATIVE — GET FOUND ONLINE UPDATE
 
 1. Extract this ZIP.
-2. In GitHub Desktop, select the existing OneTap Creative repository.
+2. Open GitHub Desktop and select the existing OneTap Creative repository.
 3. Click Fetch origin, then Pull origin if shown.
 4. Select Repository > Show in Explorer.
 5. Copy everything INSIDE this extracted folder.
-6. Paste it directly into the repository folder beside index.html.
+6. Paste directly into the repository folder beside index.html.
 7. Choose Replace the files in the destination.
 8. Return to GitHub Desktop.
-9. Commit message: Fix mobile menu and smooth section scrolling
+9. Commit message: Update OneTap complete online presence direction
 10. Click Commit to main, then Push origin.
 11. Wait for Vercel to show Ready.
-12. Test on your phone or use Ctrl + Shift + R.
-
-FIXES INCLUDED
-- Correct hamburger-button HTML structure
-- Menu closes immediately after selecting a link
-- No extra tap required
-- Smoother native mobile anchor scrolling
-- Animated portfolio previews pause while the page moves
-- Outside tap, Escape, and resize also close the menu
+12. Test the production domain on desktop and phone.
