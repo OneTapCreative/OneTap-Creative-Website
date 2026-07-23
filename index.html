@@ -5,24 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="OneTap Creative builds conversion-focused, mobile-first websites for local businesses—with design, hosting, domain management, updates, and support included." />
   <meta name="theme-color" content="#080808" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta property="og:title" content="OneTap Creative | Websites That Turn Attention Into Action" />
   <meta property="og:description" content="Conversion-focused mobile-first websites built, hosted, and maintained for local businesses." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/images/onetap-og.png" />
+  <meta property="og:image" id="og-image" content="assets/images/onetap-og.png" />
+  <meta property="og:url" id="og-url" content="" />
+  <link rel="canonical" id="canonical-link" href="" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>OneTap Creative | Mobile-First Websites for Local Businesses</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="preload" href="assets/videos/dj-showcase.mp4" as="video" type="video/mp4" />
   <link rel="stylesheet" href="styles.css" />
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="business-schema">
   {
     "@context":"https://schema.org",
     "@type":"ProfessionalService",
     "name":"OneTap Creative",
     "description":"Mobile-first website design, hosting, domain management, maintenance, and support for local businesses.",
     "email":"codicta@gmail.com",
-    "areaServed":"California",
-    "priceRange":"$$"
+    "areaServed":["California","United States"],
+    "priceRange":"$119 per month"
   }
   </script>
 </head>
@@ -59,8 +62,12 @@
             <a class="btn" href="#start">Get My Website <span aria-hidden="true">↗</span></a>
             <a class="hero-secondary" href="#work">See website examples <span aria-hidden="true">↓</span></a>
           </div>
+          <div class="hero-offer" aria-label="OneTap Creative pricing">
+            <strong>$119<span>/month</span></strong>
+            <p>One clear all-inclusive website plan<br><b>3-month minimum, then month-to-month</b></p>
+          </div>
           <div class="hero-proof" aria-label="Included benefits">
-            <span>Clear customer journey</span><span>Domain + hosting</span><span>Ongoing support</span>
+            <span>Custom mobile-first site</span><span>Domain + hosting</span><span>Updates + support</span>
           </div>
         </div>
 
@@ -88,30 +95,6 @@
       </div>
     </section>
 
-    <section class="section-pad conversion-section" id="approach">
-      <div class="container conversion-layout">
-        <div class="section-heading conversion-heading reveal">
-          <p class="eyebrow"><span></span> Designed around customer decisions</p>
-          <h2>Your website should answer three questions <em>immediately.</em></h2>
-          <p>Visitors should understand what you do, why they should trust you, and exactly how to take action. We build every page around that simple customer journey—not decoration for decoration’s sake.</p>
-          <a class="text-link light-link" href="#work">See the approach in action <span>→</span></a>
-        </div>
-        <div class="decision-path" aria-label="OneTap Creative conversion framework">
-          <article class="decision-card reveal">
-            <span>01</span>
-            <div><p>Understand</p><h3>What does this business do?</h3><small>Strong headlines, clear services, and visual hierarchy make the offer easy to grasp.</small></div>
-          </article>
-          <article class="decision-card reveal">
-            <span>02</span>
-            <div><p>Trust</p><h3>Why should I choose them?</h3><small>Real work, reviews, experience, benefits, and readable content reduce uncertainty.</small></div>
-          </article>
-          <article class="decision-card reveal">
-            <span>03</span>
-            <div><p>Act</p><h3>What should I do next?</h3><small>One high-contrast primary action makes booking, calling, or requesting a quote effortless.</small></div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section-pad work-section" id="work">
       <div class="container">
@@ -139,6 +122,28 @@
             <div class="showcase-copy"><p>Local Services</p><h3>Home-Service Website</h3><span>Clear services, trust signals, service area, and estimates.</span><a href="#start">Build a site like this ↗</a></div>
           </article>
         </div>
+
+        <article class="case-study reveal" aria-labelledby="dj-case-title">
+          <div class="case-study-copy">
+            <p class="eyebrow"><span></span> Live client project</p>
+            <div class="verified-work">Verified live website</div>
+            <h3 id="dj-case-title">DJ JRV / Romero Vision</h3>
+            <p>OneTap Creative turned an event-DJ business into a clear mobile experience where visitors can understand the services, build trust, and request a personalized quote.</p>
+            <ul>
+              <li>Mobile-first branded design</li>
+              <li>Custom domain connection</li>
+              <li>Quote-request workflow</li>
+              <li>Basic SEO foundation</li>
+              <li>Launch and ongoing support</li>
+            </ul>
+            <a class="btn" href="https://www.dj-jrv.com/" target="_blank" rel="noopener">View DJ JRV Live <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="case-study-preview phone-frame">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/images/dj-showcase-poster.png" aria-label="DJ JRV mobile website walkthrough">
+              <source src="assets/videos/dj-showcase.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -147,7 +152,7 @@
         <div class="section-heading sticky-heading reveal">
           <p class="eyebrow"><span></span> Everything handled</p>
           <h2>A professional website built for <em>your customers.</em></h2>
-          <p>You focus on serving your business. We handle the design, customer flow, setup, hosting, and ongoing website care.</p>
+          <p>You focus on serving your customers. We handle the design, customer flow, setup, hosting, and ongoing website care for one clear monthly price.</p>
           <a class="text-link" href="#start">Tell us about your business <span>→</span></a>
         </div>
         <div class="service-list">
@@ -164,7 +169,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow"><span></span> Simple from idea to launch</p>
-          <h2>Four steps. <em>One clear process.</em></h2>
+          <h2>From intake to launch—<em>without the technical stress.</em></h2>
         </div>
         <ol class="process-cards">
           <li class="reveal"><span>01</span><h3>Share your business</h3><p>Complete a simple intake form with your services, photos, brand, links, and goals.</p></li>
@@ -176,18 +181,25 @@
     </section>
 
     <section class="section-pad pricing-section" id="pricing">
-      <div class="container pricing-shell reveal">
+      <div class="container single-price-shell reveal">
         <div class="pricing-copy">
-          <p class="eyebrow"><span></span> All-inclusive website service</p>
-          <h2>Choose the term that <em>fits your business.</em></h2>
-          <p>Every plan includes the same core website service. Longer commitments receive a lower monthly rate.</p>
-          <div class="included-pills"><span>Custom website</span><span>Domain + hosting</span><span>Basic SEO</span><span>Routine updates</span><span>Ongoing support</span></div>
+          <p class="eyebrow"><span></span> One clear website plan</p>
+          <h2>Everything your business website needs for <em>$119 a month.</em></h2>
+          <p>No confusing packages and no feature guessing. Your business gets the same professional foundation, launch support, and ongoing care from day one.</p>
+          <div class="included-pills"><span>Custom mobile-first website</span><span>Domain + hosting</span><span>Basic SEO setup</span><span>Lead or booking integration</span><span>Routine updates</span><span>Ongoing support</span></div>
         </div>
-        <div class="price-stack" role="list" aria-label="Website plans">
-          <button class="price-row" type="button" data-plan="3-Month Plan — $119/month" role="listitem" aria-pressed="false"><span><b>3 months</b><small>Flexible start</small></span><strong>$119<small>/mo</small></strong></button>
-          <button class="price-row" type="button" data-plan="6-Month Plan — $109/month" role="listitem" aria-pressed="false"><span><b>6 months</b><small>Balanced value</small></span><strong>$109<small>/mo</small></strong></button>
-          <button class="price-row featured selected" type="button" data-plan="12-Month Plan — $99/month" role="listitem" aria-pressed="true"><em>Best value</em><span><b>12 months</b><small>Most popular</small></span><strong>$99<small>/mo</small></strong></button>
-          <p>No payment is collected through this website. Final scope and terms are confirmed during onboarding.</p>
+        <div class="single-price-card" aria-label="OneTap Creative website subscription price">
+          <p>OneTap Website Service</p>
+          <div class="single-price"><strong>$119</strong><span>/ month</span></div>
+          <div class="commitment-box"><b>3-month minimum commitment</b><span>$357 total for the first three months</span></div>
+          <ul>
+            <li>No separate setup fee</li>
+            <li>Continues month-to-month after month three</li>
+            <li>Cancel before the next billing cycle after the minimum term</li>
+            <li>Final scope confirmed in your service agreement</li>
+          </ul>
+          <a class="btn price-cta" href="#start">Start My Website <span aria-hidden="true">↗</span></a>
+          <small>No payment is collected on this website.</small>
         </div>
       </div>
     </section>
@@ -197,16 +209,18 @@
         <div class="start-copy reveal">
           <p class="eyebrow"><span></span> Start your website</p>
           <h2>Tell us your main goal. <em>We’ll build the path.</em></h2>
-          <p>Submit your project request and OneTap Creative will confirm your audience, primary website action, selected plan, next steps, and timeline.</p>
-          <div class="selected-plan" id="selected-plan-display"><span>Selected plan</span><strong>12-Month Plan — $99/month</strong></div>
+          <p>Submit your project request and OneTap Creative will confirm your audience, primary website action, scope, next steps, and timeline.</p>
+          <div class="selected-plan"><span>Your website service</span><strong>$119/month · 3-month minimum</strong></div>
           <ul class="start-points"><li>No payment collected today</li><li>Personal onboarding support</li><li>Clear scope before work begins</li></ul>
         </div>
         <div class="form-card reveal reveal-delay">
           <form action="https://formsubmit.co/codicta@gmail.com" method="post" id="lead-form">
             <input type="hidden" name="_subject" value="New OneTap Creative Website Request" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="Selected Plan" id="selected-plan-input" value="12-Month Plan — $99/month" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_next" id="form-next-url" value="thank-you.html" />
+            <input type="hidden" name="Website Service" value="$119/month — 3-month minimum, then month-to-month" />
+            <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form-title"><div><p>Step one</p><h3>Start Your Website</h3></div><span>Fields marked * are required.</span></div>
             <div class="form-two">
               <label>Full name *<input name="Full Name" type="text" autocomplete="name" required /></label>
@@ -223,8 +237,8 @@
               </select>
             </label>
             <label>What should your website help you accomplish? *<textarea name="Website Goals" rows="5" placeholder="Example: get more bookings, show my work, collect quote requests, appear more professional..." required></textarea></label>
-            <label>Current website or social profile<input name="Current Website or Social" type="url" placeholder="https://" /></label>
-            <label class="consent"><input type="checkbox" required /><span>I understand this is a subscription website service and agree to the <a href="terms.html" target="_blank">Terms</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>. *</span></label>
+            <label>Current website or social profile<input name="Current Website or Social" type="text" placeholder="Website link, Instagram handle, Facebook page, or none" /></label>
+            <label class="consent"><input type="checkbox" name="Service Terms Accepted" value="Yes" required /><span>I understand this is a $119/month subscription website service with a three-month minimum and agree to the <a href="terms.html" target="_blank">Terms</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>. *</span></label>
             <button class="btn submit-btn" type="submit">Request My Website <span>↗</span></button>
             <p class="form-note">You will not be charged by submitting this form.</p>
           </form>
@@ -236,11 +250,10 @@
       <div class="container faq-grid">
         <div class="section-heading reveal"><p class="eyebrow"><span></span> Common questions</p><h2>Before we <em>build.</em></h2></div>
         <div class="faq-list">
-          <details class="reveal"><summary>What is included in the monthly price?<span>+</span></summary><p>Your custom one-page website, domain and hosting management, mobile optimization, basic SEO setup, lead or booking integration, routine updates, security, and ongoing support.</p></details>
-          <details class="reveal"><summary>How long does a website take?<span>+</span></summary><p>Most projects can move from a completed intake to a first draft in approximately one to two weeks. The final schedule depends on content, photos, approvals, and revision timing.</p></details>
-          <details class="reveal"><summary>Can you connect my booking platform?<span>+</span></summary><p>Yes. We can connect common scheduling and booking services such as Square Appointments, Booksy, Squire, TheCut, Fresha, Vagaro, Calendly, and other platforms that provide a public booking link or embed.</p></details>
-          <details class="reveal"><summary>Can I request changes after launch?<span>+</span></summary><p>Yes. Routine updates to text, images, services, prices, hours, and business information are included. Major redesigns or advanced custom features may require a separate quote.</p></details>
-          <details class="reveal"><summary>Who manages the website and domain?<span>+</span></summary><p>OneTap Creative manages the website files, hosting, and domain during the active subscription. Transfer or buyout terms are handled under the signed client service agreement.</p></details>
+          <details class="reveal"><summary>What does the $119 monthly price include?<span>+</span></summary><p>Your custom mobile-first one-page website, domain and hosting management, SSL security, basic SEO setup, lead or booking integration, routine content updates, and ongoing support. Advanced features or additional pages may require a separate quote.</p></details>
+          <details class="reveal"><summary>How does the three-month commitment work?<span>+</span></summary><p>The initial commitment is three monthly payments of $119, totaling $357. After month three, the service continues month-to-month unless canceled before the next billing cycle according to your signed agreement.</p></details>
+          <details class="reveal"><summary>How long does a website take?<span>+</span></summary><p>Most projects can move from a completed intake to a first draft in approximately one to two weeks. The final schedule depends on content, photos, approvals, integrations, and revision timing.</p></details>
+          <details class="reveal"><summary>Who manages the website and domain?<span>+</span></summary><p>OneTap Creative manages the website files, hosting, and domain while the subscription is active. Transfer, buyout, cancellation, and early-termination terms are defined in the signed client service agreement.</p></details>
         </div>
       </div>
     </section>

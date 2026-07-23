@@ -14,3 +14,13 @@ Updated from the supplied web-design guidance.
 - Offscreen videos pause automatically to improve mobile performance
 - Updated social-sharing image and metadata
 - Verified desktop and mobile layouts and interactions
+## Final Single-Price Update — July 22, 2026
+- Replaced three pricing options with one $119/month all-inclusive service.
+- Added a three-month minimum commitment ($357), then month-to-month language.
+- Replaced placeholder spinner videos with four real animated mini-site walkthroughs.
+- Added a verified DJ JRV live-client case study without inventing a testimonial.
+- Added a branded thank-you page, FormSubmit CAPTCHA, honeypot, consent logging, and flexible social-profile input.
+- Added runtime canonical, social URL, absolute social image, and structured-data URL handling.
+- Added robots.txt and shortened asset caching so future updates refresh reliably.
+- Updated Terms, FAQ, form copy, README, and pricing language for consistency.
+

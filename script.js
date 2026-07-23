@@ -28,23 +28,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-const selectedDisplay = document.querySelector('#selected-plan-display strong');
-const selectedInput = document.querySelector('#selected-plan-input');
-const planButtons = [...document.querySelectorAll('.price-row')];
-planButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const plan = button.dataset.plan;
-    planButtons.forEach(item => {
-      const selected = item === button;
-      item.classList.toggle('selected', selected);
-      item.setAttribute('aria-pressed', String(selected));
-    });
-    if (selectedDisplay) selectedDisplay.textContent = plan;
-    if (selectedInput) selectedInput.value = plan;
-    document.querySelector('#start')?.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
 document.querySelectorAll('details').forEach(detail => {
   detail.addEventListener('toggle', () => {
     if (!detail.open) return;
@@ -83,3 +66,34 @@ if (reduceMotion) {
 
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
+
+
+// Build absolute launch URLs at runtime so the site works on Vercel previews and the final custom domain.
+const canonicalLink = document.querySelector('#canonical-link');
+const ogUrl = document.querySelector('#og-url');
+const ogImage = document.querySelector('#og-image');
+const formNextUrl = document.querySelector('#form-next-url');
+const businessSchema = document.querySelector('#business-schema');
+const homeUrl = new URL('index.html', window.location.href).href.replace(/index\.html$/, '');
+if (canonicalLink) canonicalLink.href = homeUrl;
+if (ogUrl) ogUrl.content = homeUrl;
+if (ogImage) ogImage.content = new URL('assets/images/onetap-og.png', window.location.href).href;
+if (formNextUrl) formNextUrl.value = new URL('thank-you.html', window.location.href).href;
+if (businessSchema) {
+  try {
+    const schema = JSON.parse(businessSchema.textContent);
+    schema.url = homeUrl;
+    schema.image = new URL('assets/images/onetap-og.png', window.location.href).href;
+    businessSchema.textContent = JSON.stringify(schema);
+  } catch (_) {}
+}
+
+// Lightweight conversion events. These become useful automatically if a dataLayer is added later.
+document.querySelectorAll('a[href="#start"]').forEach(link => link.addEventListener('click', () => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'onetap_cta_click', cta_text: link.textContent.trim() });
+}));
+document.querySelector('#lead-form')?.addEventListener('submit', () => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'onetap_lead_submit' });
+});
