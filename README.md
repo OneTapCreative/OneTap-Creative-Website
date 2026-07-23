@@ -1,59 +1,30 @@
-# OneTap Creative — Modern Website
+# OneTap Creative Website
 
-A responsive, mobile-first, static website ready for GitHub and Vercel.
+A responsive, mobile-first website for OneTap Creative.
 
-## Highlights
-- Official OneTap black-and-gold branding
-- Mobile-first responsive layout
-- Four real animated mini-site walkthroughs with static poster fallbacks
-- Live DJ JRV portfolio link
-- One clear $119/month offer with a three-month minimum
-- Production-improved FormSubmit request form with CAPTCHA, honeypot, consent logging, and branded thank-you page
-- SEO metadata, social image, structured data, terms, and privacy pages
-- No framework or build command required
-
-## Form setup
-The request form is configured for `codicta@gmail.com` through FormSubmit.
-On the first live submission, approve the activation email from FormSubmit, then test the form again.
-
-## Deploy to Vercel
-1. Upload all files to a new GitHub repository.
-2. In Vercel, choose **Add New → Project**.
-3. Import the repository.
-4. Use **Other** as the framework preset if Vercel asks.
-5. Leave build command blank and deploy.
-6. Test navigation, videos, legal pages, plan selection, and the request form.
-7. Connect the official domain under **Project Settings → Domains**.
-
-## Before publishing
-- Replace or confirm the contact email.
-- Activate and test FormSubmit.
-- Have a California-qualified attorney review Terms and Privacy wording.
-- Confirm final pricing and client agreement language.
-
-## Conversion-layout update
-The homepage was refined using the customer-first design guidance supplied in `Web Design Layouts.docx`:
-- one dominant primary call-to-action
-- stronger H1/H2/body hierarchy
-- clearer customer journey and scannable sections
-- high-contrast buttons and readable text
-- deliberate black/cream/gold color distribution
-- customer-focused messaging rather than decorative copy
-- video playback pauses outside the viewport to improve mobile performance
-
-## Final offer
+## Main offer
 - $119 per month
-- Three-month minimum commitment ($357 total)
-- Continues month-to-month after month three
-- Domain, hosting, basic SEO, routine updates, and support included while active
+- Three-month minimum commitment ($357 initial commitment)
+- Month-to-month after the first three months
 
-## Final launch steps
-- Activate FormSubmit from the confirmation email.
-- Submit a full test inquiry from another device.
-- Replace the contact email if needed.
-- Connect the final custom domain and submit it to Google Search Console.
-- Add the final domain to a sitemap after the domain is confirmed.
-- Have a California-qualified attorney review the service agreement and legal pages.
+## Primary client categories
+- Barbers
+- Nail salons
+- Hair stylists and salons
+- Car detailers
+- Landscapers and lawn-care companies
+- Local service businesses that need quote requests
 
-### Motion and logo update
-The site uses the finished OneTap touch-mark SVG and smooth 30 FPS looping website walkthroughs. Keep the SVG and video filenames unchanged when replacing the existing repository files.
+## Important files
+- `index.html` — homepage
+- `styles.css` — layout, branding, and smooth live preview animation
+- `script.js` — navigation, mobile CTA, form setup, and metadata
+- `assets/images/onetap-icon-natural.png` — header logo symbol and favicon
+- `assets/images/onetap-logo-full-natural.png` — footer logo
+- `assets/images/onetap-og-natural.jpg` — social sharing image
+
+## Deployment
+Replace the contents of the existing local OneTap Creative repository with the contents of this folder. In GitHub Desktop, commit all changes to `main` and click **Push origin**. The connected Vercel project should then create a new deployment.
+
+## Form testing
+The request form uses FormSubmit. Confirm the activation email and complete a test submission before marketing the site.

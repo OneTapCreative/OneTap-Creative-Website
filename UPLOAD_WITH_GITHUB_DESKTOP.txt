@@ -1,0 +1,22 @@
+ONETAP CREATIVE — GITHUB DESKTOP UPDATE
+
+1. Extract this ZIP file.
+2. Open GitHub Desktop.
+3. Select the existing OneTap Creative repository.
+4. Confirm Current Branch is main.
+5. Click Fetch origin, then Pull origin if it appears.
+6. Choose Repository > Show in Explorer.
+7. Copy everything INSIDE this extracted folder.
+8. Paste it directly into the repository folder beside the existing index.html.
+9. Choose Replace the files in the destination.
+10. Return to GitHub Desktop and verify these appear in Changes:
+    - index.html
+    - styles.css
+    - script.js
+    - assets/images/onetap-icon-natural.png
+    - assets/images/onetap-logo-full-natural.png
+11. Summary: Professional logo and service showcase update
+12. Click Commit to main.
+13. Click Push origin.
+14. Open Vercel > Deployments and wait for Ready.
+15. Open the site and press Ctrl + Shift + R.
