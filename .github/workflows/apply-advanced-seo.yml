@@ -1,0 +1,105 @@
+name: Apply advanced SEO homepage copy
+
+on:
+  push:
+    branches:
+      - agent/advanced-seo-foundation
+
+permissions:
+  contents: write
+
+jobs:
+  update-homepage:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/advanced-seo-foundation
+
+      - name: Apply static homepage updates
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          replacements = {
+              '<meta name="description" content="OneTap Creative helps local businesses get found online with a mobile-friendly website, domain and hosting, Google Business Profile setup, basic local SEO, ongoing updates, and support for $149 per month."/>': '<meta name="description" content="OneTap Creative helps local businesses get found online with a mobile-friendly website, advanced SEO foundation, Google Business Profile setup, domain, hosting, updates, and support for $149 per month."/>',
+              '<meta property="og:description" content="More than a website—a complete online presence for local businesses. Website, domain, hosting, Google Business setup, basic local SEO, and ongoing support."/>': '<meta property="og:description" content="A complete online presence for local businesses: professional website, advanced SEO foundation, Google Business Profile setup, domain, hosting, and ongoing support."/>',
+              '<meta property="og:image" id="og-image" content="assets/images/onetap-og-direction.jpg"/>': '<meta property="og:image" id="og-image" content="https://onetapcreative.com/assets/images/onetap-og-direction.jpg"/>',
+              '<meta property="og:url" id="og-url" content=""/>': '<meta property="og:url" id="og-url" content="https://onetapcreative.com/"/>',
+              '<link rel="canonical" id="canonical-link" href=""/>': '<link rel="canonical" id="canonical-link" href="https://onetapcreative.com/"/>',
+              '<title>OneTap Creative | Get Found Online</title>': '<title>OneTap Creative | Websites, Advanced SEO &amp; Google Visibility</title>',
+              'Basic local SEO': 'Advanced SEO foundation',
+              'basic local SEO': 'advanced SEO foundation',
+              'Basic SEO and Google-ready launch': 'Advanced SEO foundation and Google-ready launch',
+              '<p>Search-friendly structure, Google indexing, sitemap submission, and Search Console setup.</p>': '<p>Keyword-focused structure, technical SEO, metadata, schema, mobile performance, sitemap and indexing setup, Search Console, and local search signals.</p>',
+              '<strong>Website connection and indexing</strong>Search-friendly page structure, sitemap, and Google indexing submission.': '<strong>Advanced on-page and technical foundation</strong>Keyword mapping, search-friendly structure, metadata, schema, performance, sitemap, and indexing setup.',
+              '<strong>Search Console foundation</strong>Site ownership setup and basic visibility monitoring after launch.': '<strong>Search Console and visibility monitoring</strong>Ownership setup, sitemap submission, indexing review, and basic ongoing health checks after launch.',
+              '<script src="script.js?v=get-found-2"></script>': '<script src="script.js?v=get-found-3"></script>'
+          }
+
+          for old, new in replacements.items():
+              html = html.replace(old, new)
+
+          schema_pattern = re.compile(r'(<script id="business-schema" type="application/ld\+json">)(.*?)(</script>)')
+          match = schema_pattern.search(html)
+          if match:
+              schema = json.loads(match.group(2))
+              schema['url'] = 'https://onetapcreative.com/'
+              schema['image'] = 'https://onetapcreative.com/assets/images/onetap-og-direction.jpg'
+              schema['description'] = 'Complete online presence service for local businesses including mobile-first website design, domain and hosting, Google Business Profile setup, an advanced SEO foundation, Google indexing, Search Console setup, updates, and ongoing support.'
+              schema['knowsAbout'] = [
+                  'Mobile-first web design',
+                  'Local business websites',
+                  'Google Business Profile setup',
+                  'Advanced on-page SEO',
+                  'Technical SEO foundations',
+                  'Local SEO',
+                  'Google Search Console',
+                  'Booking websites',
+                  'Quote request websites'
+              ]
+              schema['hasOfferCatalog'] = {
+                  '@type': 'OfferCatalog',
+                  'name': 'Complete Online Presence Plan',
+                  'itemListElement': [{
+                      '@type': 'Offer',
+                      'price': '149',
+                      'priceCurrency': 'USD',
+                      'category': 'Website design and SEO services',
+                      'itemOffered': {
+                          '@type': 'Service',
+                          'name': 'Complete Online Presence Plan',
+                          'description': 'Mobile-friendly website, domain and hosting, Google Business Profile setup or optimization, advanced SEO foundation, Search Console setup, updates, maintenance, and support.'
+                      }
+                  }]
+              }
+              html = schema_pattern.sub(match.group(1) + json.dumps(schema, separators=(',', ':')) + match.group(3), html, count=1)
+
+          faq_anchor = '<div class="faq-list"><details class="reveal"><summary>What is included in the $149 monthly plan?'
+          if 'id="advanced-seo-faq"' not in html and faq_anchor in html:
+              faq = '<div class="faq-list"><details class="reveal" id="advanced-seo-faq"><summary>What does the advanced SEO foundation include?<span>+</span></summary><p>Every standard launch includes local keyword mapping, search-focused headings and page structure, title and description optimization, technical SEO, mobile and performance optimization, image optimization, canonical setup, structured data when appropriate, sitemap and indexing setup, Google Search Console, and local business information alignment. Ongoing blog writing, backlink campaigns, paid advertising, ecommerce SEO, multi-location campaigns, and guaranteed rankings are not included in the standard $149 plan and may require a separate proposal.</p></details><details class="reveal"><summary>What is included in the $149 monthly plan?'
+              html = html.replace(faq_anchor, faq)
+
+          path.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Remove temporary workflow
+        run: rm .github/workflows/apply-advanced-seo.yml
+
+      - name: Commit generated homepage update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/apply-advanced-seo.yml
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Apply advanced SEO foundation to homepage"
+          git push origin HEAD:agent/advanced-seo-foundation
