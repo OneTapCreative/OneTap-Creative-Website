@@ -88,7 +88,6 @@ document.addEventListener('click', event => {
   }
 });
 
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -150,6 +149,81 @@ if (reduceMotion) {
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
+// Keep the public offer aligned with OneTap Creative's approved agency standard.
+// The plan includes a comprehensive launch foundation, not an unlimited monthly SEO campaign.
+const seoCopyReplacements = [
+  ['Basic local SEO', 'Advanced SEO foundation'],
+  ['basic local SEO', 'advanced SEO foundation'],
+  ['Basic SEO and Google-ready launch', 'Advanced SEO foundation and Google-ready launch']
+];
+
+const replaceSeoText = root => {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  textNodes.forEach(node => {
+    let updatedText = node.nodeValue;
+    seoCopyReplacements.forEach(([from, to]) => {
+      updatedText = updatedText.replaceAll(from, to);
+    });
+    if (updatedText !== node.nodeValue) node.nodeValue = updatedText;
+  });
+};
+
+replaceSeoText(document.body);
+
+document.title = 'OneTap Creative | Websites, Advanced SEO & Google Visibility';
+
+const metaDescription = document.querySelector('meta[name="description"]');
+if (metaDescription) {
+  metaDescription.content = 'OneTap Creative helps local businesses get found online with a mobile-friendly website, advanced SEO foundation, Google Business Profile setup, domain, hosting, updates, and support for $149 per month.';
+}
+
+const ogDescription = document.querySelector('meta[property="og:description"]');
+if (ogDescription) {
+  ogDescription.content = 'A complete online presence for local businesses: professional website, advanced SEO foundation, Google Business Profile setup, domain, hosting, and ongoing support.';
+}
+
+const advancedSeoCard = [...document.querySelectorAll('.presence-feature')]
+  .find(card => card.querySelector('h3')?.textContent.trim() === 'Advanced SEO foundation');
+if (advancedSeoCard) {
+  const description = advancedSeoCard.querySelector('p');
+  if (description) {
+    description.textContent = 'Keyword-focused structure, technical SEO, metadata, schema, mobile performance, sitemap and indexing setup, Search Console, and local search signals.';
+  }
+}
+
+const visibilitySteps = document.querySelectorAll('.visibility-checklist > div');
+if (visibilitySteps[1]) {
+  const title = visibilitySteps[1].querySelector('strong');
+  const text = visibilitySteps[1].querySelector('span');
+  if (title) title.textContent = 'Advanced on-page and technical foundation';
+  if (text) {
+    text.innerHTML = '<strong>Advanced on-page and technical foundation</strong>Keyword mapping, search-friendly structure, metadata, schema, performance, sitemap, and indexing setup.';
+  }
+}
+if (visibilitySteps[2]) {
+  const text = visibilitySteps[2].querySelector('span');
+  if (text) {
+    text.innerHTML = '<strong>Search Console and visibility monitoring</strong>Ownership setup, sitemap submission, indexing review, and basic ongoing health checks after launch.';
+  }
+}
+
+const faqList = document.querySelector('.faq-list');
+if (faqList && !document.querySelector('#advanced-seo-faq')) {
+  const seoFaq = document.createElement('details');
+  seoFaq.id = 'advanced-seo-faq';
+  seoFaq.className = 'reveal visible';
+  seoFaq.innerHTML = '<summary>What does the advanced SEO foundation include?<span>+</span></summary><p>Every standard launch includes local keyword mapping, search-focused headings and page structure, title and description optimization, technical SEO, mobile and performance optimization, image optimization, canonical setup, structured data when appropriate, sitemap and indexing setup, Google Search Console, and local business information alignment. Ongoing blog writing, backlink campaigns, paid advertising, ecommerce SEO, multi-location campaigns, and guaranteed rankings are not included in the standard $149 plan and may require a separate proposal.</p>';
+  faqList.prepend(seoFaq);
+  seoFaq.addEventListener('toggle', () => {
+    if (!seoFaq.open) return;
+    document.querySelectorAll('details[open]').forEach(other => {
+      if (other !== seoFaq) other.open = false;
+    });
+  });
+}
 
 // Build absolute launch URLs at runtime so the site works on Vercel previews and the final custom domain.
 const canonicalLink = document.querySelector('#canonical-link');
@@ -167,6 +241,33 @@ if (businessSchema) {
     const schema = JSON.parse(businessSchema.textContent);
     schema.url = homeUrl;
     schema.image = new URL('assets/images/onetap-og-direction.jpg', window.location.href).href;
+    schema.description = 'Complete online presence service for local businesses including mobile-first website design, domain and hosting, Google Business Profile setup, an advanced SEO foundation, Google indexing, Search Console setup, updates, and ongoing support.';
+    schema.knowsAbout = [
+      'Mobile-first web design',
+      'Local business websites',
+      'Google Business Profile setup',
+      'Advanced on-page SEO',
+      'Technical SEO foundations',
+      'Local SEO',
+      'Google Search Console',
+      'Booking websites',
+      'Quote request websites'
+    ];
+    schema.hasOfferCatalog = {
+      '@type': 'OfferCatalog',
+      name: 'Complete Online Presence Plan',
+      itemListElement: [{
+        '@type': 'Offer',
+        price: '149',
+        priceCurrency: 'USD',
+        category: 'Website design and SEO services',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Complete Online Presence Plan',
+          description: 'Mobile-friendly website, domain and hosting, Google Business Profile setup or optimization, advanced SEO foundation, Search Console setup, updates, maintenance, and support.'
+        }
+      }]
+    };
     businessSchema.textContent = JSON.stringify(schema);
   } catch (_) {}
 }
