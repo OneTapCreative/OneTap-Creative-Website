@@ -1,0 +1,16 @@
+{
+  "name": "OneTap Creative",
+  "short_name": "OneTap",
+  "description": "Professional websites, Google visibility, and ongoing support for local service businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "icons": [
+    {
+      "src": "/assets/images/onetap-icon-natural.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
