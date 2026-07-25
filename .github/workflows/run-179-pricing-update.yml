@@ -30,3 +30,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "Finalize OneTap pricing at $179 per month"
           git push origin HEAD:agent/finalize-179-pricing
+
+# Triggered after workflow activation.
