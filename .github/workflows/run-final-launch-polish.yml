@@ -1,0 +1,32 @@
+name: Run OneTap final launch polish
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-feature-branch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out final polish branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/final-launch-polish
+          fetch-depth: 0
+
+      - name: Apply reviewed final launch update
+        run: python scripts/apply-final-launch-polish.py
+
+      - name: Commit final website files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html styles.css script.js thank-you.html privacy.html terms.html manifest.webmanifest sitemap.xml
+          git diff --cached --quiet && exit 0
+          git commit -m "Complete OneTap Creative public website"
+          git push origin HEAD:agent/final-launch-polish
