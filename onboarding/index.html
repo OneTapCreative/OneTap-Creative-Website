@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="Private OneTap Creative client onboarding portal." />
+  <title>Client Onboarding | OneTap Creative</title>
+  <link rel="icon" href="../assets/images/onetap-icon-natural.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/images/onetap-icon-natural.png" />
+  <link rel="stylesheet" href="onboarding.css?v=1" />
+</head>
+<body>
+  <a class="skip-link" href="#onboarding-form">Skip to onboarding form</a>
+
+  <header class="portal-header">
+    <a class="portal-brand" href="../index.html" aria-label="OneTap Creative home">
+      <img src="../assets/images/onetap-logo-full-natural.png" alt="OneTap Creative" />
+    </a>
+    <div class="save-status" id="save-status" role="status" aria-live="polite">
+      <span class="save-dot"></span>
+      <span>Progress saves on this device</span>
+    </div>
+  </header>
+
+  <div class="progress-shell" aria-label="Onboarding progress">
+    <div class="progress-copy">
+      <span id="progress-label">Welcome</span>
+      <strong id="progress-percent">0%</strong>
+    </div>
+    <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+  </div>
+
+  <main class="portal-main">
+    <form
+      id="onboarding-form"
+      action="https://formsubmit.co/codicta@gmail.com"
+      method="post"
+      enctype="multipart/form-data"
+      novalidate
+    >
+      <input type="hidden" name="_subject" value="Completed OneTap Creative Client Onboarding" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" id="form-next" name="_next" value="success.html" />
+      <input type="hidden" name="Plan" value="$179/month Complete Online Presence Plan — 3-month minimum" />
+      <input type="hidden" name="Portal Version" value="Mobile Onboarding v1" />
+      <input type="hidden" id="onboarding-summary" name="Onboarding Summary" />
+      <input type="hidden" id="uploaded-file-list" name="Uploaded File Names" />
+      <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <section class="portal-step is-active welcome-step" data-step="0" aria-labelledby="welcome-title">
+        <div class="welcome-visual"><img src="../assets/images/onetap-icon-natural.png" alt="" /></div>
+        <p class="eyebrow">Approved client onboarding</p>
+        <h1 id="welcome-title">Let’s build your <em>online presence.</em></h1>
+        <p class="step-intro">This guided portal collects everything OneTap Creative needs to create your website and Google-ready business foundation.</p>
+
+        <div class="welcome-facts">
+          <article><strong>15–20 minutes</strong><span>Typical completion time</span></article>
+          <article><strong>Mobile friendly</strong><span>Upload photos from your phone</span></article>
+          <article><strong>Auto-save</strong><span>Continue later on this device</span></article>
+        </div>
+
+        <div class="included-domain notice-card">
+          <span class="notice-icon" aria-hidden="true">✓</span>
+          <div><strong>Your domain and website are included.</strong><p>You do not need to purchase, transfer, or configure a domain. OneTap Creative will provide and connect it for you.</p></div>
+        </div>
+
+        <div class="security-card">
+          <strong>Never submit passwords.</strong>
+          <p>OneTap will send separate instructions whenever manager access is needed for Google or another service.</p>
+        </div>
+
+        <label class="confirm-card">
+          <input type="checkbox" name="Agreement and Payment Confirmed" value="Yes" required />
+          <span><strong>I have signed the client agreement and completed the first $179 payment.</strong><small>The first payment begins onboarding and the three-month commitment.</small></span>
+        </label>
+      </section>
+
+      <section class="portal-step" data-step="1" aria-labelledby="business-title">
+        <p class="eyebrow">Step 1 of 8</p>
+        <h2 id="business-title">Tell us about your business.</h2>
+        <p class="step-intro">Use the information customers should see online.</p>
+
+        <div class="field-grid two-col">
+          <label>Business name *<input name="Business Name" id="business-name" autocomplete="organization" required /></label>
+          <label>Primary contact name *<input name="Primary Contact" autocomplete="name" required /></label>
+          <label>Best email *<input name="Client Email" id="client-email" type="email" autocomplete="email" required /></label>
+          <label>Best phone number *<input name="Business Phone" type="tel" autocomplete="tel" required /></label>
+        </div>
+
+        <label>Business type *
+          <select name="Business Type" required>
+            <option value="" selected disabled>Select your business type</option>
+            <option>Barber</option><option>Salon / Hair Stylist</option><option>Nail Technician</option>
+            <option>DJ / Event Service</option><option>Auto Detailer</option><option>Cleaning Service</option>
+            <option>Landscaper / Lawn Care</option><option>Contractor / Home Service</option>
+            <option>Restaurant / Food Service</option><option>Other Local Service</option>
+          </select>
+        </label>
+
+        <fieldset>
+          <legend>How should your location appear? *</legend>
+          <div class="choice-stack">
+            <label class="choice-card"><input type="radio" name="Location Type" value="Public storefront or office" required /><span><strong>Show my business address</strong><small>Customers visit this location.</small></span></label>
+            <label class="choice-card"><input type="radio" name="Location Type" value="Service-area business" required /><span><strong>Show only my service area</strong><small>I travel to customers or work from home.</small></span></label>
+          </div>
+        </fieldset>
+
+        <div id="address-fields" class="conditional-panel" hidden>
+          <div class="field-grid two-col">
+            <label>Street address *<input name="Street Address" autocomplete="street-address" /></label>
+            <label>City *<input name="Address City" autocomplete="address-level2" /></label>
+            <label>State *<input name="Address State" value="CA" autocomplete="address-level1" /></label>
+            <label>ZIP code *<input name="ZIP Code" inputmode="numeric" autocomplete="postal-code" /></label>
+          </div>
+        </div>
+
+        <div id="service-area-fields" class="conditional-panel" hidden>
+          <label>Primary city and service area *<textarea name="Service Area" rows="3" placeholder="Example: Stockton and surrounding communities within 25 miles"></textarea></label>
+        </div>
+
+        <label>Business hours *<textarea name="Business Hours" rows="5" required placeholder="Example: Monday–Friday 9 AM–6 PM; Saturday 9 AM–3 PM; Sunday closed"></textarea></label>
+        <label>Short business description *<textarea name="Business Description" rows="5" maxlength="900" required placeholder="What do you offer, who do you help, and what makes your business different?"></textarea><span class="field-help">Plain language is perfect. OneTap will refine it for the website.</span></label>
+      </section>
+
+      <section class="portal-step" data-step="2" aria-labelledby="goal-title">
+        <p class="eyebrow">Step 2 of 8</p>
+        <h2 id="goal-title">What should customers do first?</h2>
+        <p class="step-intro">Choose one primary action. We will design the website around it.</p>
+
+        <fieldset>
+          <legend class="sr-only">Primary website action</legend>
+          <div class="goal-grid">
+            <label class="goal-card"><input type="radio" name="Primary Website Goal" value="Book an appointment" required /><span class="goal-icon">📅</span><strong>Book an appointment</strong><small>Send visitors to a booking option.</small></label>
+            <label class="goal-card"><input type="radio" name="Primary Website Goal" value="Request a quote" required /><span class="goal-icon">📝</span><strong>Request a quote</strong><small>Collect qualified project details.</small></label>
+            <label class="goal-card"><input type="radio" name="Primary Website Goal" value="Call the business" required /><span class="goal-icon">📞</span><strong>Call the business</strong><small>Make phone calls the main action.</small></label>
+            <label class="goal-card"><input type="radio" name="Primary Website Goal" value="Send a text" required /><span class="goal-icon">💬</span><strong>Send a text</strong><small>Start inquiries by text message.</small></label>
+            <label class="goal-card"><input type="radio" name="Primary Website Goal" value="Visit the location" required /><span class="goal-icon">📍</span><strong>Visit the location</strong><small>Highlight directions and hours.</small></label>
+            <label class="goal-card"><input type="radio" name="Primary Website Goal" value="Help me choose" required /><span class="goal-icon">✨</span><strong>Help me choose</strong><small>OneTap will recommend the best action.</small></label>
+          </div>
+        </fieldset>
+
+        <div class="conditional-panel" id="goal-details" hidden>
+          <div id="booking-fields" hidden>
+            <label>Existing booking link, if any<input name="Booking Link" type="url" inputmode="url" placeholder="https://..." /></label>
+            <label>How should customers request an appointment?<textarea name="Booking Instructions" rows="4" placeholder="Example: Select a service and time, or text me to confirm availability."></textarea></label>
+          </div>
+          <div id="quote-fields" hidden>
+            <label>What information should customers provide in a quote request?<textarea name="Quote Request Questions" rows="5" placeholder="Example: event date, location, service needed, budget, preferred time..."></textarea></label>
+          </div>
+          <div id="phone-fields" hidden>
+            <label>Public phone number for calls or texts<input name="Public Contact Number" type="tel" autocomplete="tel" /></label>
+            <label>Preferred contact hours<input name="Preferred Contact Hours" placeholder="Example: Monday–Saturday, 9 AM–7 PM" /></label>
+          </div>
+        </div>
+
+        <label>What would make this website successful for you? *<textarea name="Website Success Goal" rows="5" required placeholder="Example: more appointment requests, look professional on Google, show my work, or explain my services clearly."></textarea></label>
+      </section>
+
+      <section class="portal-step" data-step="3" aria-labelledby="services-title">
+        <p class="eyebrow">Step 3 of 8</p>
+        <h2 id="services-title">Add your services and prices.</h2>
+        <p class="step-intro">Start with your most important services. You can also upload an existing menu or price sheet later.</p>
+
+        <div id="services-list" class="services-list"></div>
+        <button class="secondary-button add-service" id="add-service" type="button">+ Add another service</button>
+
+        <fieldset>
+          <legend>How should prices appear?</legend>
+          <div class="choice-stack">
+            <label class="choice-card"><input type="radio" name="Pricing Display" value="Show exact prices" /><span><strong>Show exact prices</strong><small>Display the amounts I provide.</small></span></label>
+            <label class="choice-card"><input type="radio" name="Pricing Display" value="Show starting prices" /><span><strong>Show starting prices</strong><small>Use “Starting at” where appropriate.</small></span></label>
+            <label class="choice-card"><input type="radio" name="Pricing Display" value="Do not show prices" /><span><strong>Do not show prices</strong><small>Ask visitors to contact the business.</small></span></label>
+            <label class="choice-card"><input type="radio" name="Pricing Display" value="Help me decide" /><span><strong>Help me decide</strong><small>OneTap will recommend the best approach.</small></span></label>
+          </div>
+        </fieldset>
+
+        <label>Payment methods accepted<textarea name="Payment Methods" rows="3" placeholder="Example: cash, card, Apple Pay, Cash App, invoice"></textarea></label>
+      </section>
+
+      <section class="portal-step" data-step="4" aria-labelledby="brand-title">
+        <p class="eyebrow">Step 4 of 8</p>
+        <h2 id="brand-title">Choose the look and feel.</h2>
+        <p class="step-intro">You do not need design experience. Pick what feels closest to your business.</p>
+
+        <fieldset>
+          <legend>Preferred website style *</legend>
+          <div class="style-grid">
+            <label class="style-card modern"><input type="radio" name="Website Style" value="Modern and clean" required /><span><b>Modern &amp; clean</b><small>Simple, bright, organized</small></span></label>
+            <label class="style-card bold"><input type="radio" name="Website Style" value="Bold and energetic" required /><span><b>Bold &amp; energetic</b><small>Strong contrast and impact</small></span></label>
+            <label class="style-card premium"><input type="radio" name="Website Style" value="Premium and elegant" required /><span><b>Premium &amp; elegant</b><small>Refined and polished</small></span></label>
+            <label class="style-card friendly"><input type="radio" name="Website Style" value="Friendly and welcoming" required /><span><b>Friendly &amp; welcoming</b><small>Warm and approachable</small></span></label>
+            <label class="style-card dark"><input type="radio" name="Website Style" value="Dark and professional" required /><span><b>Dark &amp; professional</b><small>Confident and modern</small></span></label>
+            <label class="style-card choose"><input type="radio" name="Website Style" value="Let OneTap choose" required /><span><b>Let OneTap choose</b><small>We will match your industry</small></span></label>
+          </div>
+        </fieldset>
+
+        <div class="field-grid two-col">
+          <label>Preferred colors<input name="Preferred Colors" placeholder="Example: black and gold" /></label>
+          <label>Colors to avoid<input name="Colors to Avoid" placeholder="Example: bright pink" /></label>
+        </div>
+        <label>Words that describe your brand<textarea name="Brand Personality" rows="3" placeholder="Example: professional, family-friendly, premium, energetic"></textarea></label>
+        <label>Social media links or handles<textarea name="Social Media Links" rows="4" placeholder="Instagram, Facebook, TikTok, YouTube, Yelp, or other links"></textarea></label>
+      </section>
+
+      <section class="portal-step" data-step="5" aria-labelledby="content-title">
+        <p class="eyebrow">Step 5 of 8</p>
+        <h2 id="content-title">Upload your photos and content.</h2>
+        <p class="step-intro">Original, well-lit photos build trust. Upload what you have now; OneTap will organize it.</p>
+
+        <div class="upload-stack">
+          <label class="upload-card">
+            <span class="upload-icon">⬆</span><strong>Business logo</strong><small>PNG, JPG, WEBP, SVG, or PDF</small>
+            <input type="file" name="Business Logo" accept="image/png,image/jpeg,image/webp,image/svg+xml,application/pdf" />
+            <span class="file-status">No file selected</span>
+          </label>
+          <label class="upload-card">
+            <span class="upload-icon">📷</span><strong>Business and work photos</strong><small>Team, location, services, products, or completed work</small>
+            <input type="file" name="Business Photos" accept="image/*" multiple />
+            <span class="file-status">No files selected</span>
+          </label>
+          <label class="upload-card">
+            <span class="upload-icon">📄</span><strong>Menus, flyers, or price sheets</strong><small>Photos or PDFs are accepted</small>
+            <input type="file" name="Menus and Documents" accept="image/*,application/pdf" multiple />
+            <span class="file-status">No files selected</span>
+          </label>
+        </div>
+
+        <div id="image-preview" class="image-preview" aria-live="polite"></div>
+        <p class="upload-note">For reliable delivery, keep the combined upload under 20 MB. Text answers save automatically, but files may need to be selected again if you close the browser or switch devices.</p>
+
+        <fieldset>
+          <legend>Do you need help with images?</legend>
+          <div class="choice-stack">
+            <label class="choice-card"><input type="radio" name="Image Help" value="No, I have enough original photos" /><span><strong>I have enough photos</strong><small>Use the images I submitted.</small></span></label>
+            <label class="choice-card"><input type="radio" name="Image Help" value="Yes, help find appropriate images" /><span><strong>I need image help</strong><small>OneTap may recommend appropriate licensed images.</small></span></label>
+          </div>
+        </fieldset>
+
+        <label>Anything important that must appear on the website?<textarea name="Required Website Content" rows="5" placeholder="Certifications, years of experience, guarantees, policies, awards, languages, special offers, or other details"></textarea></label>
+      </section>
+
+      <section class="portal-step" data-step="6" aria-labelledby="contact-title">
+        <p class="eyebrow">Step 6 of 8</p>
+        <h2 id="contact-title">Confirm customer contact details.</h2>
+        <p class="step-intro">This is where website inquiries should go after launch.</p>
+
+        <div class="field-grid two-col">
+          <label>Inquiry notification email *<input name="Inquiry Email" type="email" autocomplete="email" required /></label>
+          <label>Inquiry notification phone<input name="Inquiry Phone" type="tel" autocomplete="tel" /></label>
+        </div>
+        <label>How quickly do you normally respond?<select name="Response Time"><option value="">Select one</option><option>Within 1 hour</option><option>Same business day</option><option>Within 24 hours</option><option>Within 2 business days</option><option>Response time varies</option></select></label>
+        <label>Customer instructions<textarea name="Customer Contact Instructions" rows="4" placeholder="Example: Please include the event date and location, or text for same-day availability."></textarea></label>
+
+        <div class="notice-card">
+          <span class="notice-icon">i</span>
+          <div><strong>OneTap will create and connect the website form.</strong><p>You do not need to configure technical form settings, hosting, or email routing.</p></div>
+        </div>
+      </section>
+
+      <section class="portal-step" data-step="7" aria-labelledby="google-title">
+        <p class="eyebrow">Step 7 of 8</p>
+        <h2 id="google-title">Google Business Profile.</h2>
+        <p class="step-intro">Tell us what you already have. OneTap will guide the next step without asking for your password.</p>
+
+        <fieldset>
+          <legend>Do you currently have a Google Business Profile? *</legend>
+          <div class="choice-stack">
+            <label class="choice-card"><input type="radio" name="Google Business Profile Status" value="Yes" required /><span><strong>Yes</strong><small>My business already appears on Google Maps or Search.</small></span></label>
+            <label class="choice-card"><input type="radio" name="Google Business Profile Status" value="No" required /><span><strong>No</strong><small>I need OneTap’s help creating one.</small></span></label>
+            <label class="choice-card"><input type="radio" name="Google Business Profile Status" value="Not sure" required /><span><strong>Not sure</strong><small>OneTap can check for me.</small></span></label>
+          </div>
+        </fieldset>
+
+        <div class="conditional-panel" id="gbp-existing" hidden>
+          <label>Google Business Profile or Maps link, if available<input name="Existing Google Profile Link" type="url" inputmode="url" placeholder="https://..." /></label>
+          <div class="security-card"><strong>Do not enter your Google password.</strong><p>After submission, OneTap will send simple instructions for adding OneTap Creative as a manager.</p></div>
+        </div>
+
+        <div class="conditional-panel" id="gbp-new" hidden>
+          <label>Official business name for Google<input name="Official Google Business Name" /></label>
+          <label>Primary business category<input name="Preferred Google Category" placeholder="Example: Barber shop, DJ service, Cleaning service" /></label>
+          <label>Business opening month and year<input name="Business Opening Date" placeholder="Example: June 2021" /></label>
+          <label>Google business description<textarea name="Google Business Description" rows="5" placeholder="Describe your services, service area, experience, and what makes the business different."></textarea></label>
+          <div class="notice-card"><span class="notice-icon">✓</span><div><strong>The profile belongs to your business.</strong><p>OneTap will request management access only. Google controls verification, approval, suspension, Maps placement, and search rankings.</p></div></div>
+        </div>
+      </section>
+
+      <section class="portal-step" data-step="8" aria-labelledby="review-title">
+        <p class="eyebrow">Step 8 of 8</p>
+        <h2 id="review-title">Review and submit.</h2>
+        <p class="step-intro">Check the summary below. Use Back to correct anything before submitting.</p>
+
+        <div id="review-summary" class="review-summary"></div>
+
+        <div class="final-confirmations">
+          <label class="confirm-card"><input type="checkbox" name="Information Accuracy Confirmed" value="Yes" required /><span><strong>The business information is accurate.</strong><small>I will notify OneTap if anything changes.</small></span></label>
+          <label class="confirm-card"><input type="checkbox" name="Content Rights Confirmed" value="Yes" required /><span><strong>I am authorized to use the submitted content.</strong><small>This includes photos, logos, text, and business information.</small></span></label>
+          <label class="confirm-card"><input type="checkbox" name="Scope Confirmed" value="Yes" required /><span><strong>I understand the standard website scope.</strong><small>One mobile-first page, up to approximately 8–10 sections, one primary action, and two organized prelaunch revision rounds.</small></span></label>
+          <label class="confirm-card"><input type="checkbox" name="Monthly Updates Confirmed" value="Yes" required /><span><strong>I understand the monthly update allowance.</strong><small>Up to 30 minutes of reasonable updates per month; unused time does not roll over.</small></span></label>
+          <label class="confirm-card"><input type="checkbox" name="Domain Management Confirmed" value="Yes" required /><span><strong>I understand OneTap provides and connects the domain and website.</strong><small>Domain, hosting, SSL, backups, and technical management are included while the plan is active, subject to the client agreement.</small></span></label>
+        </div>
+
+        <div class="submit-notice"><strong>Ready to submit?</strong><p>OneTap will review your onboarding, identify anything missing, and begin the production process when the required content is complete.</p></div>
+      </section>
+
+      <div class="validation-message" id="validation-message" role="alert" aria-live="assertive" hidden></div>
+
+      <nav class="portal-actions" aria-label="Onboarding controls">
+        <button class="text-button" id="save-later" type="button">Save &amp; finish later</button>
+        <div class="action-buttons">
+          <button class="secondary-button" id="back-button" type="button" hidden>Back</button>
+          <button class="primary-button" id="next-button" type="button">Start onboarding</button>
+          <button class="primary-button submit-button" id="submit-button" type="submit" hidden>Submit onboarding <span aria-hidden="true">→</span></button>
+        </div>
+      </nav>
+    </form>
+  </main>
+
+  <footer class="portal-footer"><p>OneTap Creative · Private client onboarding</p><a href="../privacy.html" target="_blank" rel="noopener">Privacy</a><a href="../terms.html" target="_blank" rel="noopener">Terms</a></footer>
+  <script src="onboarding.js?v=1"></script>
+</body>
+</html>
