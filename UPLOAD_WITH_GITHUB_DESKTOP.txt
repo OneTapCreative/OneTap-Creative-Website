@@ -12,3 +12,11 @@ ONETAP CREATIVE — GET FOUND ONLINE UPDATE
 10. Click Commit to main, then Push origin.
 11. Wait for Vercel to show Ready.
 12. Test the production domain on desktop and phone.
+
+EMAIL UPDATE
+- Customer form submissions now go to clarence.workflow@gmail.com
+- Footer, Terms, Privacy Policy, and structured business data were updated
+- After deployment, submit one test form and approve any FormSubmit activation message sent to clarence.workflow@gmail.com
+
+Recommended GitHub Desktop commit:
+Update customer form email

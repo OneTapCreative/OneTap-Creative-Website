@@ -88,6 +88,7 @@ document.addEventListener('click', event => {
   }
 });
 
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -150,57 +151,32 @@ const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
 
-// Final launch form routing, attribution, conversion events, and lazy project previews.
+// Build absolute launch URLs at runtime so the site works on Vercel previews and the final custom domain.
+const canonicalLink = document.querySelector('#canonical-link');
+const ogUrl = document.querySelector('#og-url');
+const ogImage = document.querySelector('#og-image');
 const formNextUrl = document.querySelector('#form-next-url');
-const leadForm = document.querySelector('#lead-form');
+const businessSchema = document.querySelector('#business-schema');
+const homeUrl = new URL('index.html', window.location.href).href.replace(/index\.html$/, '');
+if (canonicalLink) canonicalLink.href = homeUrl;
+if (ogUrl) ogUrl.content = homeUrl;
+if (ogImage) ogImage.content = new URL('assets/images/onetap-og-direction.jpg', window.location.href).href;
 if (formNextUrl) formNextUrl.value = new URL('thank-you.html', window.location.href).href;
+if (businessSchema) {
+  try {
+    const schema = JSON.parse(businessSchema.textContent);
+    schema.url = homeUrl;
+    schema.image = new URL('assets/images/onetap-og-direction.jpg', window.location.href).href;
+    businessSchema.textContent = JSON.stringify(schema);
+  } catch (_) {}
+}
 
-const query = new URLSearchParams(window.location.search);
-const trackingValues = {
-  '#utm-source': query.get('utm_source') || '',
-  '#utm-medium': query.get('utm_medium') || '',
-  '#utm-campaign': query.get('utm_campaign') || '',
-  '#utm-content': query.get('utm_content') || '',
-  '#landing-page': window.location.href
-};
-Object.entries(trackingValues).forEach(([selector, value]) => {
-  const field = document.querySelector(selector);
-  if (field) field.value = value;
-});
-
-window.dataLayer = window.dataLayer || [];
+// Lightweight conversion events. These become useful automatically if a dataLayer is added later.
 document.querySelectorAll('a[href="#start"]').forEach(link => link.addEventListener('click', () => {
+  window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: 'onetap_cta_click', cta_text: link.textContent.trim() });
 }));
-document.querySelectorAll('.case-study a[target="_blank"]').forEach(link => link.addEventListener('click', () => {
-  window.dataLayer.push({ event: 'onetap_portfolio_click', destination: link.href });
-}));
-leadForm?.addEventListener('submit', () => {
-  const submitButton = leadForm.querySelector('button[type="submit"]');
-  if (submitButton) {
-    submitButton.disabled = true;
-    submitButton.innerHTML = 'Sending Request <span aria-hidden="true">…</span>';
-  }
-  window.dataLayer.push({
-    event: 'onetap_lead_submit',
-    lead_source: document.querySelector('#lead-source')?.value || 'Not provided',
-    utm_source: query.get('utm_source') || 'direct'
-  });
+document.querySelector('#lead-form')?.addEventListener('submit', () => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'onetap_lead_submit' });
 });
-
-const liveFrames = [...document.querySelectorAll('.live-site-frame[data-src]')];
-const loadFrame = frame => {
-  if (!frame.src || frame.src === 'about:blank') frame.src = frame.dataset.src;
-};
-if ('IntersectionObserver' in window && !prefersReducedMotion) {
-  const frameObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      loadFrame(entry.target);
-      frameObserver.unobserve(entry.target);
-    });
-  }, { rootMargin: '500px 0px', threshold: 0.01 });
-  liveFrames.forEach(frame => frameObserver.observe(frame));
-} else {
-  liveFrames.forEach(loadFrame);
-}

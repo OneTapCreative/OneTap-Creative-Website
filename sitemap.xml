@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://onetapcreative.com/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>1.0</priority><image:image><image:loc>https://onetapcreative.com/assets/images/onetap-og-direction.jpg</image:loc><image:title>OneTap Creative complete online presence service</image:title></image:image></url>
-  <url><loc>https://onetapcreative.com/terms.html</loc><lastmod>2026-07-25</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://onetapcreative.com/privacy.html</loc><lastmod>2026-07-25</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://onetapcreative.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://onetapcreative.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://onetapcreative.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
