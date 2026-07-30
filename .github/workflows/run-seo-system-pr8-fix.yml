@@ -1,0 +1,56 @@
+name: Fix and validate SEO system PR 8
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  fix-and-validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out SEO review branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/complete-client-seo-system-v2
+          fetch-depth: 0
+
+      - name: Correct sitemap host validation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('seo-system/scripts/audit_seo.py')
+          text = path.read_text(encoding='utf-8')
+          old = '''            ElementTree.fromstring(sitemap_text)\n            if expected_home not in sitemap_text:\n                add(findings, "critical", "Crawl and discovery", "Canonical homepage is missing from the sitemap", 4)\n            wrong_hosts = {urlparse(match).netloc for match in re.findall(r"https?://[^<\\s]+", sitemap_text) if urlparse(match).netloc != urlparse(base).netloc}\n'''
+          new = '''            sitemap_root = ElementTree.fromstring(sitemap_text)\n            sitemap_locations = [\n                (element.text or "").strip()\n                for element in sitemap_root.iter()\n                if element.tag.rsplit("}", 1)[-1] == "loc" and (element.text or "").strip()\n            ]\n            if expected_home not in sitemap_locations:\n                add(findings, "critical", "Crawl and discovery", "Canonical homepage is missing from the sitemap", 4)\n            wrong_hosts = {\n                urlparse(location).netloc\n                for location in sitemap_locations\n                if urlparse(location).netloc != urlparse(base).netloc\n            }\n'''
+          if old not in text:
+              raise SystemExit('Expected sitemap audit block was not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run exact branch self-test and capture result
+        run: |
+          set +e
+          python seo-system/scripts/self_test.py > seo-system/SELF-TEST-LOG.txt 2>&1
+          echo "$?" > seo-system/SELF-TEST-EXIT.txt
+          exit 0
+
+      - name: Record and publish result
+        run: |
+          RESULT="FAIL"
+          if [ "$(cat seo-system/SELF-TEST-EXIT.txt)" = "0" ]; then RESULT="PASS"; fi
+          printf 'OneTap SEO System v1.0\nGenerator and audit self-test: %s\nRequired launch score: 90/100\nCritical findings allowed: 0\n' "$RESULT" > seo-system/SELF-TEST-RESULT.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seo-system/scripts/audit_seo.py seo-system/SELF-TEST-RESULT.txt seo-system/SELF-TEST-EXIT.txt seo-system/SELF-TEST-LOG.txt seo-system/examples/sample-site/seo-output
+          git commit -m "Fix sitemap audit and record SEO self-test"
+          git push origin HEAD:agent/complete-client-seo-system-v2
