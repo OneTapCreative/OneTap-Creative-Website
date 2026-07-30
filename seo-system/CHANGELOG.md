@@ -13,3 +13,4 @@
 - Added live monthly health check
 - Added GitHub quality-gate and monthly-watch templates
 - Added launch, monthly, quarterly, and delivery SOPs
+- Added a production-like fixture for end-to-end generator and audit validation
