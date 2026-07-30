@@ -1,0 +1,15 @@
+{
+  "systemVersion": "1.0",
+  "clientId": "sample-local-business",
+  "businessName": "Sample Local Business",
+  "productionUrl": "https://sample.onetapcreative.test/",
+  "primaryKeyword": "local service in Stockton CA",
+  "schemaType": "ProfessionalService",
+  "serviceAreas": [
+    "Stockton, CA",
+    "Lodi, CA",
+    "Manteca, CA"
+  ],
+  "generatedDate": "2026-07-30",
+  "minimumLaunchScore": 90
+}

@@ -1,0 +1,125 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://sample.onetapcreative.test/#business",
+      "name": "Sample Local Business",
+      "url": "https://sample.onetapcreative.test/",
+      "logo": "https://sample.onetapcreative.test/images/logo.png",
+      "image": "https://sample.onetapcreative.test/images/og-image.jpg",
+      "description": "Sample Local Business provides dependable local services for customers in Stockton and nearby communities.",
+      "telephone": "+12090000000",
+      "email": "hello@sample.onetapcreative.test",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": [
+        "Cash",
+        "Credit Card"
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Stockton, CA"
+        },
+        {
+          "@type": "City",
+          "name": "Lodi, CA"
+        },
+        {
+          "@type": "City",
+          "name": "Manteca, CA"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "slogan": "Dependable local service",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Stockton",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sample Local Business services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "url": "https://sample.onetapcreative.test/#services",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Primary Service",
+              "description": "A dependable primary service for local customers.",
+              "provider": {
+                "@id": "https://sample.onetapcreative.test/#business"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sample.onetapcreative.test/#website",
+      "url": "https://sample.onetapcreative.test/",
+      "name": "Sample Local Business",
+      "description": "Sample Local Business provides dependable local services for customers in Stockton and nearby communities.",
+      "publisher": {
+        "@id": "https://sample.onetapcreative.test/#business"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sample.onetapcreative.test/#primary-service",
+      "name": "Request a quote",
+      "serviceType": "local service in Stockton CA",
+      "description": "Sample Local Business provides dependable local services for customers in Stockton and nearby communities.",
+      "provider": {
+        "@id": "https://sample.onetapcreative.test/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Stockton, CA"
+        },
+        {
+          "@type": "City",
+          "name": "Lodi, CA"
+        },
+        {
+          "@type": "City",
+          "name": "Manteca, CA"
+        }
+      ],
+      "url": "https://sample.onetapcreative.test/#services"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sample.onetapcreative.test/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What areas do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve Stockton and selected nearby communities listed on this website."
+          }
+        }
+      ]
+    }
+  ]
+}

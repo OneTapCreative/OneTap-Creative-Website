@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /api/
+
+Sitemap: https://sample.onetapcreative.test/sitemap.xml
+Host: sample.onetapcreative.test
