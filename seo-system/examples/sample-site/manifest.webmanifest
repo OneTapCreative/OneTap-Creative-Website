@@ -1,0 +1,17 @@
+{
+  "name": "Sample Local Business",
+  "short_name": "Sample Business",
+  "description": "Dependable local services in Stockton, California.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "https://sample.onetapcreative.test/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

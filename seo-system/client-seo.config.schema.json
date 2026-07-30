@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OneTap Creative Client SEO Configuration",
+  "type": "object",
+  "required": ["systemVersion", "project", "business", "location", "services", "pages", "seo", "approvals", "quality"],
+  "properties": {
+    "systemVersion": {"type": "string"},
+    "project": {"type": "object", "required": ["clientId", "status", "preparedBy", "lastUpdated"]},
+    "business": {"type": "object", "required": ["name", "industryKey", "schemaType", "description", "phone", "displayPhone", "email", "website", "logo"]},
+    "location": {"type": "object", "required": ["mode", "publicAddress", "address", "serviceAreas"]},
+    "hours": {"type": "array"},
+    "services": {"type": "array", "minItems": 1},
+    "content": {"type": "object", "required": ["primaryKeyword", "primaryConversion", "faq", "images", "verifiedReviews"]},
+    "pages": {"type": "array", "minItems": 1},
+    "seo": {"type": "object", "required": ["language", "defaultRobots", "socialImage", "socialImageAlt", "privatePaths"]},
+    "approvals": {"type": "object"},
+    "quality": {"type": "object", "required": ["forbiddenLegacyTerms", "minimumLaunchScore", "requireHttps"]}
+  }
+}

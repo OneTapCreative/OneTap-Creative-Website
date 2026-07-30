@@ -1,0 +1,17 @@
+{
+  "name": "Sample Local Business",
+  "short_name": "Sample Local Business",
+  "description": "Sample Local Business provides dependable local services for customers in Stockton and nearby communities.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "https://sample.onetapcreative.test/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

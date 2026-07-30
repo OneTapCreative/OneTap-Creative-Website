@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "industries": {
+    "barber": {"schemaType": "BarberShop", "primaryConversion": "Book an appointment", "keywordPattern": "barber in {city} {state}", "recommendedSections": ["hero", "services", "gallery", "about", "pricing", "location", "faq", "booking"]},
+    "dj-event": {"schemaType": "ProfessionalService", "primaryConversion": "Request a quote", "keywordPattern": "DJ services in {city} {state}", "recommendedSections": ["hero", "events", "services", "experience", "gallery", "pricing", "service-area", "faq", "quote"]},
+    "salon-stylist": {"schemaType": "HairSalon", "primaryConversion": "Book an appointment", "keywordPattern": "hair salon in {city} {state}", "recommendedSections": ["hero", "services", "gallery", "stylist", "pricing", "location", "faq", "booking"]},
+    "nail-technician": {"schemaType": "NailSalon", "primaryConversion": "Book an appointment", "keywordPattern": "nail technician in {city} {state}", "recommendedSections": ["hero", "services", "gallery", "pricing", "policies", "location", "faq", "booking"]},
+    "auto-detailer": {"schemaType": "AutomotiveBusiness", "primaryConversion": "Request a quote", "keywordPattern": "auto detailing in {city} {state}", "recommendedSections": ["hero", "packages", "before-after", "process", "service-area", "faq", "quote"]},
+    "cleaning-service": {"schemaType": "ProfessionalService", "primaryConversion": "Request a quote", "keywordPattern": "cleaning service in {city} {state}", "recommendedSections": ["hero", "services", "trust", "process", "service-area", "faq", "quote"]},
+    "landscaper": {"schemaType": "ProfessionalService", "primaryConversion": "Request an estimate", "keywordPattern": "landscaping service in {city} {state}", "recommendedSections": ["hero", "services", "projects", "process", "service-area", "faq", "estimate"]},
+    "contractor-home-service": {"schemaType": "ProfessionalService", "primaryConversion": "Request an estimate", "keywordPattern": "{service} contractor in {city} {state}", "recommendedSections": ["hero", "services", "licenses-insurance", "projects", "process", "service-area", "faq", "estimate"]},
+    "restaurant-food": {"schemaType": "Restaurant", "primaryConversion": "View menu or order", "keywordPattern": "{cuisine} restaurant in {city} {state}", "recommendedSections": ["hero", "menu", "about", "gallery", "hours-location", "faq", "order"]},
+    "general-local-service": {"schemaType": "ProfessionalService", "primaryConversion": "Request a quote", "keywordPattern": "{service} in {city} {state}", "recommendedSections": ["hero", "services", "trust", "work", "process", "service-area", "faq", "contact"]}
+  }
+}

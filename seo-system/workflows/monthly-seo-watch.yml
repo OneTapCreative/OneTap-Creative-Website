@@ -1,0 +1,45 @@
+name: OneTap Monthly SEO Watch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 16 1 * *"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  live-seo-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out client website
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run live SEO health check
+        id: health
+        continue-on-error: true
+        run: |
+          python seo-system/scripts/monthly_seo_check.py \
+            --config client-seo.config.json \
+            --report seo-reports/monthly-live-check.md
+
+      - name: Upload monthly report
+        uses: actions/upload-artifact@v4
+        with:
+          name: monthly-seo-health-report
+          path: seo-reports/monthly-live-check.md
+
+      - name: Open an issue when review is required
+        if: steps.health.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Monthly SEO review required" \
+            --body-file seo-reports/monthly-live-check.md

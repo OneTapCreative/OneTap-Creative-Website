@@ -1,0 +1,15 @@
+{
+  "score": 100,
+  "minimumScore": 90,
+  "criticalCount": 0,
+  "warningCount": 0,
+  "homepage": "/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/index.html",
+  "canonical": "https://sample.onetapcreative.test/",
+  "schemaTypes": [
+    "FAQPage",
+    "ProfessionalService",
+    "Service",
+    "WebSite"
+  ],
+  "findings": []
+}

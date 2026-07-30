@@ -1,0 +1,44 @@
+name: OneTap SEO Quality Gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  seo-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out client website
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate SEO package
+        run: |
+          python seo-system/scripts/build_seo.py \
+            --config client-seo.config.json \
+            --output seo-output \
+            --production
+
+      - name: Audit production website
+        run: |
+          python seo-system/scripts/audit_seo.py \
+            --config client-seo.config.json \
+            --site-dir . \
+            --production \
+            --report seo-output/prelaunch-audit.md
+
+      - name: Upload SEO audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: onetap-seo-audit
+          path: seo-output/
