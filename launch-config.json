@@ -1,0 +1,19 @@
+{
+  "brand": "OneTap Creative",
+  "productionDomain": "https://onetapcreative.com/",
+  "monthlyPrice": 179,
+  "minimumMonths": 3,
+  "initialCommitmentTotal": 537,
+  "setupFee": 0,
+  "postMinimumNoticeDays": 30,
+  "prelaunchRevisionRounds": 2,
+  "monthlyUpdateMinutes": 30,
+  "firstReviewTargetBusinessDays": "7-10",
+  "leadResponseTarget": "within one business day",
+  "seoScope": "advanced SEO foundation",
+  "verifiedInternalFormInbox": "clarence.workflow@gmail.com",
+  "plannedProfessionalMailbox": "hello@onetapcreative.com",
+  "paymentProvider": "Square",
+  "publicPaymentCollection": false,
+  "onboardingRoute": "/onboarding/"
+}

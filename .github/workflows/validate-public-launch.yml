@@ -1,0 +1,34 @@
+name: Validate OneTap Public Launch
+
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "styles.css"
+      - "script*.js"
+      - "terms.html"
+      - "privacy.html"
+      - "thank-you.html"
+      - "robots.txt"
+      - "sitemap.xml"
+      - "onboarding/**"
+      - "launch-config.json"
+      - "launch/**"
+      - "client-operations/**"
+      - "scripts/audit-public-launch.py"
+      - ".github/workflows/validate-public-launch.yml"
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  public-launch-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/audit-public-launch.py
