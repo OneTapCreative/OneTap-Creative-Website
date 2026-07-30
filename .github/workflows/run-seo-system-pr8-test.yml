@@ -35,3 +35,5 @@ jobs:
           git add seo-system/SELF-TEST-PASSED.txt seo-system/examples/sample-site/seo-output
           git commit -m "Record SEO system self-test pass"
           git push origin HEAD:agent/complete-client-seo-system-v2
+
+# Second commit intentionally triggers the protected validation run.
