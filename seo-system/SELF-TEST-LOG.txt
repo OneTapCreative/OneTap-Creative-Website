@@ -1,14 +1,5 @@
 Generated OneTap SEO package for Sample Local Business in /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/seo-output
-OneTap SEO audit: 95/100 — BLOCKED
+OneTap SEO audit: 100/100 — PASS
 + /opt/hostedtoolcache/Python/3.12.13/x64/bin/python /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/scripts/build_seo.py --config /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/client-seo.config.json --output /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/seo-output --production
 + /opt/hostedtoolcache/Python/3.12.13/x64/bin/python /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/scripts/audit_seo.py --config /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/client-seo.config.json --site-dir /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site --production --report /home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/seo-output/prelaunch-audit.md
-Traceback (most recent call last):
-  File "/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/scripts/self_test.py", line 26, in <module>
-    main()
-  File "/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/scripts/self_test.py", line 21, in main
-    run([sys.executable, str(system / "scripts" / "audit_seo.py"), "--config", str(sample / "client-seo.config.json"), "--site-dir", str(sample), "--production", "--report", str(output / "prelaunch-audit.md")])
-  File "/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/scripts/self_test.py", line 13, in run
-    subprocess.run(command, check=True)
-  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/subprocess.py", line 571, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['/opt/hostedtoolcache/Python/3.12.13/x64/bin/python', '/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/scripts/audit_seo.py', '--config', '/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/client-seo.config.json', '--site-dir', '/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site', '--production', '--report', '/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/seo-output/prelaunch-audit.md']' returned non-zero exit status 1.
+OneTap SEO system self-test passed.

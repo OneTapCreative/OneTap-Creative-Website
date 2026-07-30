@@ -252,10 +252,19 @@ def audit(config: dict[str, Any], site_dir: Path, production: bool) -> tuple[int
     else:
         try:
             sitemap_text = sitemap_path.read_text(encoding="utf-8", errors="replace")
-            ElementTree.fromstring(sitemap_text)
-            if expected_home not in sitemap_text:
+            sitemap_root = ElementTree.fromstring(sitemap_text)
+            sitemap_locations = [
+                (element.text or "").strip()
+                for element in sitemap_root.iter()
+                if element.tag.rsplit("}", 1)[-1] == "loc" and (element.text or "").strip()
+            ]
+            if expected_home not in sitemap_locations:
                 add(findings, "critical", "Crawl and discovery", "Canonical homepage is missing from the sitemap", 4)
-            wrong_hosts = {urlparse(match).netloc for match in re.findall(r"https?://[^<\s]+", sitemap_text) if urlparse(match).netloc != urlparse(base).netloc}
+            wrong_hosts = {
+                urlparse(location).netloc
+                for location in sitemap_locations
+                if urlparse(location).netloc != urlparse(base).netloc
+            }
             if wrong_hosts:
                 add(findings, "critical", "Crawl and discovery", "Sitemap contains another host: " + ", ".join(sorted(wrong_hosts)), 5)
         except ElementTree.ParseError:

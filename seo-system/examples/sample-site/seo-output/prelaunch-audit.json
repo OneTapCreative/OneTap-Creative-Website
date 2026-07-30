@@ -1,7 +1,7 @@
 {
-  "score": 95,
+  "score": 100,
   "minimumScore": 90,
-  "criticalCount": 1,
+  "criticalCount": 0,
   "warningCount": 0,
   "homepage": "/home/runner/work/OneTap-Creative-Website/OneTap-Creative-Website/seo-system/examples/sample-site/index.html",
   "canonical": "https://sample.onetapcreative.test/",
@@ -11,12 +11,5 @@
     "Service",
     "WebSite"
   ],
-  "findings": [
-    {
-      "severity": "critical",
-      "category": "Crawl and discovery",
-      "message": "Sitemap contains another host: www.sitemaps.org",
-      "points": 5
-    }
-  ]
+  "findings": []
 }
