@@ -1,0 +1,133 @@
+{
+  "systemVersion": "1.0",
+  "project": {
+    "clientId": "sample-local-business",
+    "status": "production-ready",
+    "preparedBy": "OneTap Creative",
+    "lastUpdated": "2026-07-29"
+  },
+  "business": {
+    "name": "Sample Local Business",
+    "legalName": "",
+    "ownerName": "Sample Owner",
+    "industryKey": "general-local-service",
+    "schemaType": "ProfessionalService",
+    "description": "Sample Local Business provides dependable local services for customers in Stockton and nearby communities.",
+    "slogan": "Dependable local service",
+    "foundingDate": "",
+    "phone": "+12090000000",
+    "displayPhone": "(209) 000-0000",
+    "email": "hello@sample.onetapcreative.test",
+    "website": "https://sample.onetapcreative.test",
+    "logo": "https://sample.onetapcreative.test/images/logo.png",
+    "socialProfiles": [],
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": ["Cash", "Credit Card"]
+  },
+  "location": {
+    "mode": "service-area",
+    "publicAddress": false,
+    "address": {
+      "streetAddress": "",
+      "addressLocality": "Stockton",
+      "addressRegion": "CA",
+      "postalCode": "",
+      "addressCountry": "US"
+    },
+    "serviceAreas": ["Stockton, CA", "Lodi, CA", "Manteca, CA"],
+    "latitude": "",
+    "longitude": ""
+  },
+  "hours": [
+    {
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primary Service",
+      "description": "A dependable primary service for local customers.",
+      "price": "",
+      "priceCurrency": "USD",
+      "urlPath": "/#services"
+    }
+  ],
+  "content": {
+    "primaryKeyword": "local service in Stockton CA",
+    "supportingKeywords": ["professional local service Stockton", "service provider near Stockton"],
+    "primaryConversion": "Request a quote",
+    "faq": [
+      {
+        "question": "What areas do you serve?",
+        "answer": "We serve Stockton and selected nearby communities listed on this website."
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sample.onetapcreative.test/images/og-image.jpg",
+        "alt": "Sample Local Business serving customers in Stockton, California",
+        "purpose": "social-sharing"
+      }
+    ],
+    "verifiedReviews": {"enabled": false, "ratingValue": "", "reviewCount": "", "source": ""}
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "Sample Local Business | Local Service in Stockton, CA",
+      "metaDescription": "Sample Local Business provides dependable local services in Stockton, California. View services and request a personalized quote today.",
+      "primaryKeyword": "local service in Stockton CA",
+      "index": true,
+      "changeFrequency": "monthly",
+      "priority": "1.0",
+      "lastModified": "2026-07-29"
+    },
+    {
+      "path": "/privacy.html",
+      "title": "Privacy Policy | Sample Local Business",
+      "metaDescription": "Review how Sample Local Business handles information submitted through its website and contact form.",
+      "primaryKeyword": "",
+      "index": true,
+      "changeFrequency": "yearly",
+      "priority": "0.2",
+      "lastModified": "2026-07-29"
+    }
+  ],
+  "seo": {
+    "locale": "en_US",
+    "language": "en-US",
+    "defaultRobots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+    "socialImage": "https://sample.onetapcreative.test/images/og-image.jpg",
+    "socialImageAlt": "Sample Local Business serving customers in Stockton, California",
+    "twitterCard": "summary_large_image",
+    "includeFaqSchema": true,
+    "includeServiceCatalog": true,
+    "includeGeoMeta": true,
+    "searchConsoleVerification": "",
+    "analyticsMeasurementId": "",
+    "privatePaths": ["/thank-you.html", "/api/"]
+  },
+  "approvals": {
+    "businessFactsApproved": true,
+    "serviceClaimsApproved": true,
+    "pricesApproved": true,
+    "hoursApproved": true,
+    "serviceAreaApproved": true,
+    "imageRightsConfirmed": true,
+    "googleBusinessProfileClientOwned": true,
+    "noInventedReviewsOrRatings": true,
+    "approvedBy": "OneTap QA Fixture",
+    "approvedDate": "2026-07-29"
+  },
+  "quality": {
+    "forbiddenLegacyTerms": ["DJ JRV", "Romero Vision", "Freda the Barber"],
+    "minimumLaunchScore": 90,
+    "maximumImageBytes": 1572864,
+    "requireHttps": true,
+    "requireSingleH1": true,
+    "requireVisibleFaqForFaqSchema": true
+  }
+}
