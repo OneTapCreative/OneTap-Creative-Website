@@ -1,0 +1,35 @@
+name: Install complete OneTap SEO system
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  install-system:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out SEO system branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/complete-client-seo-system
+          fetch-depth: 0
+
+      - name: Install reviewed SEO system
+        run: python scripts/install-complete-seo-system.py
+
+      - name: Run SEO system self-test
+        run: python seo-system/scripts/self_test.py
+
+      - name: Commit system files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seo-system .github/workflows/validate-seo-system.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "Complete OneTap client SEO system"
+          git push origin HEAD:agent/complete-client-seo-system
