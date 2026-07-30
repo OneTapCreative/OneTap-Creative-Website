@@ -54,3 +54,5 @@ jobs:
           git add seo-system/scripts/audit_seo.py seo-system/SELF-TEST-RESULT.txt seo-system/SELF-TEST-EXIT.txt seo-system/SELF-TEST-LOG.txt seo-system/examples/sample-site/seo-output
           git commit -m "Fix sitemap audit and record SEO self-test"
           git push origin HEAD:agent/complete-client-seo-system-v2
+
+# Second commit intentionally triggers this protected fix-and-test run.
