@@ -16,6 +16,8 @@ onboarding_patch = read('onboarding/onboarding.js')
 robots = read('robots.txt')
 sitemap = read('sitemap.xml')
 readme = read('README.md')
+client_ops = read('client-operations/CLIENT-OPERATIONS-KIT.md')
+gbp_fast_track = read('client-operations/GBP-FAST-TRACK.md')
 combined_public = '\n'.join((index, terms, privacy, thank, onboarding, public_patch, onboarding_patch))
 errors = []
 
@@ -29,7 +31,6 @@ approved_price = config['monthlyPrice']
 approved_total = config['initialCommitmentTotal']
 form_id = config['formSubmitId']
 secure_form_action = f'https://formsubmit.co/{form_id}'
-secure_ajax_action = f'https://formsubmit.co/ajax/{form_id}'
 
 require(approved_price == 179 and approved_total == 537, 'Launch config does not match the approved commercial offer')
 require(f'${approved_price}' in index and f'${approved_total}' in index, 'Approved pricing is missing from the homepage')
@@ -65,9 +66,16 @@ require('https://onetapcreative.com/' in sitemap, 'Homepage is missing from site
 require('mailto:' not in index, 'A personal email is publicly exposed on the homepage')
 require('Website measurement' in privacy, 'Privacy policy does not disclose website measurement')
 
+require('never blocks an otherwise-ready website launch' in client_ops.lower(), 'Client operations do not clearly enforce nonblocking GBP launch')
+require('must **not delay a website launch**' in gbp_fast_track, 'GBP fast-track does not define the nonblocking launch rule')
+require('client remains the business owner' in gbp_fast_track.lower(), 'GBP ownership policy is missing')
+require('manager' in gbp_fast_track.lower(), 'GBP manager-access workflow is missing')
+require('verification pending' in gbp_fast_track.lower(), 'GBP pending-verification status is missing')
+
 for path in (
     '404.html',
     'client-operations/CLIENT-OPERATIONS-KIT.md',
+    'client-operations/GBP-FAST-TRACK.md',
     'client-operations/LEAD-TRACKER.csv',
     'launch/HARD-LAUNCH-RUNBOOK.md',
     'launch/EXTERNAL-ACTIVATION.md',
@@ -88,4 +96,4 @@ print(
     f"Offer: ${approved_price}/month, {config['minimumMonths']}-month minimum, "
     f"${approved_total} initial commitment"
 )
-print('Secure forms, SEO controls, privacy checks, and launch assets are aligned.')
+print('Secure forms, SEO controls, privacy checks, GBP launch policy, and launch assets are aligned.')
