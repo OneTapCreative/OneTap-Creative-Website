@@ -21,20 +21,35 @@
 - Vercel security headers and asset caching configuration
 - Automated public-launch regression audit on pull requests and `main`
 - Owner-only activation checklist at `launch/OWNER-CHECKLIST.md`
+- Nonblocking Google Business Profile workflow at `client-operations/GBP-FAST-TRACK.md`
 
 ## Required operating order
 
-Lead → discovery → personalized scope → signed agreement → first $179 payment → onboarding → build → two revision rounds → approval → launch → monthly care.
+### Website workstream
+
+Lead → discovery → personalized scope → signed agreement → first $179 payment → onboarding → build → two revision rounds → approval → **website launch** → monthly care.
+
+### Google Business Profile workstream
+
+Eligibility/status check → OneTap prepares profile information → existing-profile access or guided client setup → Google verification/ownership → OneTap Manager access → optimization → monthly care.
+
+These workstreams run **in parallel**. Google Business Profile verification, ownership requests, or Google processing delays do **not** block an otherwise-ready website launch.
+
+## Client GBP rule
+
+Clients should not be told to independently build a Google Business Profile from scratch before OneTap can continue. OneTap prepares the information and guides the client through the ownership/verification step using the client's own Google Account. The client remains Primary Owner; OneTap uses Manager access when appropriate.
+
+If GBP is still pending when the website passes launch checks, record the exact GBP status and next action, launch the website, and continue GBP as a post-launch task using `client-operations/GBP-FAST-TRACK.md`.
 
 ## Remaining external activation gates
 
-The remaining launch gates require account ownership, identity verification, billing authorization, or legal approval and therefore cannot be completed from the website repository alone.
+The remaining agency launch gates require account ownership, identity verification, billing authorization, or legal approval and therefore cannot be completed from the website repository alone.
 
 1. Activate and authenticate `hello@onetapcreative.com` (SPF, DKIM, DMARC, send/receive tests).
 2. Create and test the Square recurring $179 billing workflow.
 3. Enable Vercel Web Analytics and/or connect GA4; verify lead conversion reporting.
 4. Verify the Search Console domain property and submit the sitemap.
-5. Determine whether OneTap qualifies for a Google Business Profile before creating one.
+5. Determine whether OneTap qualifies for its own Google Business Profile before creating one.
 6. Obtain final legal review of the client agreement/Terms before relying on them for paid clients.
 7. Complete the full mock-client test from lead through monthly-care handoff.
 
