@@ -16,7 +16,7 @@ Do not expose a personal inbox in public HTML, JavaScript, or client-facing docu
 
 ## Square recurring payment
 
-Create **OneTap Creative Complete Online Presence Plan** at **$179 monthly**. The signed agreement—not the payment link by itself—defines the three-month minimum.
+Create **OneTap Creative Complete Online Presence Plan** at **$149 monthly**. The signed agreement—not the payment link by itself—defines the three-month minimum.
 
 - Disable tipping.
 - Collect client name, business name, and email where supported.
