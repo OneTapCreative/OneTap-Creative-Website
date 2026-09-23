@@ -3,7 +3,7 @@
 
   const FORM_ID = '3770cd21b709b2fc75672c99acb98256';
   const FORM_ACTION = `https://formsubmit.co/${FORM_ID}`;
-  const SUCCESS_URL = 'https://onetapcreative.com/onboarding/success.html';
+  const SUCCESS_URL = 'https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/onboarding/success.html';
   const form = document.querySelector('#onboarding-form');
 
   if (form) {
