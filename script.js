@@ -4,7 +4,7 @@
   const FORM_ID = '3770cd21b709b2fc75672c99acb98256';
   const FORM_ACTION = `https://formsubmit.co/${FORM_ID}`;
   const FORM_AJAX_ACTION = `https://formsubmit.co/ajax/${FORM_ID}`;
-  const SUCCESS_URL = 'https://onetapcreative.com/thank-you.html';
+  const SUCCESS_URL = 'https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/thank-you.html';
   const form = document.querySelector('#lead-form');
 
   const ensureHidden = (name, value = '') => {
