@@ -30,6 +30,7 @@ def require(condition, message):
 approved_price = config['monthlyPrice']
 approved_total = config['initialCommitmentTotal']
 form_id = config['formSubmitId']
+production_domain = config['productionDomain']
 secure_form_action = f'https://formsubmit.co/{form_id}'
 
 require(approved_price == 149 and approved_total == 447, 'Launch config does not match the approved commercial offer')
@@ -58,11 +59,11 @@ require('clarence.workflow@gmail.com' not in combined_public, 'Personal inbox is
 
 require('★ 5.0 reviews' not in index and '5.0 ★★★★★' not in index, 'Unsupported demo rating claims remain in static HTML')
 require('Trust section' in index and 'Business profile preview' in index, 'Neutral demo trust labels are missing from static HTML')
-require('<link rel="canonical" href="https://onetapcreative.com/"' in index, 'Static production canonical is missing')
+require(f'<link rel="canonical" href="{production_domain}"' in index, 'Static production canonical is missing')
 require('generate_lead' in public_patch, 'Lead analytics event is missing')
 require('Disallow: /onboarding/' in robots, 'Private onboarding route is not blocked')
 require('Disallow: /thank-you.html' in robots, 'Thank-you route is not blocked')
-require('https://onetapcreative.com/' in sitemap, 'Homepage is missing from sitemap')
+require(production_domain in sitemap, 'Homepage is missing from sitemap')
 require('mailto:' not in index, 'A personal email is publicly exposed on the homepage')
 require('Website measurement' in privacy, 'Privacy policy does not disclose website measurement')
 
