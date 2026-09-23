@@ -4,13 +4,15 @@ These actions require the business owner's account access, identity verification
 
 ## Professional email
 
-Planned mailbox: `hello@onetapcreative.com`.
+This is deferred until the permanent custom domain is purchased. Planned mailbox: `hello@onetapcreative.com` if `onetapcreative.com` becomes the purchased domain.
 
-1. Create and verify the mailbox.
+Until then, keep the existing verified secure FormSubmit delivery route in place. After the permanent domain is connected:
+
+1. Create and verify the professional mailbox.
 2. Configure the email provider's current SPF, DKIM, and DMARC DNS records.
 3. Test sending to Gmail and Outlook/Hotmail.
 4. Reply from both test accounts and confirm delivery is not going to spam.
-5. After the mailbox passes, migrate **both** secure FormSubmit routes together and reactivate/test the new route before retiring the current verified delivery route.
+5. Migrate **both** secure FormSubmit routes together and reactivate/test the new route before retiring the current verified delivery route.
 
 Do not expose a personal inbox in public HTML, JavaScript, or client-facing documentation.
 
@@ -36,11 +38,11 @@ The website already records UTM values, CTA clicks, portfolio clicks, lead submi
 
 ## Search Console
 
-- Verify the `onetapcreative.com` **Domain property** using DNS.
-- Submit `https://onetapcreative.com/sitemap.xml`.
-- Inspect the homepage and request indexing if needed.
-- Check manual actions and security issues.
-- Record the starting clicks, impressions, CTR, indexed pages, and top queries.
+Long-term Search Console activation is deferred until the permanent custom domain is purchased. The temporary public URL is:
+
+`https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`
+
+After the permanent domain is connected, switch the canonical/schema/sitemap/social URLs to that domain, verify its **Domain property** using DNS, submit the permanent sitemap, inspect the homepage, and record the starting search baseline.
 
 ## Google Business Profile
 

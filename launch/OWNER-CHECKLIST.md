@@ -4,16 +4,14 @@ This is the owner-side checklist for items that require account ownership, ident
 
 ## Launch gate — complete before broad paid advertising
 
-### 1. Professional business email
-- [ ] Create `hello@onetapcreative.com` with your chosen email provider.
-- [ ] Add the provider's current SPF record in DNS.
-- [ ] Add the provider's DKIM record(s) in DNS.
-- [ ] Add a DMARC record. Start with the provider's recommended monitoring policy if you are unsure.
-- [ ] Send a test from `hello@onetapcreative.com` to Gmail.
-- [ ] Send a test from `hello@onetapcreative.com` to Outlook/Hotmail.
-- [ ] Reply from both test inboxes and confirm replies arrive.
-- [ ] Confirm the messages are not landing in spam.
+### 1. Professional business email — deferred until custom domain purchase
+- [ ] Purchase/connect the permanent OneTap custom domain.
+- [ ] Create the professional mailbox on that domain (planned: `hello@onetapcreative.com` if that domain is purchased).
+- [ ] Add the provider's current SPF, DKIM, and DMARC records in DNS.
+- [ ] Test outbound delivery to Gmail and Outlook/Hotmail and confirm replies arrive.
+- [ ] Confirm messages are not landing in spam.
 - [ ] After the mailbox passes, ask the OneTap agent to migrate both website forms to the professional mailbox and re-test the secure FormSubmit route.
+- Temporary public launch may continue on the Vercel URL before this step is complete.
 
 ### 2. Square recurring billing
 - [ ] In Square, create **OneTap Creative Complete Online Presence Plan**.
@@ -26,12 +24,13 @@ This is the owner-side checklist for items that require account ownership, ident
 - [ ] Confirm the client receipt is clear and branded.
 - [ ] Confirm you know how to handle a failed payment, card update, cancellation, and refund request.
 
-### 3. Google Search Console
-- [ ] Create/verify a **Domain property** for `onetapcreative.com`.
-- [ ] Complete the DNS TXT verification at the domain registrar.
-- [ ] Submit `https://onetapcreative.com/sitemap.xml`.
-- [ ] Inspect `https://onetapcreative.com/` in URL Inspection.
-- [ ] Request indexing if Google has not indexed the homepage yet.
+### 3. Google Search Console — complete after custom domain purchase
+- Temporary public URL: `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`
+- [ ] Purchase/connect the permanent custom domain before establishing the long-term Search Console property.
+- [ ] Create/verify the custom-domain **Domain property** using DNS.
+- [ ] Switch the site's canonical, schema, sitemap, social URLs, and form redirects from the temporary Vercel URL to the permanent domain.
+- [ ] Submit the permanent-domain sitemap.
+- [ ] Inspect the permanent homepage and request indexing if needed.
 - [ ] Confirm there are no manual actions or security issues.
 - [ ] Record the starting baseline: indexed pages, impressions, clicks, CTR, and top queries.
 
@@ -87,13 +86,13 @@ This is the owner-side checklist for items that require account ownership, ident
 - [ ] Tell the OneTap agent immediately if a client asks for their project, name, images, or testimonial to be removed.
 
 ### 10. Domain and production account ownership
-- [ ] Confirm `onetapcreative.com` auto-renew is enabled at the registrar.
-- [ ] Confirm the registrar account has two-factor authentication enabled.
+- [ ] Confirm the temporary Vercel production URL loads: `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`
 - [ ] Confirm the Vercel account/project has two-factor authentication enabled where available.
-- [ ] Confirm the production domain resolves to the intended Vercel project.
-- [ ] Confirm `https://onetapcreative.com/robots.txt` loads.
-- [ ] Confirm `https://onetapcreative.com/sitemap.xml` loads.
-- [ ] Confirm `https://onetapcreative.com/404.html` loads.
+- [ ] Confirm `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/robots.txt` loads.
+- [ ] Confirm `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/sitemap.xml` loads.
+- [ ] Confirm `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/404.html` loads.
+- [ ] After purchasing the permanent domain, enable registrar auto-renew and two-factor authentication.
+- [ ] Connect the permanent domain to the intended Vercel project and repeat the production URL checks.
 
 ## Operating discipline after launch
 

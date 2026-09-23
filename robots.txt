@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you.html
 Disallow: /onboarding/
-Sitemap: https://onetapcreative.com/sitemap.xml
+Sitemap: https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/sitemap.xml
