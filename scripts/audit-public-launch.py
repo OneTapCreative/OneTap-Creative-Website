@@ -32,14 +32,14 @@ approved_total = config['initialCommitmentTotal']
 form_id = config['formSubmitId']
 secure_form_action = f'https://formsubmit.co/{form_id}'
 
-require(approved_price == 179 and approved_total == 537, 'Launch config does not match the approved commercial offer')
+require(approved_price == 149 and approved_total == 447, 'Launch config does not match the approved commercial offer')
 require(f'${approved_price}' in index and f'${approved_total}' in index, 'Approved pricing is missing from the homepage')
 require(f'${approved_price}' in terms and f'${approved_total}' in terms, 'Approved pricing is missing from Terms')
 require(f'${approved_price}' in readme and f'${approved_total}' in readme, 'README pricing is out of sync')
 require('Advanced SEO foundation' in index or 'advanced SEO foundation' in index, 'Advanced SEO foundation is missing')
 require('Two organized revision rounds' in index, 'Revision scope is missing')
 require('30 minutes' in index, 'Monthly update allowance is missing')
-require('$149' not in combined_public and '$447' not in combined_public, 'Old pricing remains in client-facing files')
+require('$179' not in combined_public and '$537' not in combined_public, 'Old pricing remains in client-facing files')
 require('basic local seo' not in combined_public.lower(), 'Old basic SEO wording remains')
 
 require(secure_form_action in index, 'Public static form does not use the secure FormSubmit route')
