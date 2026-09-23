@@ -45,10 +45,10 @@ If GBP is still pending when the website passes launch checks, record the exact 
 
 The remaining agency launch gates require account ownership, identity verification, billing authorization, or legal approval and therefore cannot be completed from the website repository alone.
 
-1. Activate and authenticate `hello@onetapcreative.com` (SPF, DKIM, DMARC, send/receive tests).
+1. Use `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/` as the temporary public website URL.
 2. Create and test the Square recurring $149 billing workflow.
 3. Enable Vercel Web Analytics and/or connect GA4; verify lead conversion reporting.
-4. Verify the Search Console domain property and submit the sitemap.
+4. Purchase/connect the permanent custom domain, then activate professional email and long-term Search Console on that domain.
 5. Determine whether OneTap qualifies for its own Google Business Profile before creating one.
 6. Obtain final legal review of the client agreement/Terms before relying on them for paid clients.
 7. Complete the full mock-client test from lead through monthly-care handoff.
