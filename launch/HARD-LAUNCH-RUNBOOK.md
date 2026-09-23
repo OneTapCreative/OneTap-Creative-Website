@@ -2,7 +2,7 @@
 
 ## Completed in the website/repository
 
-- Approved **$179/month** offer and **$537** initial three-month commitment
+- Approved **$149/month** offer and **$447** initial three-month commitment
 - No standard setup fee positioning
 - Advanced SEO foundation language and scope boundaries
 - Two organized prelaunch revision rounds
@@ -27,7 +27,7 @@
 
 ### Website workstream
 
-Lead → discovery → personalized scope → signed agreement → first $179 payment → onboarding → build → two revision rounds → approval → **website launch** → monthly care.
+Lead → discovery → personalized scope → signed agreement → first $149 payment → onboarding → build → two revision rounds → approval → **website launch** → monthly care.
 
 ### Google Business Profile workstream
 
@@ -46,7 +46,7 @@ If GBP is still pending when the website passes launch checks, record the exact 
 The remaining agency launch gates require account ownership, identity verification, billing authorization, or legal approval and therefore cannot be completed from the website repository alone.
 
 1. Activate and authenticate `hello@onetapcreative.com` (SPF, DKIM, DMARC, send/receive tests).
-2. Create and test the Square recurring $179 billing workflow.
+2. Create and test the Square recurring $149 billing workflow.
 3. Enable Vercel Web Analytics and/or connect GA4; verify lead conversion reporting.
 4. Verify the Search Console domain property and submit the sitemap.
 5. Determine whether OneTap qualifies for its own Google Business Profile before creating one.
