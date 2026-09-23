@@ -4,8 +4,8 @@ Production-ready static website for the OneTap Creative Complete Online Presence
 
 ## Approved public offer
 
-- **$179/month**
-- **3-month minimum** (**$537** initial commitment)
+- **$149/month**
+- **3-month minimum** (**$447** initial commitment)
 - Then month-to-month with **30 days’ notice** after the minimum
 - **No standard setup fee**
 - One custom mobile-first website with approximately 8–10 sections

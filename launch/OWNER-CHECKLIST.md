@@ -17,12 +17,12 @@ This is the owner-side checklist for items that require account ownership, ident
 
 ### 2. Square recurring billing
 - [ ] In Square, create **OneTap Creative Complete Online Presence Plan**.
-- [ ] Set the recurring amount to **$179 monthly**.
+- [ ] Set the recurring amount to **$149 monthly**.
 - [ ] Turn tipping off.
 - [ ] Collect client name, business name, and email at checkout when supported.
 - [ ] Keep the public homepage as inquiry-only; do not place the payment link on the homepage.
 - [ ] Use the signed agreement to define the three-month minimum; the payment link by itself does not replace the contract.
-- [ ] Complete one $179 test transaction or approved test-mode checkout.
+- [ ] Complete one $149 test transaction or approved test-mode checkout.
 - [ ] Confirm the client receipt is clear and branded.
 - [ ] Confirm you know how to handle a failed payment, card update, cancellation, and refund request.
 

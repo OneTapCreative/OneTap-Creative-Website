@@ -4,13 +4,13 @@
 
 ## Required client journey
 
-Lead request → reply within one business day → discovery call → personalized scope → signed agreement → first $179 payment → mobile onboarding → build → two revision rounds → approval → **website launch** → monthly care.
+Lead request → reply within one business day → discovery call → personalized scope → signed agreement → first $149 payment → mobile onboarding → build → two revision rounds → approval → **website launch** → monthly care.
 
 **Google Business Profile runs in parallel and never blocks an otherwise-ready website launch.** Use `GBP-FAST-TRACK.md` for the exact workflow.
 
 ## Discovery call script
 
-Opening: “I want to understand your business, how customers find you, and the one action the website should make easiest. I’ll explain the $179 Complete Online Presence Plan and tell you honestly whether it is a fit.”
+Opening: “I want to understand your business, how customers find you, and the one action the website should make easiest. I’ll explain the $149 Complete Online Presence Plan and tell you honestly whether it is a fit.”
 
 Ask:
 1. Which services produce the best customers?
@@ -32,11 +32,11 @@ This agreement is between **OneTap Creative** and **[CLIENT / BUSINESS]**, effec
 
 ### Service and price
 
-OneTap will provide the attached Scope of Work. The standard plan is $179 per month, no standard setup fee, and a three-month minimum totaling $537.
+OneTap will provide the attached Scope of Work. The standard plan is $149 per month, no standard setup fee, and a three-month minimum totaling $447.
 
 ### Billing and cancellation
 
-- First $179 payment is due before onboarding and begins the three-month commitment.
+- First $149 payment is due before onboarding and begins the three-month commitment.
 - Monthly billing continues on the agreed billing date.
 - After the minimum, service continues month-to-month.
 - Cancellation after the minimum requires 30 days’ written notice.
@@ -88,7 +88,7 @@ OneTap Creative: __________________  Date: ________
 - Exclusions: ecommerce, custom software, unlimited revisions, campaign-level SEO, and anything not listed.
 - First-review target: 7–10 business days after all required website information is received.
 - Website launch rule: Google Business Profile verification/ownership is tracked separately and does not block an otherwise-ready launch.
-- Commercial terms: $179/month; three-month minimum totaling $537; first payment begins onboarding.
+- Commercial terms: $149/month; three-month minimum totaling $447; first payment begins onboarding.
 
 Client approval: __________________  Date: ________
 
@@ -124,11 +124,11 @@ Subject: Your OneTap Creative website plan for [BUSINESS]
 
 Hi [NAME],
 
-Based on our conversation, the website should focus on [PRIMARY ACTION] and clearly present [TOP SERVICES] for customers in [SERVICE AREA]. The Complete Online Presence Plan is $179 per month with no standard setup fee and a three-month minimum totaling $537.
+Based on our conversation, the website should focus on [PRIMARY ACTION] and clearly present [TOP SERVICES] for customers in [SERVICE AREA]. The Complete Online Presence Plan is $149 per month with no standard setup fee and a three-month minimum totaling $447.
 
 Next steps:
 1. Review and sign the agreement and scope.
-2. Complete the first $179 payment.
+2. Complete the first $149 payment.
 3. Complete the mobile onboarding portal.
 4. If Google Business Profile setup is needed, OneTap will prepare the details and guide the ownership/verification step separately. Google verification will not hold up an otherwise-ready website launch.
 
