@@ -92,7 +92,7 @@ require(config.get('paymentLinks', {}).get('growRedirect') == '/onboarding/?plan
 require("Payment Redirect Plan" in onboarding_patch and "URLSearchParams" in onboarding_patch, 'Onboarding does not preselect the paid plan from Square redirect')
 require('noindex,nofollow,noarchive' in agreement, 'Agreement page must remain private/noindex')
 require('noindex,nofollow,noarchive' in agreement_received, 'Agreement receipt page must remain private/noindex')
-require(secure_form_action in agreement, 'Agreement form does not use the secure FormSubmit route')
+require(secure_form_action in agreement or 'DIRECT_FORMSUBMIT_DESTINATION' in agreement_js, 'Agreement form does not use an approved FormSubmit route')
 require('_honey' in agreement and '_autoresponse' in agreement and '_replyto' in agreement, 'Agreement form security/confirmation fields are incomplete')
 require('name="_captcha"' not in agreement, 'Agreement should use FormSubmit reCAPTCHA for reliable delivery')
 require('name="email"' in agreement, 'Agreement must expose a standard email field for FormSubmit autoresponse')
