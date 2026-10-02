@@ -98,6 +98,7 @@ require('name="_captcha"' not in agreement, 'Agreement should use FormSubmit reC
 require('name="email"' in agreement, 'Agreement must expose a standard email field for FormSubmit autoresponse')
 require('https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/agreement-received.html' in agreement, 'Agreement _next must be an absolute URL')
 require('name="_url"' in agreement, 'Agreement should provide an explicit form URL to FormSubmit')
+require('DIRECT_FORMSUBMIT_DESTINATION' in agreement_js and 'form.action = `https://formsubmit.co/${DIRECT_FORMSUBMIT_DESTINATION}`' in agreement_js, 'Agreement must force direct FormSubmit activation routing')
 require('Electronic Signature Consent' in agreement and 'Authorized Representative' in agreement, 'Agreement acceptance controls are incomplete')
 require('card number' in agreement.lower() and 'cvv' in agreement.lower(), 'Agreement page must warn clients not to submit card credentials')
 require('agreement.html?plan=start' in client_ops and 'agreement.html?plan=grow' in client_ops, 'Client operations do not document private agreement links')
