@@ -1,149 +1,160 @@
-# OneTap Creative — Square Card Payment SOP
+# OneTap Creative — Square Recurring Payment Link SOP
 
 Current launch preference: **credit/debit card only**.
 
-This is the operating setup for OneTap Creative recurring client billing. The signed client agreement controls the three-month minimum, cancellation terms, and scope. Square is the payment processor, not the contract.
+The signed client agreement controls the three-month minimum, cancellation terms, and scope. Square handles the recurring payment. The public OneTap homepage remains inquiry-only.
 
 ## Client payment journey
 
-Lead → discovery → recommend Start or Grow → signed agreement → private Square recurring invoice → first credit/debit card payment → card saved on file with customer consent → onboarding → monthly automatic billing.
+Lead → discovery → recommend Start or Grow → signed agreement → private Square recurring payment link → first credit/debit card payment → automatic monthly billing → onboarding.
 
-Do not place a public Square checkout link on the homepage.
+Create **two reusable private links**:
+- OneTap Start — $99/month
+- OneTap Grow — $149/month
 
-## Square items
+Do not place either Square link on the public homepage.
 
-### OneTap Start
-- Item name: **OneTap Start**
-- Price: **$99.00**
-- Billing: **Monthly**
-- Category: Website Services
-- Description: **Managed professional website for a local service business, including hosting, SSL, maintenance, SEO essentials, founder-led support, and the included monthly update allowance.**
-- First payment: Due before onboarding
-- Initial minimum: 3 months / $297 total under signed agreement
-- After minimum: Month-to-month with 30 days' written notice under signed agreement
+## Global Square Payment Link settings
 
-### OneTap Grow
-- Item name: **OneTap Grow**
-- Price: **$149.00**
-- Billing: **Monthly**
-- Category: Website Services
-- Description: **Everything in OneTap Start plus Google Business Profile assistance, advanced SEO foundation, local keyword mapping, Search Console, schema/local search alignment, and the included monthly update allowance.**
-- First payment: Due before onboarding
-- Initial minimum: 3 months / $447 total under signed agreement
-- After minimum: Month-to-month with 30 days' written notice under signed agreement
+In Square Dashboard go to **Payments & orders → Payment links → Settings → General**.
 
-## Square recurring invoice settings
-
-Create one recurring invoice series per client after the agreement is signed.
-
-Recommended settings:
-- Frequency: Every 1 month
-- Start date: Date the first payment is due
-- End date: No automatic end date
-- Payment method: Credit/debit card
-- Save card on file: Enabled / customer consent required
-- Automatic card charge: Enabled after card is stored
+For the current OneTap launch workflow:
+- Card payments: accepted automatically by Square Payment Links
+- Apple Pay: Off
+- Google Pay: Off
+- Cash App Pay: Off
 - Tipping: Off
-- ACH / bank transfer: Do not enable for the current launch workflow
-- Afterpay: Off
-- Cash App Pay: Do not use for the recurring OneTap workflow
-- Gift cards: Do not use for the recurring OneTap workflow
-- Customer record: Full name, business name, email, phone
-- Invoice delivery: Email
-- Receipt delivery: Email
-- Internal customer note: Selected plan + agreement date + minimum-term end date
+- Afterpay online: Off in Square payment-method settings if you want strict card/debit-only checkout
+- Customer notes: Optional
+- Email transaction notifications: On
+- Branding: Add OneTap logo/business name when available
 
-If Square presents additional payment methods by default, review **Accepted payment methods** on the invoice/template and leave only the card options needed for the OneTap launch workflow.
+Square payment-link wallet settings are global to Payment Links, so review them before sending a live client link.
 
-## Invoice title
+## OneTap Start recurring link
 
-**OneTap Creative — [Start/Grow] Monthly Service**
+Create link → **Collect a payment**
 
-## First invoice message
+- Title: **OneTap Start — Monthly Website Service**
+- Amount: **$99.00**
+- Frequency: **Recurring**
+- Recurrence: **Monthly**
+- End date: **No automatic end date**
+- Description:
 
-Thank you for choosing OneTap Creative.
+**Managed OneTap Creative website service for a local service business. Includes a custom mobile-friendly website, hosting, SSL, backups, SEO essentials, two organized prelaunch revision rounds, up to 15 minutes of monthly updates, maintenance, and support. Three-month minimum applies under the signed client agreement; after the minimum, service continues month-to-month with 30 days’ written notice.**
 
-This invoice activates your selected monthly service after your signed agreement. Your first payment starts the three-month minimum commitment. Once payment is confirmed, we will send your onboarding link and begin the website process.
+Custom fields:
+1. **Business Name**
+2. **Agreement Signer Name**
 
-Your card may be securely saved with Square for automatic monthly billing when you authorize Card on File.
+Advanced settings:
+- Tipping: Off
+- Redirect after checkout:  
+  **https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/onboarding/?plan=start**
 
-Questions about your scope or billing? Reply before submitting payment.
+## OneTap Grow recurring link
 
-## Monthly invoice description
+Create link → **Collect a payment**
 
-**OneTap Creative [Start/Grow] — Monthly managed website service for [BUSINESS NAME].**
+- Title: **OneTap Grow — Monthly Website + Google Visibility**
+- Amount: **$149.00**
+- Frequency: **Recurring**
+- Recurrence: **Monthly**
+- End date: **No automatic end date**
+- Description:
 
-## Payment confirmation message
+**OneTap Creative managed website service with advanced search support. Includes everything in OneTap Start plus Google Business Profile assistance, advanced SEO foundation, local keyword mapping, Google Search Console, structured data/local-search alignment, basic ongoing search-health checks, and up to 30 minutes of monthly updates. Three-month minimum applies under the signed client agreement; after the minimum, service continues month-to-month with 30 days’ written notice.**
 
-**Payment received — welcome to OneTap Creative.**
+Custom fields:
+1. **Business Name**
+2. **Agreement Signer Name**
 
-Your [Start/Grow] plan is active. The next step is onboarding. Complete the onboarding information so we can begin or continue your website work.
+Advanced settings:
+- Tipping: Off
+- Redirect after checkout:  
+  **https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/onboarding/?plan=grow**
 
-## Card authorization rule
+## Why the links stay private
 
-The client must authorize Square to save and charge the card on file. OneTap never stores card numbers, CVV, or other raw payment credentials outside Square.
+The payment links are reusable, but they should only be sent after OneTap has:
+1. Reviewed the lead.
+2. Completed discovery.
+3. Recommended Start or Grow.
+4. Received the signed client agreement.
 
-## Failed payment workflow
+The signed agreement—not the payment link—defines the three-month minimum and the client-specific scope.
 
-Square does not automatically reprocess a declined recurring card charge. Use this sequence:
+## Payment message to client
 
-### Day 0 — payment declined
-- Confirm Square sent the decline notice.
-- Send OneTap failed-payment message.
-- Keep website/service active during the grace period.
+**Your OneTap agreement is complete.**
 
-Message:
+Use the secure Square link below to activate your **[OneTap Start / OneTap Grow]** plan:
 
-**Your OneTap Creative payment did not go through.**
+**[SQUARE PAYMENT LINK]**
 
-Please update your payment method through the secure Square invoice so we can keep your service current. If you already updated it, no further action is needed.
+Your plan is **[$99 / $149] per month** with the initial three-month commitment described in your signed agreement.
+
+After successful payment, Square will send you directly to OneTap onboarding so we can begin collecting the information needed for your website.
+
+Never send card information by email or text.
+
+## Matching payment to the agreement
+
+Before production starts, confirm:
+- payment amount matches selected plan;
+- Business Name matches the signed agreement;
+- Agreement Signer Name matches the submitted agreement;
+- first payment shows successful in Square.
+
+Then proceed with onboarding/production.
+
+## Failed recurring payment workflow
+
+### Day 0 — payment fails
+Send:
+
+**Your OneTap Creative monthly payment did not go through.**
+
+Please update your payment method through Square so we can keep your service current. If you have already corrected the payment, no further action is needed.
 
 ### Day 3 — reminder
-Message:
+Send:
 
-**Quick billing reminder from OneTap Creative:** your monthly payment is still showing as unpaid. Please update your card through the secure Square invoice. If you need help, reply and we’ll point you in the right direction.
+**Quick billing reminder from OneTap Creative:** your monthly payment is still showing as unpaid. Please update your payment method through Square. If you need help locating the payment update, reply and we’ll point you in the right direction.
 
 ### Day 7 — grace-period notice
-Message:
+Send:
 
-**Your OneTap Creative account is now past the standard payment grace period.** Please update the payment method through Square to avoid interruption of hosting, maintenance, or support.
+**Your OneTap Creative account is now past the standard payment grace period.** Please resolve the Square payment to avoid interruption of hosting, maintenance, or support.
 
 ### Day 14 — suspension
-If the signed agreement and OneTap policy permit:
-- Send written suspension notice.
-- Suspend hosting/support only after the notice is sent.
-- Do not delete client files or domain records as part of an initial suspension.
-- Restore service after the outstanding balance is paid.
-
-## Card update process
-
-When the client changes cards:
-1. Have the client use the secure Square invoice/payment page to update the saved card where available.
-2. Confirm the recurring invoice series points to the correct Card on File.
-3. Never ask the client to email or text a full card number or CVV.
+If permitted by the signed agreement:
+- send written suspension notice;
+- suspend hosting/support only after notice;
+- do not delete client files or domain records as part of the initial suspension;
+- restore service after the outstanding balance is resolved.
 
 ## Cancellation
 
-- Three-month minimum is controlled by the signed agreement.
-- After the minimum, require 30 days' written notice.
-- End the recurring Square series only after confirming the contractual cancellation date.
+- The three-month minimum is controlled by the signed agreement.
+- After the minimum, require 30 days’ written notice.
+- End/cancel the Square subscription only after confirming the contractual cancellation date.
 - Send written confirmation of the final billing date.
 
 ## Refunds
 
-Do not promise automatic refunds. Follow the signed agreement and documented OneTap refund policy. Keep a written record of any approved refund and the reason.
+Do not promise automatic refunds. Follow the signed agreement and documented OneTap refund policy.
 
 ## Test before first real client
 
-- Create test customer
-- Create Start recurring series
-- Confirm $99 amount and invoice description
-- Confirm only intended card payment methods are presented
-- Confirm tipping is off
-- Confirm card-save/authorization language
-- Complete approved test-mode or low-risk test
-- Confirm receipt
-- Confirm onboarding is sent only after payment
+- Create Start recurring payment link
+- Verify $99 monthly
+- Verify custom fields
+- Verify card/debit-only settings
+- Verify tipping is off
+- Complete a test payment if Square provides an appropriate test method
+- Verify redirect selects Start on onboarding
 - Repeat for Grow at $149
-- Test a card update
-- Review how Square surfaces a declined recurring payment
+- Verify redirect selects Grow on onboarding
+- Confirm receipts and Square reporting identify the client correctly
