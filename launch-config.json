@@ -5,7 +5,6 @@
   "setupFee": 0,
   "postMinimumNoticeDays": 30,
   "prelaunchRevisionRounds": 2,
-  "monthlyUpdateMinutes": 30,
   "firstReviewTargetBusinessDays": "7-10",
   "leadResponseTarget": "within one business day",
   "seoScope": "Start: SEO essentials; Grow: advanced SEO and Google visibility foundation",
