@@ -6,7 +6,7 @@
 - No standard setup fee positioning
 - Advanced SEO foundation language and scope boundaries
 - Two organized prelaunch revision rounds
-- Up to 30 minutes of reasonable monthly website updates
+- Plan-based monthly website updates: up to 15 minutes on Start and 30 minutes on Grow
 - Static canonical, social metadata, structured data, robots, and sitemap
 - DJ JRV and Freda live proof/case studies
 - Founder-led trust section
