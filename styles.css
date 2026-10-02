@@ -273,3 +273,34 @@ body::before{background:radial-gradient(circle at 78% 5%,rgba(214,173,60,.055),t
 
 /* Desktop navigation visibility QA fix */
 @media(min-width:960px){.main-nav{visibility:visible}}
+
+
+/* === PRIVATE CLIENT AGREEMENT === */
+.agreement-body{background:#0a0a0a;color:#f5f2ea}
+.agreement-header{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.agreement-nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.agreement-private{font-size:.72rem;color:#9f9b91;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+.agreement-hero{padding:58px 0 48px;background:linear-gradient(180deg,#090a0b,#0c0d0e);border-bottom:1px solid rgba(255,255,255,.08)}
+.agreement-hero-inner{display:grid;gap:34px;align-items:end}
+.agreement-hero h1{font-size:clamp(2.7rem,8vw,5.25rem);margin:0 0 18px;max-width:760px}
+.agreement-hero-inner>div>p:last-child{max-width:700px;color:#aaa69d;font-size:1.02rem}
+.close-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;background:#101112}
+.close-steps li{display:flex;align-items:center;gap:10px;padding:13px 14px;color:#777b80;border-right:1px solid rgba(255,255,255,.08)}
+.close-steps li:last-child{border-right:0}.close-steps b{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;border:1px solid #34373b;font-size:.68rem}.close-steps span{font-size:.75rem;font-weight:800}.close-steps .active{color:#fff;background:rgba(214,173,60,.08)}.close-steps .active b{border-color:var(--gold);background:var(--gold);color:#111}
+.agreement-section{padding:54px 0 90px;background:#d9d0bd}
+.agreement-layout{display:grid;gap:26px;align-items:start}
+.agreement-document{background:#f4efe4;color:#191919;border-radius:24px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.18)}
+.agreement-intro{padding-bottom:26px;border-bottom:1px solid rgba(0,0,0,.13)}.agreement-version{display:inline-flex;padding:6px 9px;border-radius:999px;background:#e6dcc8;color:#6f5922;font-size:.67rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.agreement-intro h2{font-size:clamp(2rem,5vw,3.25rem);margin:16px 0 12px}.agreement-intro p{color:#575149;margin-bottom:0}
+.agreement-clause{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:24px 0;border-bottom:1px solid rgba(0,0,0,.11)}.agreement-clause>span{color:#8a6a1f;font-size:.68rem;font-weight:900;padding-top:4px}.agreement-clause h3{margin:0 0 8px;font-size:1.1rem;letter-spacing:-.02em}.agreement-clause p{margin:0;color:#575149;font-size:.92rem;line-height:1.72}
+.agreement-sign-card{background:#101112;border:1px solid rgba(255,255,255,.11);border-radius:24px;padding:22px;color:#fff;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.agreement-plan-summary{padding:18px;border:1px solid rgba(214,173,60,.35);border-radius:17px;background:#15130d;margin-bottom:24px}.agreement-plan-summary span,.agreement-plan-summary strong{display:block}.agreement-plan-summary span{color:#9c968b;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900}.agreement-plan-summary strong{font-size:1.35rem;margin:5px 0 3px}.agreement-plan-summary p{margin:0;color:var(--gold-light);font-size:.8rem;font-weight:800}
+.agreement-form-title{margin-bottom:20px}.agreement-form-title p{margin:0 0 3px;color:var(--gold);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900}.agreement-form-title h2{font-size:2rem;margin:0}
+.agreement-field-note{color:#777b80;font-size:.69rem;font-weight:500}
+.agreement-consent{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}
+.agreement-submit{width:100%;margin-top:8px}
+.agreement-security-note{margin:12px 0 0;text-align:center;color:#777b80;font-size:.68rem;line-height:1.5}
+.agreement-footer{padding:28px 0;background:#070707;border-top:1px solid var(--line)}.agreement-footer .container{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;color:#76736d;font-size:.72rem}.agreement-footer a{color:#aaa69d}
+.agreement-received-body{min-height:100vh;display:grid;place-items:center;padding:28px}
+.agreement-received{width:min(100%,680px)}.agreement-received-card{padding:32px;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:#101112;box-shadow:0 28px 80px rgba(0,0,0,.42)}.agreement-received-card>img{width:min(260px,70%);margin-bottom:32px}.agreement-check{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#111;font-size:1.5rem;font-weight:900;margin-bottom:20px}.agreement-received-card h1{font-size:clamp(2.5rem,8vw,4.6rem);margin-bottom:16px}.agreement-received-card>p:not(.eyebrow){color:#aaa69d}.agreement-received-card ol{list-style:none;padding:0;margin:28px 0;display:grid;gap:10px}.agreement-received-card li{display:flex;align-items:center;gap:13px;padding:13px;border:1px solid rgba(255,255,255,.08);border-radius:14px}.agreement-received-card li>b{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;border:1px solid #3a3d41}.agreement-received-card li.done>b{background:var(--gold);border-color:var(--gold);color:#111}.agreement-received-card li span{display:grid}.agreement-received-card li small{color:#777b80}.agreement-received-note{margin:24px 0;padding:16px;border-left:3px solid var(--gold);background:#17150f;color:#bbb6ac;font-size:.8rem}
+@media(min-width:900px){.agreement-hero-inner{grid-template-columns:1.2fr .8fr}.agreement-layout{grid-template-columns:minmax(0,1.25fr) minmax(340px,.75fr);gap:34px}.agreement-document{padding:42px}.agreement-sign-card{position:sticky;top:104px;padding:26px}}
+@media(max-width:679px){.agreement-nav{height:68px}.agreement-nav .brand{width:185px}.agreement-private{display:none}.agreement-hero{padding:38px 0 34px}.agreement-hero h1{font-size:clamp(2.45rem,12vw,3.7rem)}.close-steps li{display:grid;justify-items:center;text-align:center;gap:6px;padding:11px 5px}.close-steps span{font-size:.62rem}.agreement-section{padding:24px 0 72px}.agreement-document,.agreement-sign-card{border-radius:20px;padding:20px}.agreement-clause{grid-template-columns:30px 1fr;gap:10px}.agreement-clause p{font-size:.88rem}.agreement-received-card{padding:24px}}
