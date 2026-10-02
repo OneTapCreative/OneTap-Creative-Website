@@ -9,8 +9,11 @@ Use a fictional business and a separate test email.
 - [ ] Record UTM and lead-source fields
 - [ ] Run the discovery call using the emotion-led qualification questions
 - [ ] Confirm the recommended plan is either OneTap Start or OneTap Grow
-- [ ] Personalize and send agreement and scope with the correct plan price/minimum
-- [ ] Complete the matching Square payment workflow
+- [ ] Send the private agreement page with the correct `?plan=start` or `?plan=grow` parameter
+- [ ] Confirm prefilled client/business/email details when used
+- [ ] Submit the agreement and verify signer, selected plan, consent records, and timestamp arrive
+- [ ] Confirm the agreement-received page and automatic confirmation message
+- [ ] Review the signed submission, then complete the matching Square payment workflow
 - [ ] Send the personalized onboarding URL
 - [ ] Complete onboarding on a phone
 - [ ] Confirm the selected plan is recorded correctly
