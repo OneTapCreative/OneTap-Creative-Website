@@ -70,8 +70,10 @@ require('clarence.workflow@gmail.com' not in combined_public, 'Personal inbox is
 
 require('★ 5.0 reviews' not in index and '5.0 ★★★★★' not in index, 'Unsupported demo rating claims remain in static HTML')
 require('DJ JRV / Romero Vision' in index and 'Freda the Barber' in index, 'Real client proof is missing from the homepage')
+require('<iframe' not in index, 'Homepage portfolio should not rely on iframe previews')
+require('hero-client-preview' in index and 'portfolio-project-preview' in index, 'Real-client visual previews are missing')
 require('id="services"' not in index and 'id="why"' not in index, 'Removed long-form homepage sections returned unexpectedly')
-require('compact-benefits' in index and 'simple-process' in index, 'Simplified homepage structure is missing')
+require('compact-benefits' in index and 'process-timeline' in index, 'Simplified homepage structure is missing')
 require(f'<link rel="canonical" href="{production_domain}"' in index, 'Static production canonical is missing')
 require('generate_lead' in public_patch, 'Lead analytics event is missing')
 require('Disallow: /onboarding/' in robots, 'Private onboarding route is not blocked')
