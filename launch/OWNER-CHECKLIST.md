@@ -23,7 +23,7 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Leave ACH/bank transfer, Afterpay, Cash App Pay, and gift cards out of the recurring OneTap launch workflow.
 - [ ] Collect client name, business name, email, and selected plan at checkout when supported.
 - [ ] Keep the public homepage as inquiry-only; do not place payment links on the homepage.
-- [ ] Use the signed agreement to define each plan’s three-month minimum; the payment link by itself does not replace the contract.
+- [ ] Use the signed Square Contract to define each plan’s three-month minimum and scope; the payment link by itself does not replace the contract.
 - [ ] Complete one $99 Start test transaction or approved test-mode checkout.
 - [ ] Complete one $149 Grow test transaction or approved test-mode checkout.
 - [ ] Confirm receipts clearly identify the selected plan.
