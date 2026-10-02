@@ -49,6 +49,19 @@ Recommend **OneTap Grow — $149/month** when the client also wants:
 
 If the client does not know how to create or manage a Google Business Profile and Grow is selected, tell them OneTap will prepare the information and guide the ownership/verification session. Do not make the client build it alone before the website can launch.
 
+### Private agreement page
+
+Use the private website agreement after discovery and verbal/written acceptance of a plan.
+
+- Start link: `/agreement.html?plan=start`
+- Grow link: `/agreement.html?plan=grow`
+- Optional prefill parameters: `name`, `business`, and `email`.
+- Example: `/agreement.html?plan=grow&name=Jane%20Doe&business=Jane%20Services&email=jane@example.com`
+- Do not publish the agreement in the main navigation or sitemap.
+- Review each submitted agreement before sending the private Square payment link.
+- Never request card details through the agreement form.
+- Keep the legal-review reminder internal; obtain qualified legal review before treating the template as final for unusual clients or disputes.
+
 ## Client service agreement template
 
 This agreement is between **OneTap Creative** and **[CLIENT / BUSINESS]**, effective **[DATE]**.
