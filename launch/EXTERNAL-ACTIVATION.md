@@ -30,7 +30,7 @@ The signed agreement—not the payment link by itself—defines the three-month 
 - Disable tipping.
 - Do not enable ACH/bank transfer, Afterpay, Cash App Pay, or gift cards for the recurring OneTap launch workflow.
 - Collect client name, business name, email, and selected plan where supported.
-- Test checkout, Card on File authorization, automatic monthly billing, and receipt behavior for both plans.
+- Test recurring checkout, automatic monthly billing, correct onboarding redirect, and receipt behavior for both Start and Grow.
 - Confirm failed-payment, card-update, cancellation, plan-change, and refund handling.
 - Keep the public homepage inquiry-only; send the correct payment link only after fit, plan recommendation, scope, and agreement approval.
 - Send the personalized onboarding URL only after payment is confirmed.
