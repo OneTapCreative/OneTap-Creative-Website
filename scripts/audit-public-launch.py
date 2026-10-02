@@ -48,9 +48,9 @@ for label, plan in (('Start', start), ('Grow', grow)):
 require('OneTap Start' in index and 'OneTap Grow' in index, 'Both public plans must be present')
 require('You built the business.' in index and 'make it look like one' in index.lower(), 'Emotion-led hero positioning is missing')
 require('local service businesses' in index.lower(), 'Target local-service-business positioning is missing')
-require('advanced SEO foundation' in index or 'Advanced SEO foundation' in index, 'Grow advanced SEO scope is missing')
+require('advanced seo' in index.lower(), 'Grow advanced SEO scope is missing')
 require('15 minutes' in index and '30 minutes' in index, 'Plan update allowances are missing')
-require('Two organized revision rounds' in index, 'Revision scope is missing')
+require('two organized revision rounds' in index.lower(), 'Revision scope is missing')
 require('$179' not in combined_public and '$537' not in combined_public, 'Retired pricing remains in client-facing files')
 require('basic local seo' not in combined_public.lower(), 'Old basic SEO wording remains')
 
@@ -69,7 +69,9 @@ require('_autoresponse' in onboarding_patch and '_replyto' in onboarding_patch, 
 require('clarence.workflow@gmail.com' not in combined_public, 'Personal inbox is exposed in client-facing files')
 
 require('★ 5.0 reviews' not in index and '5.0 ★★★★★' not in index, 'Unsupported demo rating claims remain in static HTML')
-require('Trust section' in index and 'Business profile preview' in index, 'Neutral demo trust labels are missing from static HTML')
+require('DJ JRV / Romero Vision' in index and 'Freda the Barber' in index, 'Real client proof is missing from the homepage')
+require('id="services"' not in index and 'id="why"' not in index, 'Removed long-form homepage sections returned unexpectedly')
+require('compact-benefits' in index and 'simple-process' in index, 'Simplified homepage structure is missing')
 require(f'<link rel="canonical" href="{production_domain}"' in index, 'Static production canonical is missing')
 require('generate_lead' in public_patch, 'Lead analytics event is missing')
 require('Disallow: /onboarding/' in robots, 'Private onboarding route is not blocked')
