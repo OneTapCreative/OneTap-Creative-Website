@@ -1,0 +1,26 @@
+name: Mobile Symmetry Screenshot
+
+on:
+  push:
+    branches:
+      - agent/mobile-symmetry-audit
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start local server
+        run: |
+          python3 -m http.server 4173 >/tmp/onetap-http.log 2>&1 &
+          sleep 2
+      - name: Capture mobile screenshots
+        run: |
+          google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=390,844 --screenshot=mobile-top.png http://127.0.0.1:4173/
+          google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=390,6000 --screenshot=mobile-full.png http://127.0.0.1:4173/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mobile-symmetry
+          path: |
+            mobile-top.png
+            mobile-full.png
