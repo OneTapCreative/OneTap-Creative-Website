@@ -58,6 +58,9 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 
 ### 6. Legal/business approval
 - [ ] Review the `client-operations/CLIENT-OPERATIONS-KIT.md` agreement and scope template.
+- [ ] Open `/agreement.html?plan=start` and `/agreement.html?plan=grow` and confirm the correct plan summary appears.
+- [ ] Confirm a test agreement submission arrives with signer name, business, selected plan, electronic-signature consent, and timestamp.
+- [ ] Confirm the client receives the agreement-received auto-response before any payment link is sent.
 - [ ] Decide the final website/domain ownership and offboarding/buyout policy.
 - [ ] Decide the failed-payment grace period and suspension policy you will actually enforce.
 - [ ] Decide the refund policy you will actually enforce.
