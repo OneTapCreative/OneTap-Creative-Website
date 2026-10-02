@@ -27,7 +27,7 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Complete one $99 Start test transaction or approved test-mode checkout.
 - [ ] Complete one $149 Grow test transaction or approved test-mode checkout.
 - [ ] Confirm receipts clearly identify the selected plan.
-- [ ] Confirm the client can authorize Card on File for automatic monthly billing.
+- [ ] Confirm Start and Grow each have a reusable recurring Square Payment Link with the correct monthly amount.
 - [ ] Confirm you know how to handle a failed payment, card update, cancellation, plan change, and refund request.
 - [ ] Confirm the Day 0 / Day 3 / Day 7 / Day 14 failed-payment sequence is ready.
 
@@ -75,7 +75,7 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Confirm Reply-To opens the prospect's email address.
 - [ ] Confirm the thank-you page loads.
 - [ ] Complete the agreement/scope step.
-- [ ] Complete the Square payment step.
+- [ ] Complete the matching private Square recurring payment-link step and confirm the onboarding redirect selects the correct plan.
 - [ ] Complete mobile onboarding with small image/PDF uploads.
 - [ ] Confirm onboarding email and attachments arrive.
 - [ ] Confirm onboarding success page loads and saved form data clears.
