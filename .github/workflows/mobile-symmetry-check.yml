@@ -14,13 +14,27 @@ jobs:
         run: |
           python3 -m http.server 4173 >/tmp/onetap-http.log 2>&1 &
           sleep 2
-      - name: Capture mobile screenshots
+      - name: Install browser driver
+        run: npm install --no-save playwright-core
+      - name: Capture true mobile viewport
         run: |
-          google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=390,844 --screenshot=mobile-top.png http://127.0.0.1:4173/
-          google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=390,6000 --screenshot=mobile-full.png http://127.0.0.1:4173/
+          cat > /tmp/capture.mjs <<'EOF'
+          import { chromium } from 'playwright-core';
+          const browser = await chromium.launch({headless:true, executablePath:'/usr/bin/google-chrome'});
+          const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
+          await page.goto('http://127.0.0.1:4173/', { waitUntil: 'networkidle' });
+          await page.screenshot({ path: 'mobile-top.png' });
+          await page.screenshot({ path: 'mobile-full.png', fullPage: true });
+          await page.setViewportSize({ width: 375, height: 812 });
+          await page.reload({ waitUntil: 'networkidle' });
+          await page.screenshot({ path: 'mobile-375-full.png', fullPage: true });
+          await browser.close();
+          EOF
+          node /tmp/capture.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: mobile-symmetry
           path: |
             mobile-top.png
             mobile-full.png
+            mobile-375-full.png
