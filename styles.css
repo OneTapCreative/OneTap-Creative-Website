@@ -186,3 +186,24 @@ html.is-page-scrolling .demo-scroll{animation-play-state:paused!important}
   .plan-card{padding:22px}
   .hero-assurance span{font-size:.65rem}
 }
+
+
+/* === MOBILE SYMMETRY POLISH — OCT 2026 === */
+@media(max-width:679px){
+  .container{width:min(calc(100% - 36px),var(--container))}
+  .hero-actions{width:100%;gap:10px}
+  .hero-actions .btn,.hero-secondary{width:100%;min-height:52px;justify-content:center}
+  .hero-secondary{padding:13px 21px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);box-shadow:none}
+  .hero-assurance{justify-content:center;width:100%}
+  .hero-assurance span{justify-content:center}
+  .case-study,.plan-card,.form-card,.process-cards li{width:100%;margin-inline:auto}
+  .form-title{align-items:flex-start}
+  .form-title>span{text-align:right;padding-top:3px}
+  .final-inner{text-align:center}
+  .final-inner .btn{width:100%}
+  .footer-brand{text-align:center}
+  .footer-brand img{width:min(220px,72vw);margin:0 auto 16px}
+  .footer-brand p{margin-inline:auto}
+  .footer-grid>div:not(.footer-brand){justify-items:center;text-align:center}
+  .footer-bottom{display:grid;justify-content:center;justify-items:center;text-align:center;gap:7px}
+}
