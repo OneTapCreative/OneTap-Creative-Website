@@ -27,20 +27,31 @@ def require(condition, message):
         errors.append(message)
 
 
-approved_price = config['monthlyPrice']
-approved_total = config['initialCommitmentTotal']
+start = config['plans']['start']
+grow = config['plans']['grow']
 form_id = config['formSubmitId']
 production_domain = config['productionDomain']
 secure_form_action = f'https://formsubmit.co/{form_id}'
 
-require(approved_price == 149 and approved_total == 447, 'Launch config does not match the approved commercial offer')
-require(f'${approved_price}' in index and f'${approved_total}' in index, 'Approved pricing is missing from the homepage')
-require(f'${approved_price}' in terms and f'${approved_total}' in terms, 'Approved pricing is missing from Terms')
-require(f'${approved_price}' in readme and f'${approved_total}' in readme, 'README pricing is out of sync')
-require('Advanced SEO foundation' in index or 'advanced SEO foundation' in index, 'Advanced SEO foundation is missing')
+require(start['name'] == 'OneTap Start', 'Start plan name is incorrect')
+require(start['monthlyPrice'] == 99 and start['initialCommitmentTotal'] == 297, 'Start plan config is incorrect')
+require(start['monthlyUpdateMinutes'] == 15, 'Start update allowance is incorrect')
+require(grow['name'] == 'OneTap Grow', 'Grow plan name is incorrect')
+require(grow['monthlyPrice'] == 149 and grow['initialCommitmentTotal'] == 447, 'Grow plan config is incorrect')
+require(grow['monthlyUpdateMinutes'] == 30, 'Grow update allowance is incorrect')
+
+for label, plan in (('Start', start), ('Grow', grow)):
+    require(f"${plan['monthlyPrice']}" in index and f"${plan['initialCommitmentTotal']}" in index, f'{label} pricing is missing from the homepage')
+    require(f"${plan['monthlyPrice']}" in terms and f"${plan['initialCommitmentTotal']}" in terms, f'{label} pricing is missing from Terms')
+    require(f"${plan['monthlyPrice']}" in readme and f"${plan['initialCommitmentTotal']}" in readme, f'{label} pricing is missing from README')
+
+require('OneTap Start' in index and 'OneTap Grow' in index, 'Both public plans must be present')
+require('You built the business.' in index and 'make it look like one' in index.lower(), 'Emotion-led hero positioning is missing')
+require('local service businesses' in index.lower(), 'Target local-service-business positioning is missing')
+require('advanced SEO foundation' in index or 'Advanced SEO foundation' in index, 'Grow advanced SEO scope is missing')
+require('15 minutes' in index and '30 minutes' in index, 'Plan update allowances are missing')
 require('Two organized revision rounds' in index, 'Revision scope is missing')
-require('30 minutes' in index, 'Monthly update allowance is missing')
-require('$179' not in combined_public and '$537' not in combined_public, 'Old pricing remains in client-facing files')
+require('$179' not in combined_public and '$537' not in combined_public, 'Retired pricing remains in client-facing files')
 require('basic local seo' not in combined_public.lower(), 'Old basic SEO wording remains')
 
 require(secure_form_action in index, 'Public static form does not use the secure FormSubmit route')
@@ -68,6 +79,8 @@ require('mailto:' not in index, 'A personal email is publicly exposed on the hom
 require('Website measurement' in privacy, 'Privacy policy does not disclose website measurement')
 
 require('never blocks an otherwise-ready website launch' in client_ops.lower(), 'Client operations do not clearly enforce nonblocking GBP launch')
+require('OneTap Start' in client_ops and 'OneTap Grow' in client_ops, 'Client operations do not define both plans')
+require('pride, confidence, trust, relief, and growth' in client_ops.lower(), 'Emotion-led discovery guidance is missing')
 require('must **not delay a website launch**' in gbp_fast_track, 'GBP fast-track does not define the nonblocking launch rule')
 require('client remains the business owner' in gbp_fast_track.lower(), 'GBP ownership policy is missing')
 require('manager' in gbp_fast_track.lower(), 'GBP manager-access workflow is missing')
@@ -94,7 +107,7 @@ if errors:
 
 print('OneTap public launch audit: PASS')
 print(
-    f"Offer: ${approved_price}/month, {config['minimumMonths']}-month minimum, "
-    f"${approved_total} initial commitment"
+    f"Offers: Start ${start['monthlyPrice']}/month (${start['initialCommitmentTotal']} minimum total); "
+    f"Grow ${grow['monthlyPrice']}/month (${grow['initialCommitmentTotal']} minimum total)"
 )
-print('Secure forms, SEO controls, privacy checks, GBP launch policy, and launch assets are aligned.')
+print('Two-plan pricing, emotion-led positioning, secure forms, SEO controls, privacy checks, GBP launch policy, and launch assets are aligned.')
