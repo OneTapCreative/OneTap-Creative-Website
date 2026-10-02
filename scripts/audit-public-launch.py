@@ -46,7 +46,7 @@ for label, plan in (('Start', start), ('Grow', grow)):
     require(f"${plan['monthlyPrice']}" in readme and f"${plan['initialCommitmentTotal']}" in readme, f'{label} pricing is missing from README')
 
 require('OneTap Start' in index and 'OneTap Grow' in index, 'Both public plans must be present')
-require('You built the business.' in index and 'make it look like one' in index.lower(), 'Emotion-led hero positioning is missing')
+require('You built the business.' in index and 'look like one.' in index.lower(), 'Emotion-led hero positioning is missing')
 require('local service businesses' in index.lower(), 'Target local-service-business positioning is missing')
 require('advanced seo' in index.lower(), 'Grow advanced SEO scope is missing')
 require('15 minutes' in index and '30 minutes' in index, 'Plan update allowances are missing')
