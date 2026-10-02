@@ -9,6 +9,7 @@
   const email = document.getElementById('agreement-email');
   const signature = document.getElementById('agreement-signature');
   const replyTo = document.getElementById('agreement-replyto');
+  const emailCopy = document.getElementById('agreement-client-email-copy');
   const timestamp = document.getElementById('agreement-timestamp');
   const pageUrl = document.getElementById('agreement-page-url');
   const next = document.getElementById('agreement-next');
@@ -43,7 +44,13 @@
 
   setSummary();
   plan.addEventListener('change', setSummary);
-  email.addEventListener('input', () => { replyTo.value = email.value.trim(); });
+  const syncEmail = () => {
+    const value = email.value.trim();
+    replyTo.value = value;
+    if (emailCopy) emailCopy.value = value;
+  };
+  email.addEventListener('input', syncEmail);
+  syncEmail();
 
   form.addEventListener('submit', (event) => {
     const normalizedName = name.value.trim().replace(/\s+/g, ' ').toLowerCase();
@@ -56,10 +63,10 @@
       return;
     }
     signature.setCustomValidity('');
-    replyTo.value = email.value.trim();
+    syncEmail();
     timestamp.value = new Date().toISOString();
     pageUrl.value = window.location.href;
-    next.value = new URL('agreement-received.html', window.location.href).href;
+    next.value = 'https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/agreement-received.html';
   });
 
   signature.addEventListener('input', () => signature.setCustomValidity(''));

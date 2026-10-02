@@ -63,10 +63,12 @@
       <form action="https://formsubmit.co/3770cd21b709b2fc75672c99acb98256" id="agreement-form" method="post">
         <input name="_subject" type="hidden" value="Signed OneTap Creative Client Agreement"/>
         <input name="_template" type="hidden" value="table"/>
-        <input name="_captcha" type="hidden" value="false"/>
+        
         <input id="agreement-replyto" name="_replyto" type="hidden"/>
+        <input id="agreement-client-email-copy" name="Client Email" type="hidden"/>
+        <input name="_url" type="hidden" value="https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/agreement.html"/>
         <input name="_autoresponse" type="hidden" value="OneTap Creative received your client agreement. We will review the submission and send your secure Square payment link separately. Do not send payment-card information by email or through website forms."/>
-        <input id="agreement-next" name="_next" type="hidden" value="agreement-received.html"/>
+        <input id="agreement-next" name="_next" type="hidden" value="https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/agreement-received.html"/>
         <input name="Agreement Version" type="hidden" value="October 2, 2026"/>
         <input id="agreement-timestamp" name="Electronic Acceptance Timestamp" type="hidden"/>
         <input id="agreement-page-url" name="Agreement Page URL" type="hidden"/>
@@ -83,7 +85,7 @@
         <label>Full legal name *<input id="agreement-name" autocomplete="name" name="Client Full Legal Name" required type="text"/></label>
         <label>Business name *<input id="agreement-business" autocomplete="organization" name="Business Name" required type="text"/></label>
         <div class="form-two">
-          <label>Email *<input id="agreement-email" autocomplete="email" name="Client Email" required type="email"/></label>
+          <label>Email *<input id="agreement-email" autocomplete="email" name="email" required type="email"/></label>
           <label>Phone *<input autocomplete="tel" name="Client Phone" required type="tel"/></label>
         </div>
         <label>Your role / title *<input autocomplete="organization-title" name="Signer Role or Title" placeholder="Owner, Manager, Authorized Representative" required type="text"/></label>
