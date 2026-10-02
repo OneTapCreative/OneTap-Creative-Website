@@ -253,3 +253,19 @@ html.is-page-scrolling .demo-scroll{animation-play-state:paused!important}
   .process-timeline h3{font-size:1.1rem;max-width:200px}
   .process-timeline p{font-size:.88rem;max-width:220px}
 }
+
+
+/* === SECTIONED VISUAL REFRESH: RESTRAINED SURFACES === */
+body::before{background:radial-gradient(circle at 78% 5%,rgba(214,173,60,.055),transparent 25%)}
+.direction-hero{background:linear-gradient(180deg,#08090a 0%,#080808 100%)}
+.work-section{background:#0b0b0b}
+.case-study{border-radius:22px;background:#101112;border-color:rgba(255,255,255,.09);box-shadow:none}
+.case-study:hover{border-color:rgba(214,173,60,.2)}
+.pricing-section{background:#080808}
+.plan-card{border-radius:22px;background:#101112;box-shadow:none}
+.plan-card.plan-featured{background:#12100b;border-color:rgba(214,173,60,.7)}
+.btn{box-shadow:0 8px 22px rgba(214,173,60,.14)}
+.btn:hover{box-shadow:0 11px 26px rgba(214,173,60,.22)}
+.real-project-preview,.portfolio-project-preview{box-shadow:0 20px 48px rgba(0,0,0,.34)}
+.final-cta{background:var(--gold)}
+@media(max-width:679px){.section-pad{padding-top:76px;padding-bottom:76px}.direction-hero{padding-top:30px;padding-bottom:52px}.work-section,.process-section,.pricing-section,.faq-section{scroll-margin-top:78px}}
