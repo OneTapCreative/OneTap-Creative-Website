@@ -16,6 +16,16 @@ Until then, keep the existing verified secure FormSubmit delivery route in place
 
 Do not expose a personal inbox in public HTML, JavaScript, or client-facing documentation.
 
+## Square Contracts — client agreement
+
+Follow `client-operations/SQUARE-CONTRACT-SOP.md`.
+
+Create two reusable Square Contract templates:
+- **OneTap Start — Client Service Agreement**
+- **OneTap Grow — Client Service Agreement**
+
+Use Square's Service Agreement template as the base. Send the matching contract after discovery and plan confirmation. Wait until Square shows the agreement as signed/completed before sending any payment link. Keep the completed PDF in Square and attach it to the related transaction/project when useful.
+
 ## Square recurring payment — credit/debit card only at launch
 
 Follow `client-operations/SQUARE-CARD-PAYMENT-SOP.md`.
@@ -24,7 +34,7 @@ Create two recurring products:
 - **OneTap Start — $99 monthly**
 - **OneTap Grow — $149 monthly**
 
-The signed agreement—not the payment link by itself—defines the three-month minimum and selected scope.
+The signed Square Contract—not the payment link by itself—defines the three-month minimum and selected scope.
 
 - Accept credit/debit card for the current launch workflow.
 - Disable tipping.
@@ -60,4 +70,4 @@ Client Business Profiles remain **client-owned**. OneTap should receive Manager 
 
 ## Legal activation
 
-Before relying on the agreement for paid clients, finalize the ownership/offboarding, refund, failed-payment, cancellation, and scope policies and have a California-qualified attorney review the client service agreement and public Terms.
+Before relying on the Square Contract templates for paid clients, finalize the ownership/offboarding, refund, failed-payment, cancellation, and scope policies and have a California-qualified attorney review the client service agreement and public Terms.

@@ -2,11 +2,11 @@
 
 Current launch preference: **credit/debit card only**.
 
-The signed client agreement controls the three-month minimum, cancellation terms, and scope. Square handles the recurring payment. The public OneTap homepage remains inquiry-only.
+The signed Square Contract controls the three-month minimum, cancellation terms, and scope. Square handles the recurring payment. The public OneTap homepage remains inquiry-only.
 
 ## Client payment journey
 
-Lead → discovery → recommend Start or Grow → signed agreement → private Square recurring payment link → first credit/debit card payment → automatic monthly billing → onboarding.
+Lead → discovery → recommend Start or Grow → matching Square Contract → client signs → verify completed in Square → private Square recurring payment link → first credit/debit card payment → automatic monthly billing → onboarding.
 
 Create **two reusable private links**:
 - OneTap Start — $99/month
@@ -83,7 +83,7 @@ The payment links are reusable, but they should only be sent after OneTap has:
 3. Recommended Start or Grow.
 4. Received the signed client agreement.
 
-The signed agreement—not the payment link—defines the three-month minimum and the client-specific scope.
+The signed Square Contract—not the payment link—defines the three-month minimum and the client-specific scope.
 
 ## Payment message to client
 

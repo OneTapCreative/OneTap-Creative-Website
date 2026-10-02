@@ -4,7 +4,7 @@
 
 ## Required client journey
 
-Lead request → reply within one business day → discovery call → recommend **Start or Grow** → personalized scope → signed agreement → private Square recurring payment link → first credit/debit card payment → mobile onboarding → build → two revision rounds → approval → **website launch** → monthly care.
+Lead request → reply within one business day → discovery call → recommend **Start or Grow** → matching **Square Contract** → signed/completed in Square → private Square recurring payment link → first credit/debit card payment → mobile onboarding → build → two revision rounds → approval → **website launch** → monthly care.
 
 For Grow clients, Google Business Profile runs in parallel and never blocks an otherwise-ready website launch. Use `GBP-FAST-TRACK.md` for the exact workflow.
 
@@ -49,22 +49,21 @@ Recommend **OneTap Grow — $149/month** when the client also wants:
 
 If the client does not know how to create or manage a Google Business Profile and Grow is selected, tell them OneTap will prepare the information and guide the ownership/verification session. Do not make the client build it alone before the website can launch.
 
-### Agreement delivery activation
+### Square Contracts agreement workflow
 
-The private agreement temporarily forces a direct FormSubmit destination at runtime to trigger a fresh FormSubmit activation for the current OneTap agreement origin. The inbox address is not stored in plain text in the client-facing HTML. After activation and a successful delivery test, this runtime override can be removed and the hidden FormSubmit endpoint restored.
+Square Contracts is the system of record for client agreements. Do **not** use FormSubmit or the website agreement page for signatures.
 
-### Private agreement page
+Use `SQUARE-CONTRACT-SOP.md` for the exact Start/Grow templates and clause library.
 
-Use the private website agreement after discovery and verbal/written acceptance of a plan.
+1. Complete discovery and confirm Start or Grow.
+2. Create the matching Square Contract from the saved template.
+3. Add any client-specific written scope or approved exception.
+4. Send the contract from Square to the client.
+5. Wait until Square shows the contract as signed/completed.
+6. Send the matching private Square recurring payment link.
+7. After the first successful payment, send or redirect to onboarding.
 
-- Start link: `/agreement.html?plan=start`
-- Grow link: `/agreement.html?plan=grow`
-- Optional prefill parameters: `name`, `business`, and `email`.
-- Example: `/agreement.html?plan=grow&name=Jane%20Doe&business=Jane%20Services&email=jane@example.com`
-- Do not publish the agreement in the main navigation or sitemap.
-- Review each submitted agreement before sending the private Square payment link.
-- Never request card details through the agreement form.
-- Keep the legal-review reminder internal; obtain qualified legal review before treating the template as final for unusual clients or disputes.
+The old `/agreement.html` route is retired and only explains that agreements are delivered through Square.
 
 ## Client service agreement template
 
@@ -189,7 +188,7 @@ Why I’m recommending it: [ONE-SENTENCE VALUE REASON BASED ON THEIR GOAL].
 There is no standard setup fee. The selected plan has a three-month minimum, then continues month-to-month with 30 days’ notice after the minimum.
 
 Next steps:
-1. Review and sign the agreement and scope.
+1. Review and electronically sign the Square Contract and any attached scope.
 2. Complete the first selected-plan credit/debit card payment through the private Square recurring payment link.
 3. Complete the mobile onboarding portal.
 4. If Grow includes Google Business Profile work, OneTap prepares the details and guides the ownership/verification step separately. Google verification will not hold up an otherwise-ready website launch.

@@ -34,5 +34,8 @@
     "grow": "",
     "startRedirect": "/onboarding/?plan=start",
     "growRedirect": "/onboarding/?plan=grow"
-  }
+  },
+  "agreementProvider": "Square Contracts",
+  "agreementFlow": "Square Contract → signed/completed → private Square recurring payment link",
+  "websiteAgreementCollection": false
 }

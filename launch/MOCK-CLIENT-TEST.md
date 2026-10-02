@@ -9,11 +9,10 @@ Use a fictional business and a separate test email.
 - [ ] Record UTM and lead-source fields
 - [ ] Run the discovery call using the emotion-led qualification questions
 - [ ] Confirm the recommended plan is either OneTap Start or OneTap Grow
-- [ ] Send the private agreement page with the correct `?plan=start` or `?plan=grow` parameter
-- [ ] Confirm prefilled client/business/email details when used
-- [ ] Submit the agreement and verify signer, selected plan, consent records, and timestamp arrive
-- [ ] Confirm the agreement-received page and automatic confirmation message
-- [ ] Review the signed submission, then complete the matching reusable Square payment-link checkout
+- [ ] Create and send the matching Start or Grow Square Contract
+- [ ] Sign it from the test-client email
+- [ ] Confirm both sides receive/retain the completed contract PDF and Square shows Signed/Completed
+- [ ] Only after signature, complete the matching reusable Square payment-link checkout
 - [ ] Confirm successful Start payment redirects to onboarding with Start selected
 - [ ] Confirm successful Grow payment redirects to onboarding with Grow selected
 - [ ] Send the personalized onboarding URL
