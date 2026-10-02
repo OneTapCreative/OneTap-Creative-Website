@@ -57,10 +57,10 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] If OneTap is not currently eligible, skip creation rather than risking a suspension; Search Console and organic website SEO can still operate without a OneTap Business Profile.
 
 ### 6. Legal/business approval
-- [ ] Review the `client-operations/CLIENT-OPERATIONS-KIT.md` agreement and scope template.
-- [ ] Open `/agreement.html?plan=start` and `/agreement.html?plan=grow` and confirm the correct plan summary appears.
-- [ ] Confirm a test agreement submission arrives with signer name, business, selected plan, electronic-signature consent, and timestamp.
-- [ ] Confirm the client receives the agreement-received auto-response before any payment link is sent.
+- [ ] Build the two Square Contract templates from `client-operations/SQUARE-CONTRACT-SOP.md`.
+- [ ] Send a test Start contract from Square and confirm the recipient can review, sign, and receive the completed PDF.
+- [ ] Send a test Grow contract from Square and confirm the recipient can review, sign, and receive the completed PDF.
+- [ ] Confirm OneTap receives Square's signed-contract notification and can see the completed contract in Square before sending payment.
 - [ ] Decide the final website/domain ownership and offboarding/buyout policy.
 - [ ] Decide the failed-payment grace period and suspension policy you will actually enforce.
 - [ ] Decide the refund policy you will actually enforce.
@@ -74,7 +74,7 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Confirm automatic prospect response.
 - [ ] Confirm Reply-To opens the prospect's email address.
 - [ ] Confirm the thank-you page loads.
-- [ ] Complete the agreement/scope step.
+- [ ] Complete the matching Square Contract/scope step and verify Signed/Completed in Square.
 - [ ] Complete the matching private Square recurring payment-link step and confirm the onboarding redirect selects the correct plan.
 - [ ] Complete mobile onboarding with small image/PDF uploads.
 - [ ] Confirm onboarding email and attachments arrive.
