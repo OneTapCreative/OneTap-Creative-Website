@@ -49,6 +49,10 @@ Recommend **OneTap Grow — $149/month** when the client also wants:
 
 If the client does not know how to create or manage a Google Business Profile and Grow is selected, tell them OneTap will prepare the information and guide the ownership/verification session. Do not make the client build it alone before the website can launch.
 
+### Agreement delivery activation
+
+The private agreement temporarily forces a direct FormSubmit destination at runtime to trigger a fresh FormSubmit activation for the current OneTap agreement origin. The inbox address is not stored in plain text in the client-facing HTML. After activation and a successful delivery test, this runtime override can be removed and the hidden FormSubmit endpoint restored.
+
 ### Private agreement page
 
 Use the private website agreement after discovery and verbal/written acceptance of a plan.
