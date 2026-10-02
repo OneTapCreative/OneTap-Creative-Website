@@ -1,5 +1,6 @@
 (() => {
   const form = document.getElementById('agreement-form');
+  const DIRECT_FORMSUBMIT_DESTINATION = atob('Y2xhcmVuY2Uud29ya2Zsb3dAZ21haWwuY29t');
   const plan = document.getElementById('agreement-plan');
   const planName = document.getElementById('agreement-plan-name');
   const planPrice = document.getElementById('agreement-plan-price');
@@ -16,6 +17,9 @@
 
   document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
   if (!form || !plan) return;
+
+  // Force fresh FormSubmit activation for the current private agreement origin.
+  form.action = `https://formsubmit.co/${DIRECT_FORMSUBMIT_DESTINATION}`;
 
   const plans = {
     start: { value:'OneTap Start — $99/month', name:'OneTap Start', price:'$99/month', detail:'3-month minimum · $297 initial total', total:'$297' },
