@@ -18,7 +18,7 @@ jobs:
         run: npm install --no-save playwright-core
       - name: Capture true mobile viewport
         run: |
-          cat > /tmp/capture.mjs <<'EOF'
+          cat > capture.mjs <<'EOF'
           import { chromium } from 'playwright-core';
           const browser = await chromium.launch({headless:true, executablePath:'/usr/bin/google-chrome'});
           const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
@@ -30,7 +30,7 @@ jobs:
           await page.screenshot({ path: 'mobile-375-full.png', fullPage: true });
           await browser.close();
           EOF
-          node /tmp/capture.mjs
+          node capture.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: mobile-symmetry
