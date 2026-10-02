@@ -108,7 +108,7 @@ This is the owner-side checklist for items that require account ownership, ident
 - [ ] Check domain, HTTPS, broken links, and mobile navigation.
 - [ ] Review Search Console indexing, clicks, impressions, top queries, and Core Web Vitals.
 - [ ] Review the client's Google Business Profile status where applicable.
-- [ ] Record client update minutes used out of the included 30 minutes.
+- [ ] Record client update minutes used against the selected plan allowance: 15 minutes on Start or 30 minutes on Grow.
 - [ ] Send or retain a simple monthly care summary and one recommended next action.
 
 ## 100% definition
