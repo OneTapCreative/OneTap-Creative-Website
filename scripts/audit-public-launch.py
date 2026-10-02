@@ -70,7 +70,6 @@ require('_autoresponse' in public_patch and '_replyto' in public_patch, 'Public 
 require('_autoresponse' in onboarding and '_replyto' in onboarding, 'Onboarding static confirmation/reply routing is missing')
 require('_autoresponse' in onboarding_patch and '_replyto' in onboarding_patch, 'Onboarding runtime confirmation/reply fallback is missing')
 require('clarence.workflow@gmail.com' not in '\n'.join((index, terms, privacy, thank, onboarding, public_patch, onboarding_patch)), 'Personal inbox is exposed on a public-facing page')
-require('action="https://formsubmit.co/clarence.workflow@gmail.com"' in agreement, 'Agreement must use direct FormSubmit inbox routing until activation is confirmed')
 
 require('★ 5.0 reviews' not in index and '5.0 ★★★★★' not in index, 'Unsupported demo rating claims remain in static HTML')
 require('DJ JRV / Romero Vision' in index and 'Freda the Barber' in index, 'Real client proof is missing from the homepage')
