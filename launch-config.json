@@ -27,5 +27,12 @@
       "initialCommitmentTotal": 447,
       "monthlyUpdateMinutes": 30
     }
+  },
+  "paymentFlow": "Square recurring payment links",
+  "paymentLinks": {
+    "start": "",
+    "grow": "",
+    "startRedirect": "/onboarding/?plan=start",
+    "growRedirect": "/onboarding/?plan=grow"
   }
 }
