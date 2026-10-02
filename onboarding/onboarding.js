@@ -31,6 +31,19 @@
     email?.addEventListener('input', syncReplyTo);
     form.addEventListener('submit', syncReplyTo);
     syncReplyTo();
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedPlan = (params.get('plan') || '').toLowerCase();
+    const planMap = {
+      start: 'OneTap Start — $99/month',
+      grow: 'OneTap Grow — $149/month'
+    };
+    const selectedPlan = planMap[requestedPlan];
+    if (selectedPlan) {
+      const radio = [...form.querySelectorAll('input[name="Selected Plan"]')].find(input => input.value === selectedPlan);
+      if (radio) radio.checked = true;
+      ensureHidden('Payment Redirect Plan', selectedPlan);
+    }
   }
 
   const core = document.createElement('script');

@@ -13,7 +13,9 @@ Use a fictional business and a separate test email.
 - [ ] Confirm prefilled client/business/email details when used
 - [ ] Submit the agreement and verify signer, selected plan, consent records, and timestamp arrive
 - [ ] Confirm the agreement-received page and automatic confirmation message
-- [ ] Review the signed submission, then complete the matching Square payment workflow
+- [ ] Review the signed submission, then complete the matching reusable Square payment-link checkout
+- [ ] Confirm successful Start payment redirects to onboarding with Start selected
+- [ ] Confirm successful Grow payment redirects to onboarding with Grow selected
 - [ ] Send the personalized onboarding URL
 - [ ] Complete onboarding on a phone
 - [ ] Confirm the selected plan is recorded correctly

@@ -4,7 +4,7 @@
 
 ## Required client journey
 
-Lead request → reply within one business day → discovery call → recommend **Start or Grow** → personalized scope → signed agreement → private Square recurring invoice → first credit/debit card payment → mobile onboarding → build → two revision rounds → approval → **website launch** → monthly care.
+Lead request → reply within one business day → discovery call → recommend **Start or Grow** → personalized scope → signed agreement → private Square recurring payment link → first credit/debit card payment → mobile onboarding → build → two revision rounds → approval → **website launch** → monthly care.
 
 For Grow clients, Google Business Profile runs in parallel and never blocks an otherwise-ready website launch. Use `GBP-FAST-TRACK.md` for the exact workflow.
 
@@ -76,11 +76,11 @@ Selected plan: **[ONETAP START / ONETAP GROW]**
 
 ### Billing and cancellation
 
-Current launch payment method: **credit/debit card through Square recurring invoices**. Follow `SQUARE-CARD-PAYMENT-SOP.md`.
+Current launch payment method: **credit/debit card through reusable Square recurring payment links**. Follow `SQUARE-CARD-PAYMENT-SOP.md`.
 
 - Send payment only after the agreement and scope are approved.
 - Keep Square payment links private; do not place them on the public homepage.
-- The client authorizes Square Card on File for automatic monthly billing.
+- Square securely processes the client’s recurring credit/debit card payment for the subscription.
 - OneTap never asks for or stores raw card numbers or CVV.
 
 - First selected-plan payment is due before onboarding and begins the three-month commitment.
@@ -186,7 +186,7 @@ There is no standard setup fee. The selected plan has a three-month minimum, the
 
 Next steps:
 1. Review and sign the agreement and scope.
-2. Complete the first selected-plan credit/debit card payment through the private Square recurring invoice.
+2. Complete the first selected-plan credit/debit card payment through the private Square recurring payment link.
 3. Complete the mobile onboarding portal.
 4. If Grow includes Google Business Profile work, OneTap prepares the details and guides the ownership/verification step separately. Google verification will not hold up an otherwise-ready website launch.
 
