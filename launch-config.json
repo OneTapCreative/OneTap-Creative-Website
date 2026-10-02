@@ -1,20 +1,31 @@
 {
   "brand": "OneTap Creative",
   "productionDomain": "https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/",
-  "monthlyPrice": 149,
   "minimumMonths": 3,
-  "initialCommitmentTotal": 447,
   "setupFee": 0,
   "postMinimumNoticeDays": 30,
   "prelaunchRevisionRounds": 2,
-  "monthlyUpdateMinutes": 30,
   "firstReviewTargetBusinessDays": "7-10",
   "leadResponseTarget": "within one business day",
-  "seoScope": "advanced SEO foundation",
+  "seoScope": "Start: SEO essentials; Grow: advanced SEO and Google visibility foundation",
   "formSubmitId": "3770cd21b709b2fc75672c99acb98256",
   "formDelivery": "verified secure FormSubmit route",
   "plannedProfessionalMailbox": "hello@onetapcreative.com",
   "paymentProvider": "Square",
   "publicPaymentCollection": false,
-  "onboardingRoute": "/onboarding/"
+  "onboardingRoute": "/onboarding/",
+  "plans": {
+    "start": {
+      "name": "OneTap Start",
+      "monthlyPrice": 99,
+      "initialCommitmentTotal": 297,
+      "monthlyUpdateMinutes": 15
+    },
+    "grow": {
+      "name": "OneTap Grow",
+      "monthlyPrice": 149,
+      "initialCommitmentTotal": 447,
+      "monthlyUpdateMinutes": 30
+    }
+  }
 }

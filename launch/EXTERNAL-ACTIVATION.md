@@ -18,13 +18,17 @@ Do not expose a personal inbox in public HTML, JavaScript, or client-facing docu
 
 ## Square recurring payment
 
-Create **OneTap Creative Complete Online Presence Plan** at **$149 monthly**. The signed agreement—not the payment link by itself—defines the three-month minimum.
+Create two recurring products:
+- **OneTap Start — $99 monthly**
+- **OneTap Grow — $149 monthly**
+
+The signed agreement—not the payment link by itself—defines the three-month minimum and selected scope.
 
 - Disable tipping.
-- Collect client name, business name, and email where supported.
-- Test checkout/receipt behavior.
-- Confirm failed-payment, card-update, cancellation, and refund handling.
-- Keep the public homepage inquiry-only; send payment only after fit/scope/agreement approval.
+- Collect client name, business name, email, and selected plan where supported.
+- Test checkout and receipt behavior for both plans.
+- Confirm failed-payment, card-update, cancellation, plan-change, and refund handling.
+- Keep the public homepage inquiry-only; send the correct payment link only after fit, plan recommendation, scope, and agreement approval.
 - Send the personalized onboarding URL only after payment is confirmed.
 
 ## Analytics

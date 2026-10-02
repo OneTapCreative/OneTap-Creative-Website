@@ -2,11 +2,11 @@
 
 ## Completed in the website/repository
 
-- Approved **$149/month** offer and **$447** initial three-month commitment
+- Approved two-plan offer: **OneTap Start $99/month ($297 three-month minimum)** and **OneTap Grow $149/month ($447 three-month minimum)**
 - No standard setup fee positioning
 - Advanced SEO foundation language and scope boundaries
 - Two organized prelaunch revision rounds
-- Up to 30 minutes of reasonable monthly website updates
+- Plan-based monthly website updates: up to 15 minutes on Start and 30 minutes on Grow
 - Static canonical, social metadata, structured data, robots, and sitemap
 - DJ JRV and Freda live proof/case studies
 - Founder-led trust section
@@ -27,7 +27,7 @@
 
 ### Website workstream
 
-Lead → discovery → personalized scope → signed agreement → first $149 payment → onboarding → build → two revision rounds → approval → **website launch** → monthly care.
+Lead → discovery → recommend Start or Grow → personalized scope → signed agreement → first selected-plan payment → onboarding → build → two revision rounds → approval → **website launch** → monthly care.
 
 ### Google Business Profile workstream
 
@@ -46,7 +46,7 @@ If GBP is still pending when the website passes launch checks, record the exact 
 The remaining agency launch gates require account ownership, identity verification, billing authorization, or legal approval and therefore cannot be completed from the website repository alone.
 
 1. Use `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/` as the temporary public website URL.
-2. Create and test the Square recurring $149 billing workflow.
+2. Create and test both Square recurring workflows: Start at $99 and Grow at $149.
 3. Enable Vercel Web Analytics and/or connect GA4; verify lead conversion reporting.
 4. Purchase/connect the permanent custom domain, then activate professional email and long-term Search Console on that domain.
 5. Determine whether OneTap qualifies for its own Google Business Profile before creating one.

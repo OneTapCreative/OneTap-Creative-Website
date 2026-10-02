@@ -14,15 +14,16 @@ This is the owner-side checklist for items that require account ownership, ident
 - Temporary public launch may continue on the Vercel URL before this step is complete.
 
 ### 2. Square recurring billing
-- [ ] In Square, create **OneTap Creative Complete Online Presence Plan**.
-- [ ] Set the recurring amount to **$149 monthly**.
-- [ ] Turn tipping off.
-- [ ] Collect client name, business name, and email at checkout when supported.
-- [ ] Keep the public homepage as inquiry-only; do not place the payment link on the homepage.
-- [ ] Use the signed agreement to define the three-month minimum; the payment link by itself does not replace the contract.
-- [ ] Complete one $149 test transaction or approved test-mode checkout.
-- [ ] Confirm the client receipt is clear and branded.
-- [ ] Confirm you know how to handle a failed payment, card update, cancellation, and refund request.
+- [ ] In Square, create **OneTap Start** at **$99 monthly**.
+- [ ] In Square, create **OneTap Grow** at **$149 monthly**.
+- [ ] Turn tipping off for both.
+- [ ] Collect client name, business name, email, and selected plan at checkout when supported.
+- [ ] Keep the public homepage as inquiry-only; do not place payment links on the homepage.
+- [ ] Use the signed agreement to define each plan’s three-month minimum; the payment link by itself does not replace the contract.
+- [ ] Complete one $99 Start test transaction or approved test-mode checkout.
+- [ ] Complete one $149 Grow test transaction or approved test-mode checkout.
+- [ ] Confirm receipts clearly identify the selected plan.
+- [ ] Confirm you know how to handle a failed payment, card update, cancellation, plan change, and refund request.
 
 ### 3. Google Search Console — complete after custom domain purchase
 - Temporary public URL: `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`
@@ -107,7 +108,7 @@ This is the owner-side checklist for items that require account ownership, ident
 - [ ] Check domain, HTTPS, broken links, and mobile navigation.
 - [ ] Review Search Console indexing, clicks, impressions, top queries, and Core Web Vitals.
 - [ ] Review the client's Google Business Profile status where applicable.
-- [ ] Record client update minutes used out of the included 30 minutes.
+- [ ] Record client update minutes used against the selected plan allowance: 15 minutes on Start or 30 minutes on Grow.
 - [ ] Send or retain a simple monthly care summary and one recommended next action.
 
 ## 100% definition

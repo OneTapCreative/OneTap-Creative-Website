@@ -113,6 +113,24 @@
     });
   }
 
+
+  const planInterest = document.querySelector('#plan-interest');
+  const serviceHidden = document.querySelector('#website-service-hidden');
+  document.querySelectorAll('[data-plan]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (!planInterest) return;
+      const plan = link.dataset.plan || '';
+      const option = Array.from(planInterest.options).find(item => item.textContent.includes(plan));
+      if (option) {
+        planInterest.value = option.value;
+        if (serviceHidden) serviceHidden.value = option.value;
+      }
+    });
+  });
+  planInterest?.addEventListener('change', () => {
+    if (serviceHidden) serviceHidden.value = planInterest.value || 'Plan to be confirmed after fit review';
+  });
+
   document.querySelectorAll('.demo-trust span').forEach(item => {
     if (item.textContent.includes('5.0 reviews')) item.textContent = 'Trust section';
   });
