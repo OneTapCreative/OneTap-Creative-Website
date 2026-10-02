@@ -24,9 +24,19 @@ jobs:
           const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
           await page.goto('http://127.0.0.1:4173/', { waitUntil: 'networkidle' });
           await page.screenshot({ path: 'mobile-top.png' });
+          await page.evaluate(() => {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('iframe[data-src]').forEach(el => { if (!el.src) el.src = el.dataset.src; });
+          });
+          await page.waitForTimeout(500);
           await page.screenshot({ path: 'mobile-full.png', fullPage: true });
           await page.setViewportSize({ width: 375, height: 812 });
           await page.reload({ waitUntil: 'networkidle' });
+          await page.evaluate(() => {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('iframe[data-src]').forEach(el => { if (!el.src) el.src = el.dataset.src; });
+          });
+          await page.waitForTimeout(500);
           await page.screenshot({ path: 'mobile-375-full.png', fullPage: true });
           await browser.close();
           EOF
