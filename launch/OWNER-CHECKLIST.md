@@ -13,17 +13,23 @@ This is the owner-side checklist for items that require account ownership, ident
 - [ ] After the mailbox passes, ask the OneTap agent to migrate both website forms to the professional mailbox and re-test the secure FormSubmit route.
 - Temporary public launch may continue on the Vercel URL before this step is complete.
 
-### 2. Square recurring billing
+### 2. Square recurring billing — card only at launch
+
+Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] In Square, create **OneTap Start** at **$99 monthly**.
 - [ ] In Square, create **OneTap Grow** at **$149 monthly**.
+- [ ] Set credit/debit card as the current launch payment method for both plans.
 - [ ] Turn tipping off for both.
+- [ ] Leave ACH/bank transfer, Afterpay, Cash App Pay, and gift cards out of the recurring OneTap launch workflow.
 - [ ] Collect client name, business name, email, and selected plan at checkout when supported.
 - [ ] Keep the public homepage as inquiry-only; do not place payment links on the homepage.
 - [ ] Use the signed agreement to define each plan’s three-month minimum; the payment link by itself does not replace the contract.
 - [ ] Complete one $99 Start test transaction or approved test-mode checkout.
 - [ ] Complete one $149 Grow test transaction or approved test-mode checkout.
 - [ ] Confirm receipts clearly identify the selected plan.
+- [ ] Confirm the client can authorize Card on File for automatic monthly billing.
 - [ ] Confirm you know how to handle a failed payment, card update, cancellation, plan change, and refund request.
+- [ ] Confirm the Day 0 / Day 3 / Day 7 / Day 14 failed-payment sequence is ready.
 
 ### 3. Google Search Console — complete after custom domain purchase
 - Temporary public URL: `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`

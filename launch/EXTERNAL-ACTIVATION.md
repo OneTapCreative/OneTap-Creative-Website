@@ -16,7 +16,9 @@ Until then, keep the existing verified secure FormSubmit delivery route in place
 
 Do not expose a personal inbox in public HTML, JavaScript, or client-facing documentation.
 
-## Square recurring payment
+## Square recurring payment — credit/debit card only at launch
+
+Follow `client-operations/SQUARE-CARD-PAYMENT-SOP.md`.
 
 Create two recurring products:
 - **OneTap Start — $99 monthly**
@@ -24,9 +26,11 @@ Create two recurring products:
 
 The signed agreement—not the payment link by itself—defines the three-month minimum and selected scope.
 
+- Accept credit/debit card for the current launch workflow.
 - Disable tipping.
+- Do not enable ACH/bank transfer, Afterpay, Cash App Pay, or gift cards for the recurring OneTap launch workflow.
 - Collect client name, business name, email, and selected plan where supported.
-- Test checkout and receipt behavior for both plans.
+- Test checkout, Card on File authorization, automatic monthly billing, and receipt behavior for both plans.
 - Confirm failed-payment, card-update, cancellation, plan-change, and refund handling.
 - Keep the public homepage inquiry-only; send the correct payment link only after fit, plan recommendation, scope, and agreement approval.
 - Send the personalized onboarding URL only after payment is confirmed.

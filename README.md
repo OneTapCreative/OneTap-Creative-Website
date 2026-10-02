@@ -46,3 +46,4 @@ Deploy the repository root to Vercel. Public launch changes are validated by `.g
 - Owner completion checklist: `launch/OWNER-CHECKLIST.md`
 - Mock-client end-to-end test: `launch/MOCK-CLIENT-TEST.md`
 - Client operating kit: `client-operations/CLIENT-OPERATIONS-KIT.md`
+- Square card billing SOP: `client-operations/SQUARE-CARD-PAYMENT-SOP.md`
