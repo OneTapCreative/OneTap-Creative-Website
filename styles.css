@@ -269,3 +269,7 @@ body::before{background:radial-gradient(circle at 78% 5%,rgba(214,173,60,.055),t
 .real-project-preview,.portfolio-project-preview{box-shadow:0 20px 48px rgba(0,0,0,.34)}
 .final-cta{background:var(--gold)}
 @media(max-width:679px){.section-pad{padding-top:76px;padding-bottom:76px}.direction-hero{padding-top:30px;padding-bottom:52px}.work-section,.process-section,.pricing-section,.faq-section{scroll-margin-top:78px}}
+
+
+/* Desktop navigation visibility QA fix */
+@media(min-width:960px){.main-nav{visibility:visible}}
