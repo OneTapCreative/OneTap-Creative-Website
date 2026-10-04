@@ -30,8 +30,8 @@
   },
   "paymentFlow": "Square recurring payment links",
   "paymentLinks": {
-    "start": "",
-    "grow": "",
+    "start": "https://checkout.square.site/merchant/MLXEW41E28P00/checkout/KZXMQPZPPNFBQMYRI5FPCL5T",
+    "grow": "https://checkout.square.site/merchant/MLXEW41E28P00/checkout/Y3SQZZ772BAWLLRIXM4QVZPU",
     "startRedirect": "/onboarding/?plan=start",
     "growRedirect": "/onboarding/?plan=grow"
   },
