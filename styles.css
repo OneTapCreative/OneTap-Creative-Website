@@ -314,15 +314,15 @@ h1,h2,h3{text-wrap:balance}
 .eyebrow{font-size:.82rem}
 .main-nav a{font-size:.9rem}
 .hero-price p{font-size:.88rem;color:#d2cdc2}
-.hero-assurance span{font-size:.78rem;line-height:1.35}
+.hero-assurance span{font-size:.8rem;line-height:1.35}
 .compact-benefit-grid span{font-size:.9rem;line-height:1.55}
 .simplified-work .case-study-copy li{font-size:.86rem;line-height:1.5}
-.project-browser-bar{font-size:.76rem}
-.project-browser-bar b{font-size:.68rem}
-.project-shot-copy small{font-size:.8rem;line-height:1.45}
-.portfolio-site-brand small{font-size:.76rem;line-height:1.4}
-.portfolio-preview-foot{font-size:.78rem;color:#a9adb2}
-.portfolio-preview-foot b{font-size:.74rem}
+.project-browser-bar{font-size:.8rem}
+.project-browser-bar b{font-size:.76rem}
+.project-shot-copy small{font-size:.82rem;line-height:1.45}
+.portfolio-site-brand small{font-size:.8rem;line-height:1.4}
+.portfolio-preview-foot{font-size:.8rem;color:#a9adb2}
+.portfolio-preview-foot b{font-size:.78rem}
 .process-number{font-size:.8rem}
 .plan-label{font-size:.8rem}
 .commitment-box span{font-size:.9rem}
@@ -344,6 +344,8 @@ input,select,textarea{font-size:1rem}
 .legal-page article>section p{margin-bottom:1.2rem}
 .legal-page article>section h2{line-height:1.2;margin-top:2.25rem;margin-bottom:.75rem}
 .legal-page article>p{color:#b7b2a8!important}
+.agreement-private,.agreement-version,.agreement-clause>span,.agreement-plan-summary span,.agreement-form-title p,.agreement-field-note,.agreement-security-note,.agreement-footer .container{font-size:.8rem}
+.agreement-received-note{font-size:.88rem;line-height:1.55}
 
 @media(max-width:700px){
   .container{width:min(calc(100% - 32px),var(--container))}
