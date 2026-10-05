@@ -32,10 +32,10 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Confirm the Day 0 / Day 3 / Day 7 / Day 14 failed-payment sequence is ready.
 
 ### 3. Google Search Console — complete after custom domain purchase
-- Temporary public URL: `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`
+- Official production URL: `https://onetapcreative.com/`
 - [ ] Purchase/connect the permanent custom domain before establishing the long-term Search Console property.
 - [ ] Create/verify the custom-domain **Domain property** using DNS.
-- [ ] Switch the site's canonical, schema, sitemap, social URLs, and form redirects from the temporary Vercel URL to the permanent domain.
+- [x] Switch the site's canonical, schema, sitemap, social URLs, and form redirects from the temporary Vercel URL to the permanent domain.
 - [ ] Submit the permanent-domain sitemap.
 - [ ] Inspect the permanent homepage and request indexing if needed.
 - [ ] Confirm there are no manual actions or security issues.
@@ -96,11 +96,11 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Tell the OneTap agent immediately if a client asks for their project, name, images, or testimonial to be removed.
 
 ### 10. Domain and production account ownership
-- [ ] Confirm the temporary Vercel production URL loads: `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`
+- [ ] Confirm the temporary Vercel production URL loads: `https://onetapcreative.com/`
 - [ ] Confirm the Vercel account/project has two-factor authentication enabled where available.
-- [ ] Confirm `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/robots.txt` loads.
-- [ ] Confirm `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/sitemap.xml` loads.
-- [ ] Confirm `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/404.html` loads.
+- [ ] Confirm `https://onetapcreative.com/robots.txt` loads.
+- [ ] Confirm `https://onetapcreative.com/sitemap.xml` loads.
+- [ ] Confirm `https://onetapcreative.com/404.html` loads.
 - [ ] After purchasing the permanent domain, enable registrar auto-renew and two-factor authentication.
 - [ ] Connect the permanent domain to the intended Vercel project and repeat the production URL checks.
 
