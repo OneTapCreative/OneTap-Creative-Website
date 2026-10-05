@@ -4,14 +4,14 @@ These actions require the business owner's account access, identity verification
 
 ## Professional email
 
-Permanent domain purchased: `onetapcreative.com`. Planned professional mailbox: `hello@onetapcreative.com`.
+Permanent domain active: `onetapcreative.com`. Professional mailbox active: `hello@onetapcreative.com`.
 
-Until then, keep the existing verified secure FormSubmit delivery route in place. After the permanent domain is connected:
+The domain and mailbox are active. Keep the existing verified secure FormSubmit delivery route in place until both public forms are migrated and re-tested together:
 
-1. Create and verify the professional mailbox.
-2. Configure the email provider's current SPF, DKIM, and DMARC DNS records.
-3. Test sending to Gmail and Outlook/Hotmail.
-4. Reply from both test accounts and confirm delivery is not going to spam.
+1. Professional mailbox created and verified: `hello@onetapcreative.com`.
+2. Google Workspace SPF, DKIM, and DMARC are configured.
+3. Gmail delivery and SPF/DKIM/DMARC authentication have been confirmed.
+4. Still test Outlook/Hotmail delivery before broad outreach.
 5. Migrate **both** secure FormSubmit routes together and reactivate/test the new route before retiring the current verified delivery route.
 
 Do not expose a personal inbox in public HTML, JavaScript, or client-facing documentation.
@@ -56,7 +56,7 @@ The website already records UTM values, CTA clicks, portfolio clicks, lead submi
 
 ## Search Console
 
-Long-term Search Console activation is deferred until the permanent custom domain is purchased. The temporary public URL is:
+The permanent production domain is active. The official public URL is:
 
 `https://onetapcreative.com/`
 
