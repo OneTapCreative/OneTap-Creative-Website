@@ -4,9 +4,11 @@
 
 ## Required client journey
 
-Lead request → reply within one business day → discovery call → recommend **Start or Grow** → matching **Square Contract** → signed/completed in Square → private Square recurring payment link → first credit/debit card payment → mobile onboarding → build → two revision rounds → approval → **website launch** → monthly care.
+Lead request → reply within one business day → discovery call → recommend **Start or Grow** → matching **Square Contract** → signed/completed in Square → private Square recurring payment link → first credit/debit card payment → mobile onboarding → **post-onboarding production handoff** → build → two revision rounds → approval → **website launch** → monthly care.
 
 For Grow clients, Google Business Profile runs in parallel and never blocks an otherwise-ready website launch. Use `GBP-FAST-TRACK.md` for the exact workflow.
+
+After onboarding is submitted, use `POST-ONBOARDING-SOP.md` to verify activation, assign the client status, create the production brief, start the 7–10 business-day first-review window, and hand the project into monthly care after launch.
 
 ## Discovery call: sell the outcome, not the jargon
 
