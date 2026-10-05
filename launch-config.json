@@ -8,8 +8,7 @@
   "firstReviewTargetBusinessDays": "7-10",
   "leadResponseTarget": "within one business day",
   "seoScope": "Start: SEO essentials; Grow: advanced SEO and Google visibility foundation",
-  "formSubmitId": "3770cd21b709b2fc75672c99acb98256",
-  "formDelivery": "verified secure FormSubmit route",
+  "formDelivery": "FormSubmit → hello@onetapcreative.com",
   "professionalMailbox": "hello@onetapcreative.com",
   "paymentProvider": "Square",
   "publicPaymentCollection": false,
@@ -37,5 +36,6 @@
   },
   "agreementProvider": "Square Contracts",
   "agreementFlow": "Square Contract → signed/completed → private Square recurring payment link",
-  "websiteAgreementCollection": false
+  "websiteAgreementCollection": false,
+  "formSubmitRecipient": "hello@onetapcreative.com"
 }
