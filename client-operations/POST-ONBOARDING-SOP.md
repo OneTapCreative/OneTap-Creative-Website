@@ -29,7 +29,7 @@ If anything required for the website is missing, move the client to **Waiting on
 
 ## 2. Assign the client status
 
-Use one of these statuses in the OneTap lead/client tracker:
+Use one of these statuses in the OneTap lead/client tracker. See `CLIENT-TRACKER-GUIDE.md` for the full tracker field definitions and weekly review routine:
 
 - **Onboarding Received** — form arrived; intake is being reviewed.
 - **Waiting on Client** — required content, access, approval, or clarification is missing.
