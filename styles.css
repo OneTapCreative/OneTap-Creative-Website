@@ -304,3 +304,68 @@ body::before{background:radial-gradient(circle at 78% 5%,rgba(214,173,60,.055),t
 .agreement-received{width:min(100%,680px)}.agreement-received-card{padding:32px;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:#101112;box-shadow:0 28px 80px rgba(0,0,0,.42)}.agreement-received-card>img{width:min(260px,70%);margin-bottom:32px}.agreement-check{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#111;font-size:1.5rem;font-weight:900;margin-bottom:20px}.agreement-received-card h1{font-size:clamp(2.5rem,8vw,4.6rem);margin-bottom:16px}.agreement-received-card>p:not(.eyebrow){color:#aaa69d}.agreement-received-card ol{list-style:none;padding:0;margin:28px 0;display:grid;gap:10px}.agreement-received-card li{display:flex;align-items:center;gap:13px;padding:13px;border:1px solid rgba(255,255,255,.08);border-radius:14px}.agreement-received-card li>b{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;border:1px solid #3a3d41}.agreement-received-card li.done>b{background:var(--gold);border-color:var(--gold);color:#111}.agreement-received-card li span{display:grid}.agreement-received-card li small{color:#777b80}.agreement-received-note{margin:24px 0;padding:16px;border-left:3px solid var(--gold);background:#17150f;color:#bbb6ac;font-size:.8rem}
 @media(min-width:900px){.agreement-hero-inner{grid-template-columns:1.2fr .8fr}.agreement-layout{grid-template-columns:minmax(0,1.25fr) minmax(340px,.75fr);gap:34px}.agreement-document{padding:42px}.agreement-sign-card{position:sticky;top:104px;padding:26px}}
 @media(max-width:679px){.agreement-nav{height:68px}.agreement-nav .brand{width:185px}.agreement-private{display:none}.agreement-hero{padding:38px 0 34px}.agreement-hero h1{font-size:clamp(2.45rem,12vw,3.7rem)}.close-steps li{display:grid;justify-items:center;text-align:center;gap:6px;padding:11px 5px}.close-steps span{font-size:.62rem}.agreement-section{padding:24px 0 72px}.agreement-document,.agreement-sign-card{border-radius:20px;padding:20px}.agreement-clause{grid-template-columns:30px 1fr;gap:10px}.agreement-clause p{font-size:.88rem}.agreement-received-card{padding:24px}}
+
+
+/* === FINAL RESPONSIVE + READABILITY QA — OCT 2026 === */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-size:16px}
+p,li{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+.eyebrow{font-size:.82rem}
+.main-nav a{font-size:.9rem}
+.hero-price p{font-size:.88rem;color:#d2cdc2}
+.hero-assurance span{font-size:.8rem;line-height:1.35}
+.compact-benefit-grid span{font-size:.9rem;line-height:1.55}
+.simplified-work .case-study-copy li{font-size:.86rem;line-height:1.5}
+.project-browser-bar{font-size:.8rem}
+.project-browser-bar b{font-size:.76rem}
+.project-shot-copy small{font-size:.82rem;line-height:1.45}
+.portfolio-site-brand small{font-size:.8rem;line-height:1.4}
+.portfolio-preview-foot{font-size:.8rem;color:#a9adb2}
+.portfolio-preview-foot b{font-size:.78rem}
+.process-number{font-size:.8rem}
+.plan-label{font-size:.8rem}
+.commitment-box span{font-size:.9rem}
+.pricing-note{font-size:.88rem;line-height:1.6;color:#aaa69d}
+.form-title>div>p{font-size:.8rem}
+.form-title span{font-size:.82rem;color:#aaa69d}
+label{font-size:.86rem;line-height:1.4}
+.form-note{font-size:.82rem;line-height:1.5;color:#aaa69d}
+.consent{font-size:.84rem;line-height:1.55;color:#b8b4aa}
+.final-inner>div>p{font-size:.82rem}
+.footer-grid a,.footer-grid p{line-height:1.6}
+.footer-bottom{font-size:.82rem;line-height:1.5;color:#97938a}
+.brand-lockup small{font-size:.58rem;letter-spacing:.34em}
+.start-copy>p{color:#4f4b43}
+input,select,textarea{font-size:1rem}
+.faq-list summary{min-height:56px}
+.faq-list p{line-height:1.7}
+.legal-page article>section{font-size:1rem;line-height:1.75}
+.legal-page article>section p{margin-bottom:1.2rem}
+.legal-page article>section h2{line-height:1.2;margin-top:2.25rem;margin-bottom:.75rem}
+.legal-page article>p{color:#b7b2a8!important}
+.agreement-private,.agreement-version,.agreement-clause>span,.agreement-plan-summary span,.agreement-form-title p,.agreement-field-note,.agreement-security-note,.agreement-footer .container{font-size:.8rem}
+.agreement-received-note{font-size:.88rem;line-height:1.55}
+
+@media(max-width:700px){
+  .container{width:min(calc(100% - 32px),var(--container))}
+  .direction-hero h1{font-size:clamp(2.45rem,12.5vw,3.55rem);line-height:1.02}
+  .hero-lead{font-size:1.05rem;line-height:1.55}
+  .hero-assurance{gap:7px}
+  .hero-assurance span{min-height:36px;padding:8px 10px}
+  .project-browser-bar{padding-inline:12px}
+  .portfolio-preview-foot{flex-wrap:wrap;row-gap:5px}
+  .portfolio-preview-foot span,.portfolio-preview-foot b{line-height:1.35}
+  .plan-card li{font-size:.92rem;line-height:1.55}
+  .pricing-note{padding-inline:8px}
+  .form-card{padding:22px 18px}
+  .consent{align-items:start}
+  .final-inner h2{line-height:1.08}
+  .site-footer{padding-bottom:92px}
+  .legal-page .section-pad{padding-top:54px;padding-bottom:64px}
+  .legal-page .btn{width:100%}
+}
+
+@media(min-width:960px){
+  .brand-lockup small{font-size:.62rem}
+}

@@ -110,11 +110,32 @@ document.querySelectorAll('details').forEach(detail => {
 
 const mobileCta = document.querySelector('.mobile-cta');
 const heroPrimary = document.querySelector('.hero .btn');
+const mobileCtaBlockers = [
+  document.querySelector('#start'),
+  document.querySelector('.final-cta'),
+  document.querySelector('.site-footer')
+].filter(Boolean);
 if (mobileCta && heroPrimary && 'IntersectionObserver' in window) {
-  const mobileCtaObserver = new IntersectionObserver(([entry]) => {
-    mobileCta.classList.toggle('visible', !entry.isIntersecting);
+  let heroPrimaryVisible = true;
+  const visibleBlockers = new Set();
+  const syncMobileCta = () => {
+    mobileCta.classList.toggle('visible', !heroPrimaryVisible && visibleBlockers.size === 0);
+  };
+
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    heroPrimaryVisible = entry.isIntersecting;
+    syncMobileCta();
   }, { threshold: 0.25 });
-  mobileCtaObserver.observe(heroPrimary);
+  heroObserver.observe(heroPrimary);
+
+  const blockerObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) visibleBlockers.add(entry.target);
+      else visibleBlockers.delete(entry.target);
+    });
+    syncMobileCta();
+  }, { threshold: 0.08 });
+  mobileCtaBlockers.forEach(element => blockerObserver.observe(element));
 }
 
 const reduceMotion = prefersReducedMotion;
@@ -153,7 +174,7 @@ if (year) year.textContent = new Date().getFullYear();
 // Final launch form routing, attribution, conversion events, and lazy project previews.
 const formNextUrl = document.querySelector('#form-next-url');
 const leadForm = document.querySelector('#lead-form');
-if (formNextUrl) formNextUrl.value = new URL('thank-you.html', window.location.href).href;
+if (formNextUrl) formNextUrl.value = new URL('/thank-you', window.location.origin).href;
 
 const query = new URLSearchParams(window.location.search);
 const trackingValues = {
