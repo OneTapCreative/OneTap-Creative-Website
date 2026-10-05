@@ -41,7 +41,7 @@
   let submitting = false;
   let previewUrls = [];
 
-  if (formNext) formNext.value = new URL('success.html', window.location.href).href;
+  if (formNext) formNext.value = new URL('/onboarding/success', window.location.origin).href;
 
   const escapeHtml = value => String(value ?? '')
     .replaceAll('&', '&amp;')
