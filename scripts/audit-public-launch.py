@@ -32,9 +32,9 @@ def require(condition, message):
 
 start = config['plans']['start']
 grow = config['plans']['grow']
-form_id = config['formSubmitId']
+form_recipient = config['formSubmitRecipient']
 production_domain = config['productionDomain']
-secure_form_action = f'https://formsubmit.co/{form_id}'
+secure_form_action = f'https://formsubmit.co/{form_recipient}'
 
 require(start['name'] == 'OneTap Start', 'Start plan name is incorrect')
 require(start['monthlyPrice'] == 99 and start['initialCommitmentTotal'] == 297, 'Start plan config is incorrect')
@@ -59,8 +59,8 @@ require('basic local seo' not in combined_public.lower(), 'Old basic SEO wording
 
 require(secure_form_action in index, 'Public static form does not use the secure FormSubmit route')
 require(secure_form_action in onboarding, 'Onboarding static form does not use the secure FormSubmit route')
-require(f"const FORM_ID = '{form_id}'" in public_patch, 'Public runtime form ID is out of sync')
-require(f"const FORM_ID = '{form_id}'" in onboarding_patch, 'Onboarding runtime form ID is out of sync')
+require(f"const FORM_RECIPIENT = '{form_recipient}'" in public_patch, 'Public runtime form recipient is out of sync')
+require(f"const FORM_RECIPIENT = '{form_recipient}'" in onboarding_patch, 'Onboarding runtime form recipient is out of sync')
 require('FORM_AJAX_ACTION' in public_patch and 'formsubmit.co/ajax/' in public_patch, 'Public AJAX form route is missing')
 require('_captcha' in index and 'value="false"' in index, 'Public static form CAPTCHA setting is inconsistent')
 require('_captcha' in onboarding and 'value="false"' in onboarding, 'Onboarding static form CAPTCHA setting is inconsistent')
