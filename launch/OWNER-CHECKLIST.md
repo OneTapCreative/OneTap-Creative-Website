@@ -10,7 +10,8 @@ This is the owner-side checklist for items that require account ownership, ident
 - [x] Add Google Workspace SPF, DKIM, and DMARC records in DNS.
 - [ ] Test outbound delivery to Gmail and Outlook/Hotmail and confirm replies arrive.
 - [x] Confirm Gmail delivery/authentication after marking the initial new-domain test as not spam.
-- [ ] After the mailbox passes, ask the OneTap agent to migrate both website forms to the professional mailbox and re-test the secure FormSubmit route.
+- [x] Migrate both website forms to `hello@onetapcreative.com`.
+- [ ] Activate the new FormSubmit destination from the live `onetapcreative.com` forms and re-test lead + onboarding delivery.
 - Official production domain is active at `https://onetapcreative.com/`.
 
 ### 2. Square recurring billing — card only at launch
