@@ -12,7 +12,7 @@ The domain and mailbox are active. Keep the existing verified secure FormSubmit 
 2. Google Workspace SPF, DKIM, and DMARC are configured.
 3. Gmail delivery and SPF/DKIM/DMARC authentication have been confirmed.
 4. Still test Outlook/Hotmail delivery before broad outreach.
-5. Migrate **both** secure FormSubmit routes together and reactivate/test the new route before retiring the current verified delivery route.
+5. Both secure FormSubmit routes now target `hello@onetapcreative.com`; activate the destination from the live site and test lead + onboarding delivery before considering the migration complete.
 
 Do not expose a personal inbox in public HTML, JavaScript, or client-facing documentation.
 

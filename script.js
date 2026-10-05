@@ -1,9 +1,9 @@
 (() => {
   'use strict';
 
-  const FORM_ID = '3770cd21b709b2fc75672c99acb98256';
-  const FORM_ACTION = `https://formsubmit.co/${FORM_ID}`;
-  const FORM_AJAX_ACTION = `https://formsubmit.co/ajax/${FORM_ID}`;
+  const FORM_RECIPIENT = 'hello@onetapcreative.com';
+  const FORM_ACTION = `https://formsubmit.co/${FORM_RECIPIENT}`;
+  const FORM_AJAX_ACTION = `https://formsubmit.co/ajax/${FORM_RECIPIENT}`;
   const SUCCESS_URL = new URL('/thank-you', window.location.origin).href;
   const form = document.querySelector('#lead-form');
 

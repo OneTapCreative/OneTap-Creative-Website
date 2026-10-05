@@ -1,8 +1,8 @@
 (() => {
   'use strict';
 
-  const FORM_ID = '3770cd21b709b2fc75672c99acb98256';
-  const FORM_ACTION = `https://formsubmit.co/${FORM_ID}`;
+  const FORM_RECIPIENT = 'hello@onetapcreative.com';
+  const FORM_ACTION = `https://formsubmit.co/${FORM_RECIPIENT}`;
   const SUCCESS_URL = new URL('/onboarding/success', window.location.origin).href;
   const form = document.querySelector('#onboarding-form');
 
