@@ -4,14 +4,14 @@ This is the owner-side checklist for items that require account ownership, ident
 
 ## Launch gate — complete before broad paid advertising
 
-### 1. Professional business email — deferred until custom domain purchase
-- [ ] Purchase/connect the permanent OneTap custom domain.
-- [ ] Create the professional mailbox on that domain (planned: `hello@onetapcreative.com` if that domain is purchased).
-- [ ] Add the provider's current SPF, DKIM, and DMARC records in DNS.
+### 1. Professional business email
+- [x] Purchase/connect the permanent OneTap custom domain: `onetapcreative.com`.
+- [x] Create the professional mailbox: `hello@onetapcreative.com`.
+- [x] Add Google Workspace SPF, DKIM, and DMARC records in DNS.
 - [ ] Test outbound delivery to Gmail and Outlook/Hotmail and confirm replies arrive.
-- [ ] Confirm messages are not landing in spam.
+- [x] Confirm Gmail delivery/authentication after marking the initial new-domain test as not spam.
 - [ ] After the mailbox passes, ask the OneTap agent to migrate both website forms to the professional mailbox and re-test the secure FormSubmit route.
-- Temporary public launch may continue on the Vercel URL before this step is complete.
+- Official production domain is active at `https://onetapcreative.com/`.
 
 ### 2. Square recurring billing — card only at launch
 
@@ -96,13 +96,13 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Tell the OneTap agent immediately if a client asks for their project, name, images, or testimonial to be removed.
 
 ### 10. Domain and production account ownership
-- [ ] Confirm the temporary Vercel production URL loads: `https://onetapcreative.com/`
+- [x] Confirm the official production URL loads: `https://onetapcreative.com/`
 - [ ] Confirm the Vercel account/project has two-factor authentication enabled where available.
 - [ ] Confirm `https://onetapcreative.com/robots.txt` loads.
 - [ ] Confirm `https://onetapcreative.com/sitemap.xml` loads.
 - [ ] Confirm `https://onetapcreative.com/404.html` loads.
-- [ ] After purchasing the permanent domain, enable registrar auto-renew and two-factor authentication.
-- [ ] Connect the permanent domain to the intended Vercel project and repeat the production URL checks.
+- [ ] Confirm registrar auto-renew and two-factor authentication are enabled.
+- [x] Connect the permanent domain to the intended Vercel project and configure `www` as a 308 redirect to the apex domain.
 
 ## Operating discipline after launch
 
