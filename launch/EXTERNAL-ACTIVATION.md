@@ -4,7 +4,7 @@ These actions require the business owner's account access, identity verification
 
 ## Professional email
 
-This is deferred until the permanent custom domain is purchased. Planned mailbox: `hello@onetapcreative.com` if `onetapcreative.com` becomes the purchased domain.
+Permanent domain purchased: `onetapcreative.com`. Planned professional mailbox: `hello@onetapcreative.com`.
 
 Until then, keep the existing verified secure FormSubmit delivery route in place. After the permanent domain is connected:
 
@@ -58,9 +58,9 @@ The website already records UTM values, CTA clicks, portfolio clicks, lead submi
 
 Long-term Search Console activation is deferred until the permanent custom domain is purchased. The temporary public URL is:
 
-`https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/`
+`https://onetapcreative.com/`
 
-After the permanent domain is connected, switch the canonical/schema/sitemap/social URLs to that domain, verify its **Domain property** using DNS, submit the permanent sitemap, inspect the homepage, and record the starting search baseline.
+The canonical/schema/sitemap/social URLs now use the permanent domain. Next: verify the **Domain property** in Google Search Console using DNS, submit the permanent sitemap, inspect the homepage, and record the starting search baseline.
 
 ## Google Business Profile
 

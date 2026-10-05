@@ -4,4 +4,4 @@ Disallow: /thank-you.html
 Disallow: /agreement.html
 Disallow: /agreement-received.html
 Disallow: /onboarding/
-Sitemap: https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/sitemap.xml
+Sitemap: https://onetapcreative.com/sitemap.xml
