@@ -76,6 +76,16 @@
     first.value = value ?? '';
   };
 
+  const START_PLAN = 'OneTap Start — $99/month';
+  const GROW_PLAN = 'OneTap Grow — $149/month';
+  const isGrowPlan = () => getFieldValue('Selected Plan') === GROW_PLAN;
+  const getPlanDetails = () => isGrowPlan()
+    ? { name: GROW_PLAN, monthlyPrice: 149, initialCommitment: 447, monthlyUpdateMinutes: 30 }
+    : { name: START_PLAN, monthlyPrice: 99, initialCommitment: 297, monthlyUpdateMinutes: 15 };
+  const visibleStepIndexes = () => steps
+    .map((_, index) => index)
+    .filter(index => index !== 7 || isGrowPlan());
+
   const serviceRows = () => [...servicesList.querySelectorAll('.service-row')];
 
   const collectServices = () => serviceRows().map((row, index) => ({
@@ -187,6 +197,9 @@
     const query = new URLSearchParams(window.location.search);
     const business = query.get('business');
     const email = query.get('email');
+    const requestedPlan = (query.get('plan') || '').toLowerCase();
+    if (requestedPlan === 'start') setFieldValue('Selected Plan', START_PLAN);
+    if (requestedPlan === 'grow') setFieldValue('Selected Plan', GROW_PLAN);
     if (business && !getFieldValue('Business Name')) setFieldValue('Business Name', business);
     if (email && !getFieldValue('Client Email')) setFieldValue('Client Email', email);
   };
@@ -225,13 +238,38 @@
     wrapper.hidden = !(showBooking || showQuote || showPhone);
   };
 
+  const syncPlanScope = () => {
+    const grow = isGrowPlan();
+    const googleStep = steps[7];
+    googleStep.hidden = !grow;
+    googleStep.querySelectorAll('input,select,textarea').forEach(control => {
+      control.disabled = !grow;
+      if (control.name === 'Google Business Profile Status') control.required = grow;
+    });
+
+    const monthlyConfirmation = getNamedControls('Monthly Updates Confirmed')[0]
+      ?.closest('.confirm-card')
+      ?.querySelector('small');
+    if (monthlyConfirmation) {
+      monthlyConfirmation.textContent = `Up to ${grow ? 30 : 15} minutes of reasonable updates per month; unused time does not roll over.`;
+    }
+  };
+
   const syncGoogleFields = () => {
+    const existing = document.querySelector('#gbp-existing');
+    const createNew = document.querySelector('#gbp-new');
+    if (!isGrowPlan()) {
+      existing.hidden = true;
+      createNew.hidden = true;
+      return;
+    }
     const status = getFieldValue('Google Business Profile Status');
-    document.querySelector('#gbp-existing').hidden = status !== 'Yes';
-    document.querySelector('#gbp-new').hidden = status !== 'No';
+    existing.hidden = status !== 'Yes';
+    createNew.hidden = status !== 'No';
   };
 
   const syncConditionals = () => {
+    syncPlanScope();
     syncLocationFields();
     syncGoalFields();
     syncGoogleFields();
@@ -332,6 +370,7 @@
   const buildReview = () => {
     const services = collectServices().filter(service => service.name);
     const files = selectedFiles();
+    const plan = getPlanDetails();
     const cards = [
       {
         step: 1,
@@ -385,7 +424,7 @@
           ['Response time', getFieldValue('Response Time')], ['Instructions', getFieldValue('Customer Contact Instructions')]
         ]
       },
-      {
+      ...(isGrowPlan() ? [{
         step: 7,
         title: 'Google Business Profile',
         rows: [
@@ -395,15 +434,15 @@
           ['Category', getFieldValue('Preferred Google Category')],
           ['Opening date', getFieldValue('Business Opening Date')]
         ]
-      },
+      }] : []),
       {
         step: 0,
         title: 'Plan and website management',
         rows: [
-          ['Plan', '$179/month · 3-month minimum · $537 initial commitment'],
+          ['Plan', `${plan.name} · 3-month minimum · ${plan.initialCommitment} initial commitment`],
           ['Website', 'One mobile-first page with up to approximately 8–10 sections'],
           ['Revisions', 'Two organized prelaunch revision rounds'],
-          ['Monthly updates', 'Up to 30 minutes; unused time does not roll over'],
+          ['Monthly updates', `Up to ${plan.monthlyUpdateMinutes} minutes; unused time does not roll over`],
           ['Domain', 'Provided and connected by OneTap Creative while the plan is active']
         ]
       }
@@ -426,6 +465,13 @@
   };
 
   const showStep = () => {
+    syncPlanScope();
+    const visibleSteps = visibleStepIndexes();
+    if (!visibleSteps.includes(currentStep)) {
+      currentStep = visibleSteps.find(index => index > currentStep) ?? visibleSteps.at(-1);
+    }
+    const visiblePosition = visibleSteps.indexOf(currentStep);
+
     steps.forEach((step, index) => {
       const active = index === currentStep;
       step.classList.toggle('is-active', active);
@@ -435,14 +481,24 @@
     if (currentStep === 6) prefillContactFields();
     if (currentStep === 8) buildReview();
 
-    const percent = currentStep === 0 ? 0 : Math.round((currentStep / (steps.length - 1)) * 100);
+    const percent = currentStep === 0 ? 0 : Math.round((visiblePosition / (visibleSteps.length - 1)) * 100);
     progressLabel.textContent = stepNames[currentStep];
     progressPercent.textContent = `${percent}%`;
     progressBar.style.width = `${percent}%`;
-    backButton.hidden = currentStep === 0;
-    nextButton.hidden = currentStep === steps.length - 1;
-    submitButton.hidden = currentStep !== steps.length - 1;
-    nextButton.textContent = currentStep === 0 ? 'Start onboarding' : currentStep === 7 ? 'Review answers' : 'Continue';
+
+    if (currentStep > 0) {
+      const eyebrow = steps[currentStep].querySelector('.eyebrow');
+      if (eyebrow) eyebrow.textContent = `Step ${visiblePosition} of ${visibleSteps.length - 1}`;
+    }
+
+    backButton.hidden = visiblePosition === 0;
+    nextButton.hidden = visiblePosition === visibleSteps.length - 1;
+    submitButton.hidden = visiblePosition !== visibleSteps.length - 1;
+    nextButton.textContent = visiblePosition === 0
+      ? 'Start onboarding'
+      : visiblePosition === visibleSteps.length - 2
+        ? 'Review answers'
+        : 'Continue';
     clearValidation();
     syncConditionals();
     saveDraft();
@@ -451,12 +507,16 @@
 
   nextButton.addEventListener('click', () => {
     if (!validateStep(currentStep)) return;
-    currentStep = Math.min(currentStep + 1, steps.length - 1);
+    const visibleSteps = visibleStepIndexes();
+    const position = visibleSteps.indexOf(currentStep);
+    currentStep = visibleSteps[Math.min(position + 1, visibleSteps.length - 1)];
     showStep();
   });
 
   backButton.addEventListener('click', () => {
-    currentStep = Math.max(currentStep - 1, 0);
+    const visibleSteps = visibleStepIndexes();
+    const position = visibleSteps.indexOf(currentStep);
+    currentStep = visibleSteps[Math.max(position - 1, 0)];
     showStep();
   });
 
