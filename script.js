@@ -4,7 +4,7 @@
   const FORM_ID = '3770cd21b709b2fc75672c99acb98256';
   const FORM_ACTION = `https://formsubmit.co/${FORM_ID}`;
   const FORM_AJAX_ACTION = `https://formsubmit.co/ajax/${FORM_ID}`;
-  const SUCCESS_URL = 'https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/thank-you.html';
+  const SUCCESS_URL = new URL('/thank-you', window.location.origin).href;
   const form = document.querySelector('#lead-form');
 
   const ensureHidden = (name, value = '') => {
@@ -140,7 +140,7 @@
   if (profileType) profileType.textContent = 'Example layout';
 
   const core = document.createElement('script');
-  core.src = 'script-core.js?v=hard-launch-1';
+  core.src = '/script-core.js?v=final-qa-1';
   core.defer = true;
   document.body.appendChild(core);
 })();
