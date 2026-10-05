@@ -439,7 +439,7 @@
         step: 0,
         title: 'Plan and website management',
         rows: [
-          ['Plan', `${plan.name} · 3-month minimum · ${plan.initialCommitment} initial commitment`],
+          ['Plan', `${plan.name} · 3-month minimum · $${plan.initialCommitment} initial commitment`],
           ['Website', 'One mobile-first page with up to approximately 8–10 sections'],
           ['Revisions', 'Two organized prelaunch revision rounds'],
           ['Monthly updates', `Up to ${plan.monthlyUpdateMinutes} minutes; unused time does not roll over`],
