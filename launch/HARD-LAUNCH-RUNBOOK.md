@@ -45,7 +45,7 @@ If GBP is still pending when the website passes launch checks, record the exact 
 
 The remaining agency launch gates require account ownership, identity verification, billing authorization, or legal approval and therefore cannot be completed from the website repository alone.
 
-1. Use `https://one-tap-creative-website-git-main-clarenceworkflows-projects.vercel.app/` as the temporary public website URL.
+1. Use `https://onetapcreative.com/` as the official public website URL.
 2. Create and test both Square Contract templates using `client-operations/SQUARE-CONTRACT-SOP.md`.
 3. Create and test both reusable Square recurring **payment links**: Start at $99 and Grow at $149, using `client-operations/SQUARE-CARD-PAYMENT-SOP.md`.
 3. Enable Vercel Web Analytics and/or connect GA4; verify lead conversion reporting.
