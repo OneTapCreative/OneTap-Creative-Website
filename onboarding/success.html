@@ -56,7 +56,7 @@
         payload = null;
       }
 
-      if (!payload?.email || !payload?.submissionId) return;
+      if (!payload?.email || !payload?.submissionId || payload?.sendBranded !== true) return;
 
       try {
         const response = await fetch('/api/onboarding-confirmation', {
