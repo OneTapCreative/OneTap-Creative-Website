@@ -22,7 +22,7 @@ const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const originAllowed = req => {
   const origin = String(req.headers.origin || '');
   const referer = String(req.headers.referer || '');
-  if (!origin && !referer) return true;
+  if (!origin && !referer) return false;
   if (PROD_ORIGINS.has(origin)) return true;
   if (origin.endsWith('.vercel.app')) return true;
   if ([...PROD_ORIGINS].some(item => referer.startsWith(item))) return true;
@@ -190,7 +190,8 @@ export default async function handler(req, res) {
     }
 
     return res.status(200).json({
-      ready: Boolean(process.env.RESEND_API_KEY && process.env.ONETAP_EMAIL_FROM)
+      ready: process.env.ONETAP_BRANDED_EMAIL_ENABLED === 'true'
+        && Boolean(process.env.RESEND_API_KEY && process.env.ONETAP_EMAIL_FROM)
     });
   }
 
@@ -216,11 +217,12 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, error: 'invalid_payload' });
   }
 
+  const enabled = process.env.ONETAP_BRANDED_EMAIL_ENABLED === 'true';
   const apiKey = process.env.RESEND_API_KEY;
   const from = clean(process.env.ONETAP_EMAIL_FROM, 180);
   const replyTo = clean(process.env.ONETAP_EMAIL_REPLY_TO || 'hello@onetapcreative.com', 180);
 
-  if (!apiKey || !from) {
+  if (!enabled || !apiKey || !from) {
     return res.status(503).json({ ok: false, error: 'email_not_configured' });
   }
 
