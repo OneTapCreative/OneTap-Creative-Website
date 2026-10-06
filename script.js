@@ -47,7 +47,7 @@
     form.action = FORM_ACTION;
     ensureHidden('_captcha', 'false');
     ensureHidden('_next', SUCCESS_URL);
-    ensureHidden('_autoresponse', 'Thank you for contacting OneTap Creative. Your project request was received and will normally be reviewed within one business day. No payment was collected. If the project is a fit, the next steps are a written scope, client agreement, first payment, and the mobile onboarding portal.');
+    ensureHidden('_autoresponse', 'Thanks for reaching out to OneTap Creative. We received your project request and will review it within one business day. If we need anything else, we’ll contact you from hello@onetapcreative.com. If the project is a fit, we’ll confirm the plan and next steps before any payment is collected.');
 
     const replyTo = ensureHidden('_replyto');
     const email = form.querySelector('input[name="Email"], input[type="email"]');
