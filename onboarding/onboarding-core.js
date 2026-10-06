@@ -201,7 +201,7 @@
     if (requestedPlan === 'start') setFieldValue('Selected Plan', START_PLAN);
     if (requestedPlan === 'grow') setFieldValue('Selected Plan', GROW_PLAN);
     if (business && !getFieldValue('Business Name')) setFieldValue('Business Name', business);
-    if (email && !getFieldValue('Client Email')) setFieldValue('Client Email', email);
+    if (email && !getFieldValue('email')) setFieldValue('email', email);
   };
 
   const setRequiredForPanel = (panel, required) => {
@@ -330,7 +330,7 @@
   const prefillContactFields = () => {
     const inquiryEmail = getNamedControls('Inquiry Email')[0];
     const inquiryPhone = getNamedControls('Inquiry Phone')[0];
-    if (inquiryEmail && !inquiryEmail.value) inquiryEmail.value = getFieldValue('Client Email');
+    if (inquiryEmail && !inquiryEmail.value) inquiryEmail.value = getFieldValue('email');
     if (inquiryPhone && !inquiryPhone.value) inquiryPhone.value = getFieldValue('Business Phone');
   };
 
@@ -377,7 +377,7 @@
         title: 'Business information',
         rows: [
           ['Business', getFieldValue('Business Name')], ['Contact', getFieldValue('Primary Contact')],
-          ['Email', getFieldValue('Client Email')], ['Phone', getFieldValue('Business Phone')],
+          ['Email', getFieldValue('email')], ['Phone', getFieldValue('Business Phone')],
           ['Business type', getFieldValue('Business Type')], ['Location', formatAddress()],
           ['Hours', getFieldValue('Business Hours')], ['Description', getFieldValue('Business Description')]
         ]
