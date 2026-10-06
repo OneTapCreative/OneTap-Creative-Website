@@ -16,6 +16,8 @@ agreement_received = read('agreement-received.html')
 agreement_js = read('agreement.js')
 public_patch = read('script.js')
 onboarding_patch = read('onboarding/onboarding.js')
+onboarding_success = read('onboarding/success.html')
+branded_email_api = read('api/onboarding-confirmation.js')
 robots = read('robots.txt')
 sitemap = read('sitemap.xml')
 readme = read('README.md')
@@ -81,6 +83,14 @@ require(f'<link rel="canonical" href="{production_domain}"' in index, 'Static pr
 require('generate_lead' in public_patch, 'Lead analytics event is missing')
 require('Disallow: /onboarding/' in robots, 'Private onboarding route is not blocked')
 require('Disallow: /thank-you.html' in robots, 'Thank-you route is not blocked')
+require(config.get('brandedOnboardingEmail', {}).get('provider') == 'Resend', 'Branded onboarding email provider is not configured')
+require(config.get('brandedOnboardingEmail', {}).get('endpoint') == '/api/onboarding-confirmation', 'Branded onboarding email endpoint is incorrect')
+require('/api/onboarding-confirmation' in onboarding_patch, 'Onboarding does not check branded email readiness')
+require('onetap-onboarding-confirmation-v1' in onboarding_patch, 'Onboarding confirmation handoff storage is missing')
+require('/api/onboarding-confirmation' in onboarding_success, 'Onboarding success page does not trigger branded confirmation')
+require('RESEND_API_KEY' in branded_email_api and 'ONETAP_BRANDED_EMAIL_ENABLED' in branded_email_api, 'Branded email server configuration is incomplete')
+require('Idempotency-Key' in branded_email_api, 'Branded email duplicate-send protection is missing')
+require('hello@onetapcreative.com' in branded_email_api, 'Branded email reply-to identity is missing')
 require(production_domain in sitemap, 'Homepage is missing from sitemap')
 require('mailto:hello@onetapcreative.com' in index, 'Official business email is missing from the homepage')
 require('gmail.com' not in index.lower(), 'A personal Gmail address is publicly exposed on the homepage')
@@ -111,6 +121,7 @@ for path in (
     '404.html',
     'client-operations/CLIENT-OPERATIONS-KIT.md',
     'client-operations/GBP-FAST-TRACK.md',
+    'client-operations/BRANDED-ONBOARDING-EMAIL.md',
     'client-operations/LEAD-TRACKER.csv',
     'launch/HARD-LAUNCH-RUNBOOK.md',
     'launch/EXTERNAL-ACTIVATION.md',
