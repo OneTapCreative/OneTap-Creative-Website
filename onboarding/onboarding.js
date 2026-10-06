@@ -21,9 +21,8 @@
       return field;
     };
 
-    ensureHidden('_captcha', 'false');
     ensureHidden('_next', SUCCESS_URL);
-    ensureHidden('_autoresponse', 'OneTap Creative received your completed onboarding form. Your business information and uploaded files will be reviewed. You will be contacted if anything is missing before production begins.');
+    ensureHidden('_autoresponse', 'OneTap Creative received your completed onboarding form. We will review your business information and uploaded files and contact you from hello@onetapcreative.com if anything is missing before production begins.');
 
     const replyTo = ensureHidden('_replyto');
     const email = form.querySelector('#client-email');
