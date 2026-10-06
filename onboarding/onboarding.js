@@ -50,7 +50,8 @@
         email: email?.value.trim() || '',
         name: form.querySelector('input[name="Primary Contact"]')?.value.trim() || '',
         business: form.querySelector('input[name="Business Name"]')?.value.trim() || '',
-        plan: selectedPlan
+        plan: selectedPlan,
+        sendBranded: brandedEmailReady
       };
 
       try {
