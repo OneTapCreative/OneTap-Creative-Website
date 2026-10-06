@@ -44,7 +44,38 @@
 
   <footer class="portal-footer"><p>OneTap Creative · Private client onboarding</p><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></footer>
   <script>
+    const CONFIRMATION_STORAGE_KEY = 'onetap-onboarding-confirmation-v1';
+
     try { localStorage.removeItem('onetap-client-onboarding-v1'); } catch (error) {}
+
+    const sendBrandedConfirmation = async () => {
+      let payload = null;
+      try {
+        payload = JSON.parse(sessionStorage.getItem(CONFIRMATION_STORAGE_KEY) || 'null');
+      } catch (error) {
+        payload = null;
+      }
+
+      if (!payload?.email || !payload?.submissionId) return;
+
+      try {
+        const response = await fetch('/api/onboarding-confirmation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          try { sessionStorage.removeItem(CONFIRMATION_STORAGE_KEY); } catch (error) {}
+        }
+      } catch (error) {}
+    };
+
+    sendBrandedConfirmation();
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'onetap_onboarding_complete' });
   </script>

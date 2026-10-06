@@ -37,5 +37,11 @@
   "agreementProvider": "Square Contracts",
   "agreementFlow": "Square Contract → signed/completed → private Square recurring payment link",
   "websiteAgreementCollection": false,
-  "formSubmitRecipient": "hello@onetapcreative.com"
+  "formSubmitRecipient": "hello@onetapcreative.com",
+  "brandedOnboardingEmail": {
+    "provider": "Resend",
+    "endpoint": "/api/onboarding-confirmation",
+    "replyTo": "hello@onetapcreative.com",
+    "activation": "ONETAP_BRANDED_EMAIL_ENABLED=true after Resend domain verification"
+  }
 }
