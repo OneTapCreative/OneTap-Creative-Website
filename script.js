@@ -49,6 +49,28 @@
     ensureHidden('_next', SUCCESS_URL);
     ensureHidden('_autoresponse', 'Thanks for reaching out to OneTap Creative. We received your project request and will review it within one business day. If we need anything else, we’ll contact you from hello@onetapcreative.com. If the project is a fit, we’ll confirm the plan and next steps before any payment is collected.');
 
+    // Check branded email readiness before submitting to FormSubmit so it
+    // cannot also send a second plain-text customer autoresponse.
+    let brandReady = false;
+    const readyController = new AbortController();
+    const readyTimeout = window.setTimeout(() => readyController.abort(), 5000);
+    const readiness = fetch('/api/lead-confirmation', {
+      headers: { Accept: 'application/json' }, cache: 'no-store', signal: readyController.signal
+    }).then(response => response.ok ? response.json() : null)
+      .then(data => { brandReady = Boolean(data?.ready); })
+      .catch(() => { brandReady = false; })
+      .finally(() => window.clearTimeout(readyTimeout));
+
+    const autoresponse = form.querySelector('input[name="_autoresponse"]');
+    const newSubmissionId = () => window.crypto?.randomUUID?.() ||
+      `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const confirmationPayload = () => ({
+      submissionId: newSubmissionId(),
+      email: email?.value.trim() || '',
+      name: form.querySelector('input[name="Full Name"]')?.value.trim() || '',
+      business: form.querySelector('input[name="Business Name"]')?.value.trim() || ''
+    });
+
     const replyTo = ensureHidden('_replyto');
     const email = form.querySelector('input[name="Email"], input[type="email"]');
     const submitButton = form.querySelector('button[type="submit"]');
@@ -65,6 +87,10 @@
       if (!form.reportValidity()) return;
 
       syncReplyTo();
+      await readiness;
+      const useBranded = brandReady;
+      if (useBranded) autoresponse?.remove();
+      const leadConfirmation = useBranded ? confirmationPayload() : null;
       form.dataset.submitting = 'true';
       form.setAttribute('aria-busy', 'true');
       if (submitButton) {
@@ -90,12 +116,28 @@
           throw new Error(payload.message || `Submission failed with status ${response.status}`);
         }
 
+        if (leadConfirmation) {
+          try {
+            const confirmationResponse = await fetch('/api/lead-confirmation', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+              body: JSON.stringify(leadConfirmation)
+            });
+            if (!confirmationResponse.ok) console.warn('Branded lead confirmation could not be sent. Check Vercel logs.');
+          } catch (error) {
+            console.warn('Branded lead confirmation request failed.', error);
+          }
+        }
         if (status) status.textContent = 'Request received. Opening your confirmation…';
         window.setTimeout(() => window.location.assign(SUCCESS_URL), 450);
       } catch (error) {
         console.warn('AJAX submission unavailable; using secure form fallback.', error);
         if (status) status.textContent = 'Opening the secure submission confirmation…';
         form.action = FORM_ACTION;
+        // Fall back to FormSubmit customer response if its AJAX request fails.
+        if (!form.querySelector('input[name="_autoresponse"]')) {
+          ensureHidden('_autoresponse', 'Thanks for reaching out to OneTap Creative. We received your website request and will follow up within one business day.');
+        }
         ensureHidden('_next', SUCCESS_URL);
         window.setTimeout(() => HTMLFormElement.prototype.submit.call(form), 150);
       } finally {
