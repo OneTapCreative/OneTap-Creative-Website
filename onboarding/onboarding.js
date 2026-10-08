@@ -31,10 +31,37 @@
     ensureHidden('_next', SUCCESS_URL);
     const autoresponse = ensureHidden('_autoresponse', 'Thanks — we received your OneTap Creative onboarding. We’ll review your business details, content, and uploads to make sure we have everything needed to begin. If anything is missing, we’ll contact you from hello@onetapcreative.com. Once your onboarding is complete, the first website review is typically ready within 7–10 business days.');
 
-    fetch('/api/onboarding-confirmation', { headers: { Accept: 'application/json' } })
+    // Resolve readiness before the browser leaves for FormSubmit. If Resend is
+    // unavailable, preserve FormSubmit's customer autoresponse as the fallback.
+    const readinessController = new AbortController();
+    const readinessTimeout = window.setTimeout(() => readinessController.abort(), 5000);
+    let readinessSettled = false;
+    let resubmitting = false;
+    const readinessPromise = fetch('/api/onboarding-confirmation', {
+      headers: { Accept: 'application/json' },
+      cache: 'no-store',
+      signal: readinessController.signal
+    })
       .then(response => response.ok ? response.json() : null)
       .then(data => { brandedEmailReady = Boolean(data?.ready); })
-      .catch(() => { brandedEmailReady = false; });
+      .catch(() => { brandedEmailReady = false; })
+      .finally(() => {
+        window.clearTimeout(readinessTimeout);
+        readinessSettled = true;
+      });
+
+    form.addEventListener('submit', async event => {
+      if (readinessSettled || resubmitting) return;
+      event.preventDefault();
+      const submitter = event.submitter;
+      await readinessPromise;
+      resubmitting = true;
+      try {
+        form.requestSubmit(submitter || undefined);
+      } finally {
+        resubmitting = false;
+      }
+    }, true);
 
     const replyTo = ensureHidden('_replyto');
     const email = form.querySelector('#client-email');
