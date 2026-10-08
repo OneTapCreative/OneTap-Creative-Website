@@ -68,6 +68,13 @@ Use `client-operations/SQUARE-CARD-PAYMENT-SOP.md` as the operating checklist.
 - [ ] Have a California-qualified attorney review the final client service agreement and public Terms before relying on them for paid clients.
 - [ ] Save the approved agreement as the only version used for new clients.
 
+### 6A. Branded onboarding confirmation email
+- [x] Resend domain verification completed for `onetapcreative.com`.
+- [x] Add `RESEND_API_KEY` to Vercel Production environment.
+- [x] Set `ONETAP_BRANDED_EMAIL_ENABLED=true` in Vercel Production.
+- [ ] Confirm `/api/onboarding-confirmation` reports ready after production redeploy.
+- [ ] Submit one onboarding test and confirm exactly one branded client email is received.
+
 ### 7. End-to-end mock client test
 - [ ] Use a separate test email and fictional business.
 - [ ] Complete every item in `launch/MOCK-CLIENT-TEST.md` from a phone.
