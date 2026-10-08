@@ -369,3 +369,13 @@ input,select,textarea{font-size:1rem}
 @media(min-width:960px){
   .brand-lockup small{font-size:.62rem}
 }
+
+/* Founder introduction — consistent with OneTap's existing dark/gold identity. */
+.founder-section { padding-block: clamp(54px, 7vw, 100px); }
+.founder-panel { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(22px, 4vw, 64px); align-items: center; border: 1px solid rgba(217, 172, 69, .2); border-radius: 22px; padding: clamp(24px, 4vw, 54px); background: #11110f; }
+.founder-heading h2 { margin: 14px 0 18px; font-size: clamp(28px, 3.2vw, 45px); line-height: 1.13; letter-spacing: -.035em; }
+.founder-signature { color: #ebc35a; font-weight: 700; }
+.founder-message p { color: #d8d4c9; line-height: 1.75; margin: 0 0 16px; }
+.founder-message .founder-promise { color: #f5f2e8; font-weight: 700; border-top: 1px solid rgba(217,172,69,.2); padding-top: 18px; }
+.founder-message .btn { margin-top: 8px; display: inline-flex; align-items: center; justify-content: center; }
+@media (max-width: 760px) { .founder-panel { grid-template-columns: 1fr; gap: 18px; } .founder-heading h2 { margin-bottom: 12px; } .founder-message .btn { width: 100%; text-align: center; } }
