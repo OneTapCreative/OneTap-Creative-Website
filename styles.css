@@ -398,8 +398,3 @@ input,select,textarea{font-size:1rem}
 .site-header .main-nav a.btn,.site-header .main-nav a.btn:hover,.site-header .main-nav a.btn:focus-visible {color:#111!important;}
 /* QA: align pricing comparison rows without forcing tall phone cards. */
 @media(min-width:820px){.plan-top{display:grid;grid-template-rows:auto minmax(3.35em,auto) auto auto;align-content:start}.plan-top h3{align-self:start}}
-
-/* Approved OneTap logo: preserve the supplied wordmark rather than rebuilding it in CSS. */
-.site-header .brand,.thank-you-card .brand{width:auto;max-width:min(235px,60vw);min-width:0;display:inline-flex;align-items:center}
-.site-header .brand img.brand-wordmark,.thank-you-card .brand img.brand-wordmark{width:100%;height:auto;max-height:62px;object-fit:contain;object-position:left center}
-@media(max-width:679px){.site-header .brand{max-width:min(188px,57vw)}.site-header .brand img.brand-wordmark{max-height:52px}}
