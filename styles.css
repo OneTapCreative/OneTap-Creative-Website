@@ -398,3 +398,9 @@ input,select,textarea{font-size:1rem}
 .site-header .main-nav a.btn,.site-header .main-nav a.btn:hover,.site-header .main-nav a.btn:focus-visible {color:#111!important;}
 /* QA: align pricing comparison rows without forcing tall phone cards. */
 @media(min-width:820px){.plan-top{display:grid;grid-template-rows:auto minmax(3.35em,auto) auto auto;align-content:start}.plan-top h3{align-self:start}}
+
+/* Keep footer and agreement brand identical to the restored header lockup. */
+.footer-brand .brand-consistent,.agreement-received-card .brand-consistent{display:inline-flex;align-items:center;gap:10px;width:auto;max-width:100%;text-decoration:none}
+.footer-brand .brand-consistent .brand-mark,.agreement-received-card .brand-consistent .brand-mark{width:50px;height:50px;flex:0 0 50px;object-fit:contain}
+.footer-brand .brand-consistent .brand-lockup,.agreement-received-card .brand-consistent .brand-lockup{display:grid;line-height:1;text-align:left}
+@media(max-width:420px){.footer-brand .brand-consistent .brand-mark,.agreement-received-card .brand-consistent .brand-mark{width:40px;height:40px;flex-basis:40px}}

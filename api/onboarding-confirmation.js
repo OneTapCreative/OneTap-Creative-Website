@@ -81,7 +81,7 @@ const buildHtml = ({ name, business, plan }) => {
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:620px;">
           <tr>
             <td style="padding:0 0 18px 0;">
-              <img src="https://onetapcreative.com/assets/images/onetap-master-logo.png" width="164" alt="OneTap Creative" style="display:block;width:164px;max-width:100%;height:auto;border:0;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse"><tr><td style="vertical-align:middle;padding-right:10px"><img src="https://onetapcreative.com/assets/images/onetap-icon-natural.png" alt="" width="48" height="48" style="display:block;width:48px;height:48px;border:0"></td><td style="vertical-align:middle"><div style="font-family:Arial,Helvetica,sans-serif;font-size:26px;font-weight:800;letter-spacing:-1px;line-height:1"><span style="color:#ffffff">One</span><span style="color:#d6ad3c">Tap</span></div><div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;color:#f5f2e8;padding-top:5px">CREATIVE</div></td></tr></table>
             </td>
           </tr>
           <tr>
