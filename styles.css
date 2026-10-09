@@ -393,3 +393,8 @@ input,select,textarea{font-size:1rem}
 .first-look-steps strong {display:block;color:#f5f2e8;font-size:1rem;}
 .first-look-steps p {color:#bdb7aa;line-height:1.55;font-size:.9rem;margin:5px 0 0;}
 @media(max-width:760px){.first-look-panel{grid-template-columns:1fr;gap:22px}.first-look-copy .btn{width:100%;justify-content:center;text-align:center}}
+
+/* QA: reliable dark text contrast for the gold header CTA. */
+.site-header .main-nav a.btn,.site-header .main-nav a.btn:hover,.site-header .main-nav a.btn:focus-visible {color:#111!important;}
+/* QA: align pricing comparison rows without forcing tall phone cards. */
+@media(min-width:820px){.plan-top{display:grid;grid-template-rows:auto minmax(3.35em,auto) auto auto;align-content:start}.plan-top h3{align-self:start}}
