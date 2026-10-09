@@ -78,12 +78,24 @@
     const originalButtonHtml = submitButton?.innerHTML || 'Submit';
     const syncReplyTo = () => { if (replyTo && email) replyTo.value = email.value.trim(); };
 
+    const phone = form.querySelector('input[name="Phone"]');
+    const checkPhone = () => {
+      if (!phone) return;
+      const value = phone.value.trim();
+      const digits = value.replace(/\D/g, '');
+      const validCharacters = /^[+\d\s().-]+$/.test(value);
+      const validLength = digits.length === 10 || (digits.length === 11 && digits.startsWith('1'));
+      phone.setCustomValidity(!value || (validCharacters && validLength) ? '' : 'Enter a valid 10-digit phone number (or 11 digits starting with 1).');
+    };
+    phone?.addEventListener('input', checkPhone);
+    phone?.addEventListener('blur', checkPhone);
     email?.addEventListener('input', syncReplyTo);
     syncReplyTo();
 
     form.addEventListener('submit', async event => {
       event.preventDefault();
       if (form.dataset.submitting === 'true') return;
+      checkPhone();
       if (!form.reportValidity()) return;
 
       syncReplyTo();
@@ -162,7 +174,7 @@
     link.addEventListener('click', () => {
       if (!planInterest) return;
       const plan = link.dataset.plan || '';
-      const option = Array.from(planInterest.options).find(item => item.textContent.includes(plan));
+      const option = Array.from(planInterest.options).find(item => item.value.startsWith(plan + ' —'));
       if (option) {
         planInterest.value = option.value;
         if (serviceHidden) serviceHidden.value = option.value;
