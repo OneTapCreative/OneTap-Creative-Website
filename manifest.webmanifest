@@ -8,8 +8,8 @@
   "theme_color": "#080808",
   "icons": [
     {
-      "src": "/assets/images/onetap-icon-natural.png",
-      "sizes": "512x512",
+      "src": "/assets/images/onetap-icon-192.png",
+      "sizes": "192x192",
       "type": "image/png"
     }
   ]
